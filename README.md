@@ -1,18 +1,11 @@
 # Ziglings
-
-## ⚠️ Attention! Ziglings has moved to Codeberg!
-
-Check out our handy new URL: https://ziglings.org
-
-Or visit the repo directly at: https://codeberg.org/ziglings/exercises
-
-***
+# ⚠️  This project ist currently under construction! We move it from github to this place!
 
 Welcome to Ziglings! This project contains a series of tiny
 broken programs (and one nasty surprise).  By fixing them, you'll
 learn how to read and write [Zig](https://ziglang.org/) code.
 
-![ziglings](https://user-images.githubusercontent.com/1458409/109398392-c1069500-790a-11eb-8ed4-7d7d74d32666.jpg)
+![Ziglings](images/ziglings.jpg "Ziglings")
 
 Those broken programs need your help! (You'll also save the
 planet from evil aliens and help some friendly elephants stick
@@ -53,7 +46,7 @@ Verify the installation and build number of `zig` like so:
 
 ```
 $ zig version
-0.11.0-dev.4246+xxxxxxxxx
+0.12.0-dev.xxxx+xxxxxxxxx
 ```
 
 Clone this repository with Git:
@@ -78,17 +71,12 @@ reading these.
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
 compiler rather than versioned **release** builds. The last
-stable release was `0.10.1`, but Ziglings needs a dev build with
-pre-release version "0.11.0" and a build number at least as high
+stable release was `0.11.0`, but Ziglings needs a dev build with
+pre-release version "0.12.0" and a build number at least as high
 as that shown in the example version check above.
 
 It is likely that you'll download a build which is _greater_ than
 the minimum.
-
-_(For those who cannot easily update Zig, there are also
-community-supported branches in this repo. At the moment, there's
-one for v0.8.1. Older version branches may or may not have all
-exercises and/or bugfixes.)_
 
 Once you have a build of the Zig compiler that works with
 Ziglings, they'll continue to work together. But keep in mind
@@ -231,5 +219,5 @@ tons of room for improvement:
 * Idiomatic usage of Zig
 * Additional exercises
 
-Please see [CONTRIBUTING](https://github.com/ratfactor/ziglings/blob/main/CONTRIBUTING.md)
+Please see [CONTRIBUTING](https://codeberg.org/ziglings/exercises/src/branch/main/CONTRIBUTING.md)
 in this repo for the full details.
