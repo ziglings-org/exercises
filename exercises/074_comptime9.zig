@@ -6,7 +6,7 @@
 // compile time, and adding the 'comptime' keyword would be
 // superfluous, redundant, and smelly:
 //
-//    * The global scope (outside of any function in a source file)
+//    * The container-level scope (outside of any function in a source file)
 //    * Type declarations of:
 //        * Variables
 //        * Functions (types of parameters and return values)
@@ -28,7 +28,7 @@
 //
 const print = @import("std").debug.print;
 
-// Being in the global scope, everything about this value is
+// Being in the container-level scope, everything about this value is
 // implicitly required to be known compile time.
 const llama_count = 5;
 
