@@ -62,7 +62,7 @@
 //        // A standard tokenizer is called (Zig has several) and
 //        // used to locate the positions of the respective separators
 //        // (we remember, space and comma) and pass them to an iterator.
-//        var it = std.mem.tokenize(u8, input, " ,");
+//        var it = std.mem.tokenizeAny(u8, input, " ,");
 //
 //        // The iterator can now be processed in a loop and the
 //        // individual numbers can be transferred.
@@ -136,7 +136,7 @@ pub fn main() !void {
     ;
 
     // now the tokenizer, but what do we need here?
-    var it = std.mem.tokenize(u8, poem, ???);
+    var it = std.mem.tokenizeAny(u8, poem, ???);
 
     // print all words and count them
     var cnt: usize = 0;
