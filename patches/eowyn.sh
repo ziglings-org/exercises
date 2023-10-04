@@ -39,7 +39,7 @@ do
         # Apply the bandages to the wounds, grow new limbs, let
         # new life spring into the broken bodies of the fallen.
         echo Healing "$true_name"...
-        patch --output="patches/healed/$true_name.zig" "$broken" "$patch_name"
+        ./test/patch --output="patches/healed/$true_name.zig" "$broken" "$patch_name"
     else
         echo Cannot heal "$true_name". No patch found.
     fi
