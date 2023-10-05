@@ -1,20 +1,11 @@
---- exercises/103_tokenization.zig	2023-10-05 21:29:56.965283604 +0200
-+++ answers/103_tokenization.zig	2023-10-05 21:30:19.815708910 +0200
-@@ -62,7 +62,7 @@
- //        // A standard tokenizer is called (Zig has several) and
- //        // used to locate the positions of the respective separators
- //        // (we remember, space and comma) and pass them to an iterator.
--//        var it = std.mem.tokenizeAny(u8, input, " ,");
-+//        var it = std.mem.tokenize(u8, input, " ,");
- //
- //        // The iterator can now be processed in a loop and the
- //        // individual numbers can be transferred.
+--- exercises/103_tokenization.zig	2023-10-05 21:57:23.245974688 +0200
++++ answers/103_tokenization.zig	2023-10-05 22:06:08.319119156 +0200
 @@ -136,7 +136,7 @@
      ;
  
      // now the tokenizer, but what do we need here?
 -    var it = std.mem.tokenizeAny(u8, poem, ???);
-+    var it = std.mem.tokenize(u8, poem, " ,;!\n");
++    var it = std.mem.tokenizeAny(u8, poem, " ,;!\n");
  
      // print all words and count them
      var cnt: usize = 0;
