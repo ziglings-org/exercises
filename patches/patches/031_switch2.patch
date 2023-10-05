@@ -1,2 +1,10 @@
-33a34
->             else => '!',
+--- exercises/031_switch2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/031_switch2.zig	2023-10-05 20:04:06.979432113 +0200
+@@ -31,6 +31,7 @@
+             26 => 'Z',
+             // As in the last exercise, please add the 'else' clause
+             // and this time, have it return an exclamation mark '!'.
++            else => '!',
+         };
+ 
+         std.debug.print("{c}", .{real_char});

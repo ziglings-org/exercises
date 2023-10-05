@@ -1,8 +1,15 @@
-12c12
-< pub fn main() void {
----
-> pub fn main() !void {
-15c15
-<     const my_num: u32 = getNumber();
----
->     const my_num: u32 = try getNumber();
+--- exercises/034_quiz4.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/034_quiz4.zig	2023-10-05 20:04:06.996099091 +0200
+@@ -9,10 +9,10 @@
+ 
+ const NumError = error{IllegalNumber};
+ 
+-pub fn main() void {
++pub fn main() !void {
+     const stdout = std.io.getStdOut().writer();
+ 
+-    const my_num: u32 = getNumber();
++    const my_num: u32 = try getNumber();
+ 
+     try stdout.print("my_num={}\n", .{my_num});
+ }

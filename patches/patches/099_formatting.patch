@@ -1,4 +1,11 @@
-134c134
-<             print("{???} ", .{(a + 1) * (b + 1)});
----
->             print("{d:>3} ", .{(a + 1) * (b + 1)});
+--- exercises/099_formatting.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/099_formatting.zig	2023-10-05 20:04:07.292771311 +0200
+@@ -131,7 +131,7 @@
+         for (0..size) |b| {
+             // What formatting is needed here to make our columns
+             // nice and straight?
+-            print("{???} ", .{(a + 1) * (b + 1)});
++            print("{d:>3} ", .{(a + 1) * (b + 1)});
+         }
+ 
+         // After each row we use double line feed:

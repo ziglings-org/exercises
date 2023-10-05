@@ -1,7 +1,15 @@
-44a45,50
->     chars[1] = Character{
->         .role = Role.bard,
->         .gold = 10,
->         .health = 100,
->         .experience = 20,
->     };
+--- exercises/038_structs2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/038_structs2.zig	2023-10-05 20:04:07.012766070 +0200
+@@ -42,6 +42,12 @@
+     //
+     // Feel free to run this program without adding Zump. What does
+     // it do and why?
++    chars[1] = Character{
++        .role = Role.bard,
++        .gold = 10,
++        .health = 100,
++        .experience = 20,
++    };
+ 
+     // Printing all RPG characters in a loop:
+     for (chars, 0..) |c, num| {

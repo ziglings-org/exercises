@@ -1,4 +1,10 @@
-23c23
-<     const hello = .{ 'h', 'e', 'l', 'l', 'o' };
----
->     const hello: [5]u8 = .{ 'h', 'e', 'l', 'l', 'o' };
+--- exercises/083_anonymous_lists.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/083_anonymous_lists.zig	2023-10-05 20:04:07.216103210 +0200
+@@ -20,6 +20,6 @@
+     //
+     //     = .{ 'h', 'e', 'l', 'l', 'o' };
+     //
+-    const hello = .{ 'h', 'e', 'l', 'l', 'o' };
++    const hello: [5]u8 = .{ 'h', 'e', 'l', 'l', 'o' };
+     print("I say {s}!\n", .{hello});
+ }

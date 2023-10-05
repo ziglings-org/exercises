@@ -1,8 +1,20 @@
-85c85
-<             for (???) |s| {
----
->             for (my_seq) |s| {
-97c97
-<             while (??? != my_sentinel) {
----
->             while (my_seq[i] != my_sentinel) {
+--- exercises/076_sentinels.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/076_sentinels.zig	2023-10-05 20:04:07.186102649 +0200
+@@ -82,7 +82,7 @@
+             print("Array:", .{});
+ 
+             // Loop through the items in my_seq.
+-            for (???) |s| {
++            for (my_seq) |s| {
+                 print("{}", .{s});
+             }
+         },
+@@ -94,7 +94,7 @@
+             // Loop through the items in my_seq until we hit the
+             // sentinel value.
+             var i: usize = 0;
+-            while (??? != my_sentinel) {
++            while (my_seq[i] != my_sentinel) {
+                 print("{}", .{my_seq[i]});
+                 i += 1;
+             }

@@ -1,4 +1,11 @@
-26c26
-<     const b: *u8 = &a; // fix this!
----
->     const b: *const u8 = &a; // fix this!
+--- exercises/040_pointers2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/040_pointers2.zig	2023-10-05 20:04:07.022766257 +0200
+@@ -23,7 +23,7 @@
+ 
+ pub fn main() void {
+     const a: u8 = 12;
+-    const b: *u8 = &a; // fix this!
++    const b: *const u8 = &a; // fix this!
+ 
+     std.debug.print("a: {}, b: {}\n", .{ a, b.* });
+ }

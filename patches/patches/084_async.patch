@@ -1,4 +1,11 @@
-51c51
-<     foo();
----
->     _ = async foo();
+--- exercises/084_async.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/084_async.zig	2023-10-05 20:04:07.219436606 +0200
+@@ -48,7 +48,7 @@
+ pub fn main() void {
+     // Additional Hint: you can assign things to '_' when you
+     // don't intend to do anything with them.
+-    foo();
++    _ = async foo();
+ }
+ 
+ fn foo() void {

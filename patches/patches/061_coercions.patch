@@ -1,4 +1,11 @@
-70c70
-<     const my_letter:   ???   = &letter;
----
->     const my_letter: ?*[1]u8 = &letter;
+--- exercises/061_coercions.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/061_coercions.zig	2023-10-05 20:04:07.119434735 +0200
+@@ -67,7 +67,7 @@
+ pub fn main() void {
+     var letter: u8 = 'A';
+ 
+-    const my_letter:   ???   = &letter;
++    const my_letter: ?*[1]u8 = &letter;
+     //               ^^^^^^^
+     //           Your type here.
+     // Must coerce from &letter (which is a *u8).

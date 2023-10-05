@@ -1,6 +1,13 @@
-44,45c44,45
-<     var com_title = com_frame;
-<     var org_title = org_frame;
----
->     var com_title = await com_frame;
->     var org_title = await org_frame;
+--- exercises/089_async6.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/089_async6.zig	2023-10-05 20:04:07.242770376 +0200
+@@ -41,8 +41,8 @@
+     var com_frame = async getPageTitle("http://example.com");
+     var org_frame = async getPageTitle("http://example.org");
+ 
+-    var com_title = com_frame;
+-    var org_title = org_frame;
++    var com_title = await com_frame;
++    var org_title = await org_frame;
+ 
+     print(".com: {s}, .org: {s}.\n", .{ com_title, org_title });
+ }

@@ -1,8 +1,20 @@
-12c12
-<     ???,
----
->     TooSmall,
-29c29
-<         if (???) {
----
->         if (number_error == MyNumberError.TooSmall) {
+--- exercises/021_errors.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/021_errors.zig	2023-10-05 20:04:06.936097967 +0200
+@@ -9,7 +9,7 @@
+ // "TooSmall". Please add it where needed!
+ const MyNumberError = error{
+     TooBig,
+-    ???,
++    TooSmall,
+     TooFour,
+ };
+ 
+@@ -26,7 +26,7 @@
+         if (number_error == MyNumberError.TooBig) {
+             std.debug.print(">4. ", .{});
+         }
+-        if (???) {
++        if (number_error == MyNumberError.TooSmall) {
+             std.debug.print("<4. ", .{});
+         }
+         if (number_error == MyNumberError.TooFour) {

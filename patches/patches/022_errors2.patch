@@ -1,4 +1,11 @@
-22c22
-<     var my_number: ??? = 5;
----
->     var my_number: MyNumberError!u8 = 5;
+--- exercises/022_errors2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/022_errors2.zig	2023-10-05 20:04:06.939431363 +0200
+@@ -19,7 +19,7 @@
+ const MyNumberError = error{TooSmall};
+ 
+ pub fn main() void {
+-    var my_number: ??? = 5;
++    var my_number: MyNumberError!u8 = 5;
+ 
+     // Looks like my_number will need to either store a number OR
+     // an error. Can you set the type correctly above?

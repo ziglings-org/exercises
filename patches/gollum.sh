@@ -26,6 +26,6 @@ echo "Hissss!    before: '$b'"
 echo "            after: '$a'"
 echo "            patch: '$p'"
 
-diff $b $a > $p
+diff -u $b $a > $p
 
 cat $p

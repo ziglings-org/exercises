@@ -1,12 +1,18 @@
-23,24c23,24
-<     const 55_cows: i32 = 55;
-<     const isn't true: bool = false;
----
->     const @"55_cows": i32 = 55;
->     const @"isn't true": bool = false;
-27,28c27,28
-<         55_cows,
-<         isn't true,
----
->         @"55_cows",
->         @"isn't true",
+--- exercises/079_quoted_identifiers.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/079_quoted_identifiers.zig	2023-10-05 20:04:07.199436232 +0200
+@@ -20,11 +20,11 @@
+ const print = @import("std").debug.print;
+ 
+ pub fn main() void {
+-    const 55_cows: i32 = 55;
+-    const isn't true: bool = false;
++    const @"55_cows": i32 = 55;
++    const @"isn't true": bool = false;
+ 
+     print("Sweet freedom: {}, {}.\n", .{
+-        55_cows,
+-        isn't true,
++        @"55_cows",
++        @"isn't true",
+     });
+ }

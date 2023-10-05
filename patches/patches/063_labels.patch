@@ -1,6 +1,13 @@
-131,132c131,132
-<         break;
-<     };
----
->         break food;
->     } else menu[0];
+--- exercises/063_labels.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/063_labels.zig	2023-10-05 20:04:07.126101525 +0200
+@@ -128,8 +128,8 @@
+         // wanted for this Food.
+         //
+         // Please return this Food from the loop.
+-        break;
+-    };
++        break food;
++    } else menu[0];
+     // ^ Oops! We forgot to return Mac & Cheese as the default
+     // Food when the requested ingredients aren't found.
+ 

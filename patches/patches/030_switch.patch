@@ -1,2 +1,10 @@
-48a49
->             else => std.debug.print("?", .{}),
+--- exercises/030_switch.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/030_switch.zig	2023-10-05 20:04:06.976098717 +0200
+@@ -46,6 +46,7 @@
+             // match for every possible value).  Please add an "else"
+             // to this switch to print a question mark "?" when c is
+             // not one of the existing matches.
++            else => std.debug.print("?", .{}),
+         }
+     }
+ 

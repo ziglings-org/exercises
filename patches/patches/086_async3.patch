@@ -1,9 +1,16 @@
-16c16,21
-<     ???
----
->     // Silly solution. You can also use a loop.
->     resume foo_frame;
->     resume foo_frame;
->     resume foo_frame;
->     resume foo_frame;
->     resume foo_frame;
+--- exercises/086_async3.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/086_async3.zig	2023-10-05 20:04:07.229436793 +0200
+@@ -13,7 +13,12 @@
+     const n = 5;
+     var foo_frame = async foo(n);
+ 
+-    ???
++    // Silly solution. You can also use a loop.
++    resume foo_frame;
++    resume foo_frame;
++    resume foo_frame;
++    resume foo_frame;
++    resume foo_frame;
+ 
+     print("\n", .{});
+ }

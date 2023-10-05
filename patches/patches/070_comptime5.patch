@@ -1,6 +1,13 @@
-126,127c126,127
-<     const walks_like_duck = ???;
-<     const quacks_like_duck = ???;
----
->     const walks_like_duck = @hasDecl(MyType, "waddle");
->     const quacks_like_duck = @hasDecl(MyType, "quack");
+--- exercises/070_comptime5.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/070_comptime5.zig	2023-10-05 20:04:07.159435482 +0200
+@@ -123,8 +123,8 @@
+     // Please make sure MyType has both waddle() and quack()
+     // methods:
+     const MyType = @TypeOf(possible_duck);
+-    const walks_like_duck = ???;
+-    const quacks_like_duck = ???;
++    const walks_like_duck = @hasDecl(MyType, "waddle");
++    const quacks_like_duck = @hasDecl(MyType, "quack");
+ 
+     const is_duck = walks_like_duck and quacks_like_duck;
+ 

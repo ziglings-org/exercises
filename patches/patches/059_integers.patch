@@ -1,8 +1,15 @@
-23,25c23,25
-<         0o131, // octal
-<         0b1101000, // binary
-<         0x66, // hex
----
->         0o132, // octal
->         0b1101001, // binary
->         0x67, // hex
+--- exercises/059_integers.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/059_integers.zig	2023-10-05 20:04:07.109434546 +0200
+@@ -20,9 +20,9 @@
+ 
+ pub fn main() void {
+     const zig = [_]u8{
+-        0o131, // octal
+-        0b1101000, // binary
+-        0x66, // hex
++        0o132, // octal
++        0b1101001, // binary
++        0x67, // hex
+     };
+ 
+     print("{s} is cool.\n", .{zig});
