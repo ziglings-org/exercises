@@ -1,7 +1,6 @@
 steps:
   eowyn:
-    image: buddyspencer/ziglang
-    # image: debian
+    image: ziglings/ziglang
     commands:
       - sh ./patches/eowyn.sh
     when:
