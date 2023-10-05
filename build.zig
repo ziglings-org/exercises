@@ -1,16 +1,42 @@
 const std = @import("std");
 const builtin = @import("builtin");
-const compat = @import("src/compat.zig");
 const tests = @import("test/tests.zig");
 
-const Build = compat.Build;
-const CompileStep = compat.build.CompileStep;
-const Step = compat.build.Step;
+const Build = std.Build;
+const CompileStep = Build.CompileStep;
+const Step = Build.Step;
 const Child = std.process.Child;
 
 const assert = std.debug.assert;
 const join = std.fs.path.join;
 const print = std.debug.print;
+
+// When changing this version, be sure to also update README.md in two places:
+//     1) Getting Started
+//     2) Version Changes
+comptime {
+    const required_zig = "0.11.0-dev.4246";
+    const current_zig = builtin.zig_version;
+    const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
+    if (current_zig.order(min_zig) == .lt) {
+        const error_message =
+            \\Sorry, it looks like your version of zig is too old. :-(
+            \\
+            \\Ziglings requires development build
+            \\
+            \\{}
+            \\
+            \\or higher.
+            \\
+            \\Please download a development ("master") build from
+            \\
+            \\https://ziglang.org/download/
+            \\
+            \\
+        ;
+        @compileError(std.fmt.comptimePrint(error_message, .{min_zig}));
+    }
+}
 
 const Kind = enum {
     /// Run the artifact as a normal executable.
@@ -93,7 +119,6 @@ pub const logo =
 ;
 
 pub fn build(b: *Build) !void {
-    if (!compat.is_compatible) compat.die();
     if (!validate_exercises()) std.os.exit(2);
 
     use_color_escapes = false;
