@@ -1,4 +1,11 @@
-83c83
-<     ???;
----
->     x ^= y;
+--- exercises/097_bit_manipulation.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/097_bit_manipulation.zig	2023-10-05 20:04:07.282771124 +0200
+@@ -80,7 +80,7 @@
+     y ^= x;
+ 
+     // What must be written here?
+-    ???;
++    x ^= y;
+ 
+     print("x = {d}; y = {d}\n", .{ x, y });
+ }

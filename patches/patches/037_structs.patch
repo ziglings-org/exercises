@@ -1,4 +1,18 @@
-38a39
->     health: u8,
-46a48
->         .health = 100,
+--- exercises/037_structs.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/037_structs.zig	2023-10-05 20:04:07.009432674 +0200
+@@ -36,6 +36,7 @@
+     role: Role,
+     gold: u32,
+     experience: u32,
++    health: u8,
+ };
+ 
+ pub fn main() void {
+@@ -44,6 +45,7 @@
+         .role = Role.wizard,
+         .gold = 20,
+         .experience = 10,
++        .health = 100,
+     };
+ 
+     // Glorp gains some gold.

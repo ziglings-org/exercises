@@ -1,4 +1,11 @@
-50c50
-<     };
----
->     } else null;
+--- exercises/062_loop_expressions.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/062_loop_expressions.zig	2023-10-05 20:04:07.122768129 +0200
+@@ -47,7 +47,7 @@
+     // return it from the for loop.
+     const current_lang: ?[]const u8 = for (langs) |lang| {
+         if (lang.len == 3) break lang;
+-    };
++    } else null;
+ 
+     if (current_lang) |cl| {
+         print("Current language: {s}\n", .{cl});

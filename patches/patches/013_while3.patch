@@ -1,6 +1,13 @@
-27,28c27,28
-<         if (n % 3 == 0) ???;
-<         if (n % 5 == 0) ???;
----
->         if (n % 3 == 0) continue;
->         if (n % 5 == 0) continue;
+--- exercises/013_while3.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/013_while3.zig	2023-10-05 20:04:06.899430616 +0200
+@@ -24,8 +24,8 @@
+     while (n <= 20) : (n += 1) {
+         // The '%' symbol is the "modulo" operator and it
+         // returns the remainder after division.
+-        if (n % 3 == 0) ???;
+-        if (n % 5 == 0) ???;
++        if (n % 3 == 0) continue;
++        if (n % 5 == 0) continue;
+         std.debug.print("{} ", .{n});
+     }
+ 

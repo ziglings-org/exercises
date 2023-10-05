@@ -1,4 +1,11 @@
-139c139
-<     var it = std.mem.tokenizeAny(u8, poem, ???);
----
->     var it = std.mem.tokenizeAny(u8, poem, " ,;!\n");
+--- exercises/103_tokenization.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/103_tokenization.zig	2023-10-05 20:04:07.309438291 +0200
+@@ -136,7 +136,7 @@
+     ;
+ 
+     // now the tokenizer, but what do we need here?
+-    var it = std.mem.tokenize(u8, poem, ???);
++    var it = std.mem.tokenize(u8, poem, " ,;!\n");
+ 
+     // print all words and count them
+     var cnt: usize = 0;

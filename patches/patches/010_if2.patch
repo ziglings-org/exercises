@@ -1,4 +1,11 @@
-13c13
-<     const price: u8 = if ???;
----
->     const price: u8 = if (discount) 17 else 20;
+--- exercises/010_if2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/010_if2.zig	2023-10-05 20:04:06.886097032 +0200
+@@ -10,7 +10,7 @@
+ 
+     // Please use an if...else expression to set "price".
+     // If discount is true, the price should be $17, otherwise $20:
+-    const price: u8 = if ???;
++    const price: u8 = if (discount) 17 else 20;
+ 
+     std.debug.print("With the discount, the price is ${}.\n", .{price});
+ }

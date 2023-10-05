@@ -1,18 +1,30 @@
-22c22
-<     const x: usize = 1;
----
->     var x: usize = 1;
-26c26
-<     // 'undefined'. There is no problem on this line.
----
->     // 'undefined'. There is no error here.
-36c36
-<     lang[???] = letters[x];
----
->     lang[1] = letters[x];
-38,39c38,39
-<     x = ???;
-<     lang[2] = letters[???];
----
->     x = 5;
->     lang[2] = letters[x];
+--- exercises/008_quiz.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/008_quiz.zig	2023-10-05 20:04:06.879430240 +0200
+@@ -19,11 +19,11 @@
+     // the idiomatic type to use for array indexing.
+     //
+     // There IS a problem on this line, but 'usize' isn't it.
+-    const x: usize = 1;
++    var x: usize = 1;
+ 
+     // Note: When you want to declare memory (an array in this
+     // case) without putting anything in it, you can set it to
+-    // 'undefined'. There is no problem on this line.
++    // 'undefined'. There is no error here.
+     var lang: [3]u8 = undefined;
+ 
+     // The following lines attempt to put 'Z', 'i', and 'g' into the
+@@ -33,10 +33,10 @@
+     lang[0] = letters[x];
+ 
+     x = 3;
+-    lang[???] = letters[x];
++    lang[1] = letters[x];
+ 
+-    x = ???;
+-    lang[2] = letters[???];
++    x = 5;
++    lang[2] = letters[x];
+ 
+     // We want to "Program in Zig!" of course:
+     std.debug.print("Program in {s}!\n", .{lang});

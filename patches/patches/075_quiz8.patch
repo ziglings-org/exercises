@@ -1,8 +1,15 @@
-52c52,56
-< 
----
->     return Path{
->         .from = from,
->         .to = to,
->         .dist = dist,
->     };
+--- exercises/075_quiz8.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/075_quiz8.zig	2023-10-05 20:04:07.182769252 +0200
+@@ -49,7 +49,11 @@
+ //
+ // Please fill in the body of this function!
+ fn makePath(from: *Place, to: *Place, dist: u8) Path {
+-
++    return Path{
++        .from = from,
++        .to = to,
++        .dist = dist,
++    };
+ }
+ 
+ // Using our new function, these path definitions take up considerably less

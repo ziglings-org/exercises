@@ -1,8 +1,18 @@
-86c86
-<     try testing.expect(sub(10, 5) == 6);
----
->     try testing.expect(sub(10, 5) == 5);
-111c111
-<     try testing.expectError(error.???, divide(15, 0));
----
->     try testing.expectError(error.DivisionByZero, divide(15, 0));
+--- exercises/102_testing.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/102_testing.zig	2023-10-05 20:04:07.302771500 +0200
+@@ -83,7 +83,7 @@
+ // an error that you need
+ // to correct.
+ test "sub" {
+-    try testing.expect(sub(10, 5) == 6);
++    try testing.expect(sub(10, 5) == 5);
+ 
+     try testing.expect(sub(3, 1.5) == 1.5);
+ }
+@@ -108,5 +108,5 @@
+     // Now we test if the function returns an error
+     // if we pass a zero as denominator.
+     // But which error needs to be tested?
+-    try testing.expectError(error.???, divide(15, 0));
++    try testing.expectError(error.DivisionByZero, divide(15, 0));
+ }

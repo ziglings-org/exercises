@@ -1,2 +1,7 @@
-8a9
-> // gollum's line ;-)
+--- exercises/999_the_end.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/999_the_end.zig	2023-10-05 20:04:07.312771687 +0200
+@@ -6,3 +6,4 @@
+ pub fn main() void {
+     print("\nThis is the end for now!\nWe hope you had fun and were able to learn a lot, so visit us again when the next exercises are available.\n", .{});
+ }
++// gollum's line ;-)

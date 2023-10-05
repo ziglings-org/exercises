@@ -1,4 +1,11 @@
-57c57
-<     for (???) |n| {
----
->     for (1..21) |n| {
+--- exercises/095_for3.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/095_for3.zig	2023-10-05 20:04:07.272770937 +0200
+@@ -54,7 +54,7 @@
+ 
+     // I want to print every number between 1 and 20 that is NOT
+     // divisible by 3 or 5.
+-    for (???) |n| {
++    for (1..21) |n| {
+ 
+         // The '%' symbol is the "modulo" operator and it
+         // returns the remainder after division.

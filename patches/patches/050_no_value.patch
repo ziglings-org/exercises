@@ -1,14 +1,26 @@
-68c68
-<     var first_line1: *const [16]u8 = ???;
----
->     var first_line1: *const [16]u8 = undefined;
-71c71
-<     var first_line2: Err!*const [21]u8 = ???;
----
->     var first_line2: Err!*const [21]u8 = Err.Cthulhu;
-80,81c80,81
-< fn printSecondLine() ??? {
-<     var second_line2: ?*const [18]u8 = ???;
----
-> fn printSecondLine() void {
->     var second_line2: ?*const [18]u8 = null;
+--- exercises/050_no_value.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/050_no_value.zig	2023-10-05 20:04:07.069433797 +0200
+@@ -65,10 +65,10 @@
+ const Err = error{Cthulhu};
+ 
+ pub fn main() void {
+-    var first_line1: *const [16]u8 = ???;
++    var first_line1: *const [16]u8 = undefined;
+     first_line1 = "That is not dead";
+ 
+-    var first_line2: Err!*const [21]u8 = ???;
++    var first_line2: Err!*const [21]u8 = Err.Cthulhu;
+     first_line2 = "which can eternal lie";
+ 
+     // Note we need the "{!s}" format for the error union string.
+@@ -77,8 +77,8 @@
+     printSecondLine();
+ }
+ 
+-fn printSecondLine() ??? {
+-    var second_line2: ?*const [18]u8 = ???;
++fn printSecondLine() void {
++    var second_line2: ?*const [18]u8 = null;
+     second_line2 = "even death may die";
+ 
+     std.debug.print("And with strange aeons {s}.\n", .{second_line2.?});

@@ -1,10 +1,17 @@
-62c62,68
-<     return detectProblems(n) ???;
----
->     return detectProblems(n) catch |err| {
->         if (err == MyNumberError.TooSmall) {
->             return 10;
->         }
-> 
->         return err;
->     };
+--- exercises/024_errors4.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/024_errors4.zig	2023-10-05 20:04:06.949431550 +0200
+@@ -59,7 +59,13 @@
+     // If we get a TooSmall error, we should return 10.
+     // If we get any other error, we should return that error.
+     // Otherwise, we return the u32 number.
+-    return detectProblems(n) ???;
++    return detectProblems(n) catch |err| {
++        if (err == MyNumberError.TooSmall) {
++            return 10;
++        }
++
++        return err;
++    };
+ }
+ 
+ fn detectProblems(n: u32) MyNumberError!u32 {

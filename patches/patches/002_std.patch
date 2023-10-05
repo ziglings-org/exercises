@@ -1,4 +1,11 @@
-14c14
-< ??? = @import("std");
----
-> const std = @import("std");
+--- exercises/002_std.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/002_std.zig	2023-10-05 20:04:06.849429678 +0200
+@@ -11,7 +11,7 @@
+ // Please complete the import below:
+ //
+ 
+-??? = @import("std");
++const std = @import("std");
+ 
+ pub fn main() void {
+     std.debug.print("Standard Library.\n", .{});

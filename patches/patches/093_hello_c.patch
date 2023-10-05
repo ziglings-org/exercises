@@ -1,4 +1,11 @@
-57c57
-<     const c_res = write(2, "Hello C from Zig!", 17);
----
->     const c_res = c.write(2, "Hello C from Zig!", 17);
+--- exercises/093_hello_c.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/093_hello_c.zig	2023-10-05 20:04:07.262770750 +0200
+@@ -54,7 +54,7 @@
+     //
+     // In this exercise we use 'write' to output 17 chars,
+     // but something is still missing...
+-    const c_res = write(2, "Hello C from Zig!", 17);
++    const c_res = c.write(2, "Hello C from Zig!", 17);
+ 
+     // let's see what the result from C is:
+     std.debug.print(" - C result is {d} chars written.\n", .{c_res});

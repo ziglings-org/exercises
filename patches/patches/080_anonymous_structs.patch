@@ -1,8 +1,18 @@
-51c51
-<     var circle1 = ??? {
----
->     var circle1 = Circle(i32){
-57c57
-<     var circle2 = ??? {
----
->     var circle2 = Circle(f32){
+--- exercises/080_anonymous_structs.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/080_anonymous_structs.zig	2023-10-05 20:04:07.202769626 +0200
+@@ -48,13 +48,13 @@
+     // * circle1 should hold i32 integers
+     // * circle2 should hold f32 floats
+     //
+-    var circle1 = ??? {
++    var circle1 = Circle(i32){
+         .center_x = 25,
+         .center_y = 70,
+         .radius = 15,
+     };
+ 
+-    var circle2 = ??? {
++    var circle2 = Circle(f32){
+         .center_x = 25.234,
+         .center_y = 70.999,
+         .radius = 15.714,

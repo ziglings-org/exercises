@@ -1,4 +1,11 @@
-39c39
-<     var value = ???
----
->     var value = await myframe;
+--- exercises/088_async5.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/088_async5.zig	2023-10-05 20:04:07.239436980 +0200
+@@ -36,7 +36,7 @@
+ pub fn main() void {
+     var myframe = async getPageTitle("http://example.com");
+ 
+-    var value = ???
++    var value = await myframe;
+ 
+     print("{s}\n", .{value});
+ }

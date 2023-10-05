@@ -1,10 +1,20 @@
-47,48c47,48
-<     printInsect(???);
-<     printInsect(???);
----
->     printInsect(ant);
->     printInsect(bee);
-54c54
-<     switch (???) {
----
->     switch (insect) {
+--- exercises/056_unions2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/056_unions2.zig	2023-10-05 20:04:07.096100965 +0200
+@@ -44,14 +44,14 @@
+     std.debug.print("Insect report! ", .{});
+ 
+     // Could it really be as simple as just passing the union?
+-    printInsect(???);
+-    printInsect(???);
++    printInsect(ant);
++    printInsect(bee);
+ 
+     std.debug.print("\n", .{});
+ }
+ 
+ fn printInsect(insect: Insect) void {
+-    switch (???) {
++    switch (insect) {
+         .still_alive => |a| std.debug.print("Ant alive is: {}. ", .{a}),
+         .flowers_visited => |f| std.debug.print("Bee visited {} flowers. ", .{f}),
+     }

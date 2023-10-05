@@ -1,4 +1,17 @@
-21a22
->     var elephantB = Elephant{ .letter = 'B' };
-27a29
->     elephantB.tail = &elephantC;
+--- exercises/044_quiz5.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/044_quiz5.zig	2023-10-05 20:04:07.039433235 +0200
+@@ -19,12 +19,14 @@
+ pub fn main() void {
+     var elephantA = Elephant{ .letter = 'A' };
+     // (Please add Elephant B here!)
++    var elephantB = Elephant{ .letter = 'B' };
+     var elephantC = Elephant{ .letter = 'C' };
+ 
+     // Link the elephants so that each tail "points" to the next elephant.
+     // They make a circle: A->B->C->A...
+     elephantA.tail = &elephantB;
+     // (Please link Elephant B's tail to Elephant C here!)
++    elephantB.tail = &elephantC;
+     elephantC.tail = &elephantA;
+ 
+     visitElephants(&elephantA);
