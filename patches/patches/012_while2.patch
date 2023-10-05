@@ -1,4 +1,11 @@
-28c28
-<     while (n < 1000) : ??? {
----
->     while (n < 1000) : (n *= 2) {
+--- exercises/012_while2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/012_while2.zig	2023-10-05 20:04:06.896097219 +0200
+@@ -25,7 +25,7 @@
+ 
+     // Please set the continue expression so that we get the desired
+     // results in the print statement below.
+-    while (n < 1000) : ??? {
++    while (n < 1000) : (n *= 2) {
+         // Print the current number
+         std.debug.print("{} ", .{n});
+     }

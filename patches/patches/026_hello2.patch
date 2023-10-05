@@ -1,4 +1,9 @@
-26c26
-<     stdout.print("Hello world!\n", .{});
----
->     try stdout.print("Hello world!\n", .{});
+--- exercises/026_hello2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/026_hello2.zig	2023-10-05 20:04:06.959431737 +0200
+@@ -23,5 +23,5 @@
+     // to be able to pass it up as a return value of main().
+     //
+     // We just learned of a single statement which can accomplish this.
+-    stdout.print("Hello world!\n", .{});
++    try stdout.print("Hello world!\n", .{});
+ }

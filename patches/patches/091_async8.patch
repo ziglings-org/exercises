@@ -1,16 +1,26 @@
-20c20
-<     print("X", .{});
----
->     print("D", .{});
-28c28
-<     print("X", .{});
----
->     print("B", .{});
-31c31
-<         print("X", .{});
----
->         print("C", .{});
-34c34
-<     print("X", .{});
----
->     print("E", .{});
+--- exercises/091_async8.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/091_async8.zig	2023-10-05 20:04:07.252770563 +0200
+@@ -17,7 +17,7 @@
+ 
+     var frame = async suspendable();
+ 
+-    print("X", .{});
++    print("D", .{});
+ 
+     resume frame;
+ 
+@@ -25,11 +25,11 @@
+ }
+ 
+ fn suspendable() void {
+-    print("X", .{});
++    print("B", .{});
+ 
+     suspend {
+-        print("X", .{});
++        print("C", .{});
+     }
+ 
+-    print("X", .{});
++    print("E", .{});
+ }

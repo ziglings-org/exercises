@@ -1,12 +1,27 @@
-90c90
-<     const print = ???;
----
->     const print = std.debug.print;
-155c155
-<     levelUp(glorp, reward_xp);
----
->     levelUp(&glorp, reward_xp);
-161c161
-< fn levelUp(character_access: Character, xp: u32) void {
----
-> fn levelUp(character_access: *Character, xp: u32) void {
+--- exercises/051_values.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/051_values.zig	2023-10-05 20:04:07.072767194 +0200
+@@ -87,7 +87,7 @@
+     // Let's assign the std.debug.print function to a const named
+     // "print" so that we can use this new name later!
+ 
+-    const print = ???;
++    const print = std.debug.print;
+ 
+     // Now let's look at assigning and pointing to values in Zig.
+     //
+@@ -152,13 +152,13 @@
+     print("XP before:{}, ", .{glorp.experience});
+ 
+     // Fix 1 of 2 goes here:
+-    levelUp(glorp, reward_xp);
++    levelUp(&glorp, reward_xp);
+ 
+     print("after:{}.\n", .{glorp.experience});
+ }
+ 
+ // Fix 2 of 2 goes here:
+-fn levelUp(character_access: Character, xp: u32) void {
++fn levelUp(character_access: *Character, xp: u32) void {
+     character_access.experience += xp;
+ }
+ 

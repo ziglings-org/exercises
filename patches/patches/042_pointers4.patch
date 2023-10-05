@@ -1,4 +1,9 @@
-40c40
-<     ??? = 5; // fix me!
----
->     x.* = 5; // fix me!
+--- exercises/042_pointers4.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/042_pointers4.zig	2023-10-05 20:04:07.032766444 +0200
+@@ -37,5 +37,5 @@
+ // This function should take a reference to a u8 value and set it
+ // to 5.
+ fn makeFive(x: *u8) void {
+-    ??? = 5; // fix me!
++    x.* = 5; // fix me!
+ }

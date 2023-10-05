@@ -1,4 +1,11 @@
-42c42
-< fn makeLlamas(count: usize) [count]u8 {
----
-> fn makeLlamas(comptime count: usize) [count]u8 {
+--- exercises/074_comptime9.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/074_comptime9.zig	2023-10-05 20:04:07.176102462 +0200
+@@ -39,7 +39,7 @@
+ 
+ // And here's the function. Note that the return value type
+ // depends on one of the input arguments!
+-fn makeLlamas(count: usize) [count]u8 {
++fn makeLlamas(comptime count: usize) [count]u8 {
+     var temp: [count]u8 = undefined;
+     var i = 0;
+ 

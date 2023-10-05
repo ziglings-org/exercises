@@ -1,4 +1,11 @@
-28c28
-<     for (bits, ???) |bit, ???| {
----
->     for (bits, 0..) |bit, i| {
+--- exercises/016_for2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/016_for2.zig	2023-10-05 20:04:06.912764197 +0200
+@@ -25,7 +25,7 @@
+     // the value of the place as a power of two for each bit.
+     //
+     // See if you can figure out the missing pieces:
+-    for (bits, ???) |bit, ???| {
++    for (bits, 0..) |bit, i| {
+         // Note that we convert the usize i to a u32 with
+         // @intCast(), a builtin function just like @import().
+         // We'll learn about these properly in a later exercise.

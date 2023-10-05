@@ -1,2 +1,10 @@
-21a22
->     resume foo_frame;
+--- exercises/085_async2.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/085_async2.zig	2023-10-05 20:04:07.226103397 +0200
+@@ -19,6 +19,7 @@
+ 
+ pub fn main() void {
+     var foo_frame = async foo();
++    resume foo_frame;
+ }
+ 
+ fn foo() void {

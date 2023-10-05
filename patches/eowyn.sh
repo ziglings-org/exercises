@@ -22,7 +22,9 @@ then
 fi
 
 # Which version we have?
-echo "I am in version 23.4.25.1, let's try our magic power."
+echo "Zig version" $(zig version)
+echo "Eowyn version 23.10.5.1, let's try our magic power."
+echo ""
 
 # Create directory of healing if it doesn't already exist.
 mkdir -p patches/healed
@@ -39,7 +41,9 @@ do
         # Apply the bandages to the wounds, grow new limbs, let
         # new life spring into the broken bodies of the fallen.
         echo Healing "$true_name"...
-        ./test/patch --output="patches/healed/$true_name.zig" "$broken" "$patch_name"
+		cp "$broken" "patches/healed/$true_name.zig"
+		patch -i "$patch_name" "patches/healed/$true_name.zig"
+
     else
         echo Cannot heal "$true_name". No patch found.
     fi

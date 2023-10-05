@@ -1,8 +1,20 @@
-24c24
-<     tail: *Elephant = null, // Hmm... tail needs something...
----
->     tail: ?*Elephant = null, // <---- make this optional!
-54c54
-<         if (e.tail == null) ???;
----
->         if (e.tail == null) break;
+--- exercises/046_optionals2.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/046_optionals2.zig	2023-10-05 20:04:07.049433424 +0200
+@@ -21,7 +21,7 @@
+ 
+ const Elephant = struct {
+     letter: u8,
+-    tail: *Elephant = null, // Hmm... tail needs something...
++    tail: ?*Elephant = null, // <---- make this optional!
+     visited: bool = false,
+ };
+ 
+@@ -51,7 +51,7 @@
+         // We should stop once we encounter a tail that
+         // does NOT point to another element. What can
+         // we put here to make that happen?
+-        if (e.tail == null) ???;
++        if (e.tail == null) break;
+ 
+         e = e.tail.?;
+     }

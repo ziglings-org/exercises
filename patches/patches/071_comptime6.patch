@@ -1,4 +1,11 @@
-43c43
-<     ??? {
----
->     inline for (fields) |field| {
+--- exercises/071_comptime6.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/071_comptime6.zig	2023-10-05 20:04:07.162768879 +0200
+@@ -40,7 +40,7 @@
+ 
+     const fields = @typeInfo(Narcissus).Struct.fields;
+ 
+-    ??? {
++    inline for (fields) |field| {
+         if (field.type != void) {
+             print(" {s}", .{field.name});
+         }

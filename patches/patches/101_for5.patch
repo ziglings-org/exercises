@@ -1,4 +1,11 @@
-54c54
-<     for (roles, gold, experience, ???) |c, g, e, i| {
----
->     for (roles, gold, experience, 1..) |c, g, e, i| {
+--- exercises/101_for5.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/101_for5.zig	2023-10-05 20:04:07.299438103 +0200
+@@ -51,7 +51,7 @@
+ 
+     // We would like to number our list starting with 1, not 0.
+     // How do we do that?
+-    for (roles, gold, experience, ???) |c, g, e, i| {
++    for (roles, gold, experience, 1..) |c, g, e, i| {
+         const role_name = switch (c) {
+             .wizard => "Wizard",
+             .thief => "Thief",

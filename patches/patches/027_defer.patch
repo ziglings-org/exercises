@@ -1,4 +1,10 @@
-23c23
-<     std.debug.print("Two\n", .{});
----
->     defer std.debug.print("Two\n", .{});
+--- exercises/027_defer.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/027_defer.zig	2023-10-05 20:04:06.962765133 +0200
+@@ -20,6 +20,6 @@
+ pub fn main() void {
+     // Without changing anything else, please add a 'defer' statement
+     // to this code so that our program prints "One Two\n":
+-    std.debug.print("Two\n", .{});
++    defer std.debug.print("Two\n", .{});
+     std.debug.print("One ", .{});
+ }

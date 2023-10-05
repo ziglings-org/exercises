@@ -1,8 +1,19 @@
-15c15
-<     const b: u32 = addTwenty(4) ??? 22;
----
->     const b: u32 = addTwenty(4) catch 22;
-22c22
-< fn addTwenty(n: u32) ??? {
----
-> fn addTwenty(n: u32) MyNumberError!u32 {
+--- exercises/023_errors3.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/023_errors3.zig	2023-10-05 20:04:06.946098156 +0200
+@@ -12,14 +12,14 @@
+ 
+ pub fn main() void {
+     const a: u32 = addTwenty(44) catch 22;
+-    const b: u32 = addTwenty(4) ??? 22;
++    const b: u32 = addTwenty(4) catch 22;
+ 
+     std.debug.print("a={}, b={}\n", .{ a, b });
+ }
+ 
+ // Please provide the return type from this function.
+ // Hint: it'll be an error union.
+-fn addTwenty(n: u32) ??? {
++fn addTwenty(n: u32) MyNumberError!u32 {
+     if (n < 5) {
+         return MyNumberError.TooSmall;
+     } else {

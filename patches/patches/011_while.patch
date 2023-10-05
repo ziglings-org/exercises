@@ -1,4 +1,11 @@
-24c24
-<     while (???) {
----
->     while (n < 1024) {
+--- exercises/011_while.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/011_while.zig	2023-10-05 20:04:06.892763823 +0200
+@@ -21,7 +21,7 @@
+     var n: u32 = 2;
+ 
+     // Please use a condition that is true UNTIL "n" reaches 1024:
+-    while (???) {
++    while (n < 1024) {
+         // Print the current number
+         std.debug.print("{} ", .{n});
+ 

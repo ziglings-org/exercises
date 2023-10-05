@@ -1,4 +1,11 @@
-41c41
-< fn printCircle(???) void {
----
-> fn printCircle(circle: anytype) void {
+--- exercises/081_anonymous_structs2.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/081_anonymous_structs2.zig	2023-10-05 20:04:07.209436419 +0200
+@@ -38,7 +38,7 @@
+ 
+ // Please complete this function which prints an anonymous struct
+ // representing a circle.
+-fn printCircle(???) void {
++fn printCircle(circle: anytype) void {
+     print("x:{} y:{} radius:{}\n", .{
+         circle.center_x,
+         circle.center_y,

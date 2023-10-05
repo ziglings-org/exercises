@@ -1,4 +1,11 @@
-21c21
-<         if (???) ???;
----
->         if (n == 4) break;
+--- exercises/014_while4.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/014_while4.zig	2023-10-05 20:04:06.906097406 +0200
+@@ -18,7 +18,7 @@
+     // Oh dear! This while loop will go forever?!
+     // Please fix this so the print statement below gives the desired output.
+     while (true) : (n += 1) {
+-        if (???) ???;
++        if (n == 4) break;
+     }
+ 
+     // Result: we want n=4

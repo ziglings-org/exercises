@@ -1,18 +1,30 @@
-24,25c24,25
-< fn printPowersOfTwo(numbers: [4]u16) ??? {
-<     loop (numbers) |n| {
----
-> fn printPowersOfTwo(numbers: [4]u16) void {
->     for (numbers) |n| {
-34c34
-< fn twoToThe(number: u16) ??? {
----
-> fn twoToThe(number: u16) u16 {
-38c38
-<     loop (n < number) : (n += 1) {
----
->     while (n < number) : (n += 1) {
-42c42
-<     return ???;
----
->     return total;
+--- exercises/020_quiz3.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/020_quiz3.zig	2023-10-05 20:04:06.932764573 +0200
+@@ -21,8 +21,8 @@
+ //
+ // This function prints, but does not return anything.
+ //
+-fn printPowersOfTwo(numbers: [4]u16) ??? {
+-    loop (numbers) |n| {
++fn printPowersOfTwo(numbers: [4]u16) void {
++    for (numbers) |n| {
+         std.debug.print("{} ", .{twoToThe(n)});
+     }
+ }
+@@ -31,13 +31,13 @@
+ // exercise. But don't be fooled! This one does the math without the aid
+ // of the standard library!
+ //
+-fn twoToThe(number: u16) ??? {
++fn twoToThe(number: u16) u16 {
+     var n: u16 = 0;
+     var total: u16 = 1;
+ 
+-    loop (n < number) : (n += 1) {
++    while (n < number) : (n += 1) {
+         total *= 2;
+     }
+ 
+-    return ???;
++    return total;
+ }

@@ -1,11 +1,18 @@
-28a29,31
->     pub fn getTrunk(self: *Elephant) *Elephant {
->         return self.trunk.?;
->     }
-30,31c33,35
-<     ???
-< 
----
->     pub fn hasTrunk(self: *Elephant) bool {
->         return (self.trunk != null);
->     }
+--- exercises/049_quiz6.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/049_quiz6.zig	2023-10-05 20:04:07.062767005 +0200
+@@ -26,9 +26,13 @@
+ 
+     // Your Elephant trunk methods go here!
+     // ---------------------------------------------------
++    pub fn getTrunk(self: *Elephant) *Elephant {
++        return self.trunk.?;
++    }
+ 
+-    ???
+-
++    pub fn hasTrunk(self: *Elephant) bool {
++        return (self.trunk != null);
++    }
+     // ---------------------------------------------------
+ 
+     pub fn visit(self: *Elephant) void {

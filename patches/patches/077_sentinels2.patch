@@ -1,4 +1,11 @@
-63c63
-<     const printable = ???;
----
->     const printable = foo.data[0..foo.length];
+--- exercises/077_sentinels2.zig	2023-10-03 22:15:22.125574535 +0200
++++ answers/077_sentinels2.zig	2023-10-05 20:04:07.189436043 +0200
+@@ -60,7 +60,7 @@
+     // length... You've actually solved this problem before!
+     //
+     // Here's a big hint: do you remember how to take a slice?
+-    const printable = ???;
++    const printable = foo.data[0..foo.length];
+ 
+     print("{s}\n", .{printable});
+ }

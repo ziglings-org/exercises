@@ -1,4 +1,10 @@
-28c28
-< ??? deepThought() ??? {
----
-> fn deepThought() u8 {
+--- exercises/018_functions.zig	2023-10-03 22:15:22.122241138 +0200
++++ answers/018_functions.zig	2023-10-05 20:04:06.922764386 +0200
+@@ -25,6 +25,6 @@
+ // We're just missing a couple things. One thing we're NOT missing is the
+ // keyword "pub", which is not needed here. Can you guess why?
+ //
+-??? deepThought() ??? {
++fn deepThought() u8 {
+     return 42; // Number courtesy Douglas Adams
+ }
