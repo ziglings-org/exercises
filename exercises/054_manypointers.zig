@@ -4,6 +4,7 @@
 //     var foo: [4]u8 = [4]u8{ 1, 2, 3, 4 };
 //     var foo_slice: []u8 = foo[0..];
 //     var foo_ptr: [*]u8 = &foo;
+//     var foo_slice_from_ptr: []u8 = foo_ptr[0..4];
 //
 // The difference between foo_slice and foo_ptr is that the slice has
 // a known length. The pointer doesn't. It is up to YOU to keep track
