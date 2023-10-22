@@ -1,6 +1,6 @@
---- exercises/054_manypointers.zig	2023-10-03 22:15:22.122241138 +0200
-+++ answers/054_manypointers.zig	2023-10-05 20:04:07.086100775 +0200
-@@ -32,7 +32,7 @@
+--- exercises/054_manypointers.zig	2023-10-22 13:59:15.818523309 +0200
++++ answers/054_manypointers.zig	2023-10-22 14:05:24.095241143 +0200
+@@ -33,7 +33,7 @@
      // we can CONVERT IT TO A SLICE. (Hint: we do know the length!)
      //
      // Please fix this line so the print statement below can print it:
