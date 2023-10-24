@@ -1,6 +1,7 @@
 steps:
   eowyn:
-    image: ziglings/ziglang
+    image: ziglings/ziglang:latest
+    pull: true
     commands:
       - sh ./patches/eowyn.sh
     when:
