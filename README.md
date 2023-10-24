@@ -75,6 +75,9 @@ reading these.
 
 ## A Note About Versions
 
+**Hint:** To check out Ziglings for a stable release of Zig, you can use
+the appropriate tag. 
+
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
 compiler rather than versioned **release** builds. The last
