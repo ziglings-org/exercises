@@ -39,6 +39,7 @@ for more detail:
 * https://ziglang.org/learn/
 * https://ziglearn.org/
 * https://ziglang.org/documentation/master/
+* [Zig in Depth! (video series)](https://www.youtube.com/watch?v=MMtvGA1YhW4&list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&pp=iAQB)
 
 Also, the [Zig community](https://github.com/ziglang/zig/wiki/Community)
 is incredibly friendly and helpful!
