@@ -83,19 +83,19 @@ const DuctError = error{UnmatchedDiameters};
 
 pub fn main() void {
     // This is a real duck!
-    var ducky1 = Duck{
+    const ducky1 = Duck{
         .eggs = 0,
         .loudness = 3,
     };
 
     // This is not a real duck, but it has quack() and waddle()
     // abilities, so it's still a "duck".
-    var ducky2 = RubberDuck{
+    const ducky2 = RubberDuck{
         .in_bath = false,
     };
 
     // This is not even remotely a duck.
-    var ducky3 = Duct{
+    const ducky3 = Duct{
         .diameter = 17,
         .length = 165,
         .galvanized = true,

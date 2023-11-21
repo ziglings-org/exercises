@@ -1,5 +1,5 @@
---- exercises/067_comptime2.zig	2023-10-03 22:15:22.125574535 +0200
-+++ answers/067_comptime2.zig	2023-10-05 20:04:07.146101899 +0200
+--- exercises/067_comptime2.zig	2023-11-21 14:36:12.080295365 +0100
++++ answers/067_comptime2.zig	2023-11-21 15:11:50.814098876 +0100
 @@ -35,7 +35,7 @@
      // In this contrived example, we've decided to allocate some
      // arrays using a variable count! But something's missing...
@@ -8,4 +8,4 @@
 +    comptime var count = 0;
  
      count += 1;
-     var a1: [count]u8 = .{'A'} ** count;
+     const a1: [count]u8 = .{'A'} ** count;

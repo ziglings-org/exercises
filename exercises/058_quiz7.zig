@@ -273,7 +273,7 @@ const HermitsNotebook = struct {
     // distance) than the one we'd noted before. If it is, we
     // overwrite the old entry with the new one.
     fn checkNote(self: *HermitsNotebook, note: NotebookEntry) void {
-        var existing_entry = self.getEntry(note.place);
+        const existing_entry = self.getEntry(note.place);
 
         if (existing_entry == null) {
             self.entries[self.end_of_entries] = note;
@@ -386,7 +386,7 @@ pub fn main() void {
     // "start" entry we just added) until we run out, at which point
     // we'll have checked every reachable Place.
     while (notebook.hasNextEntry()) {
-        var place_entry = notebook.getNextEntry();
+        const place_entry = notebook.getNextEntry();
 
         // For every Path that leads FROM the current Place, create a
         // new note (in the form of a NotebookEntry) with the

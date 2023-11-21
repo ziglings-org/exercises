@@ -1,11 +1,11 @@
---- exercises/025_errors5.zig	2023-10-03 22:15:22.122241138 +0200
-+++ answers/025_errors5.zig	2023-10-05 20:04:06.952764946 +0200
+--- exercises/025_errors5.zig	2023-11-21 14:22:48.159250165 +0100
++++ answers/025_errors5.zig	2023-11-21 14:25:01.338277886 +0100
 @@ -26,7 +26,7 @@
      // This function needs to return any error which might come back from detect().
      // Please use a "try" statement rather than a "catch".
      //
--    var x = detect(n);
-+    var x = try detect(n);
+-    const x = detect(n);
++    const x = try detect(n);
  
      return x + 5;
  }

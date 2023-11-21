@@ -38,16 +38,16 @@ pub fn main() void {
     var count = 0;
 
     count += 1;
-    var a1: [count]u8 = .{'A'} ** count;
+    const a1: [count]u8 = .{'A'} ** count;
 
     count += 1;
-    var a2: [count]u8 = .{'B'} ** count;
+    const a2: [count]u8 = .{'B'} ** count;
 
     count += 1;
-    var a3: [count]u8 = .{'C'} ** count;
+    const a3: [count]u8 = .{'C'} ** count;
 
     count += 1;
-    var a4: [count]u8 = .{'D'} ** count;
+    const a4: [count]u8 = .{'D'} ** count;
 
     print("{s} {s} {s} {s}\n", .{ a1, a2, a3, a4 });
 

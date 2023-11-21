@@ -46,7 +46,7 @@ pub fn main() void {
     var nums = [_:0]u32{ 1, 2, 3, 4, 5, 6 };
 
     // And here's a zero-terminated many-item pointer:
-    var ptr: [*:0]u32 = &nums;
+    const ptr: [*:0]u32 = &nums;
 
     // For fun, let's replace the value at position 3 with the
     // sentinel value 0. This seems kind of naughty.
