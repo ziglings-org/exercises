@@ -39,7 +39,7 @@ pub fn main() void {
 
         // This gets the digit from the "instruction". Can you
         // figure out why we subtract '0' from it?
-        comptime var digit = instructions[i + 1] - '0';
+        const digit = instructions[i + 1] - '0';
 
         // This 'switch' statement contains the actual work done
         // at runtime. At first, this doesn't seem exciting...

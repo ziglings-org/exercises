@@ -52,7 +52,7 @@ fn runningAverage(arr: []const f64, avg: []f64) void {
 
 pub fn main() !void {
     // pretend this was defined by reading in user input
-    var arr: []const f64 = &[_]f64{ 0.3, 0.2, 0.1, 0.1, 0.4 };
+    const arr: []const f64 = &[_]f64{ 0.3, 0.2, 0.1, 0.1, 0.4 };
 
     // initialize the allocator
     var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
@@ -64,7 +64,7 @@ pub fn main() !void {
     const allocator = arena.allocator();
 
     // allocate memory for this array
-    var avg: []f64 = ???;
+    const avg: []f64 = ???;
 
     runningAverage(arr, avg);
     std.debug.print("Running Average: ", .{});

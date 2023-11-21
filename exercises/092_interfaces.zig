@@ -96,7 +96,7 @@ const Insect = union(enum) {
 };
 
 pub fn main() !void {
-    var my_insects = [_]Insect{
+    const my_insects = [_]Insect{
         Insect{ .ant = Ant{ .still_alive = true } },
         Insect{ .bee = Bee{ .flowers_visited = 17 } },
         Insect{ .grasshopper = Grasshopper{ .distance_hopped = 32 } },
