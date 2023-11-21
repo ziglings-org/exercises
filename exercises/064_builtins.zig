@@ -58,7 +58,7 @@ pub fn main() void {
     // There is a difference between
     //  - a value, that overflowed at some point and is now corrupted
     //  - a single operation that overflows and maybe causes subsequent errors
-    // In practise we usually notice the overflowed value first and have to work
+    // In practice we usually notice the overflowed value first and have to work
     // our way backwards to the operation that caused the overflow.
     //
     // If there was no overflow at all while adding 5 to a, what value would

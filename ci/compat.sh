@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script checks that `zig build` will return an useful error message when
+# This script checks that `zig build` will return a useful error message when
 # the Zig compiler is not compatible, instead of failing due to a syntax error.
 #
 # This script should be run on an UNIX system.
