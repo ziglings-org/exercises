@@ -49,7 +49,7 @@ fn isPangram(str: []const u8) bool {
             // then we set the bit at the position
             //
             // to do this, we use a little trick:
-            // since the letters in the ASCI table start at 65
+            // since the letters in the ASCII table start at 65
             // and are numbered sequentially, we simply subtract the
             // first letter (in this case the 'a') from the character
             // found, and thus get the position of the desired bit
