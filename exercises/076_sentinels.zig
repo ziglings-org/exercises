@@ -74,8 +74,8 @@ pub fn main() void {
 fn printSequence(my_seq: anytype) void {
     const my_typeinfo = @typeInfo(@TypeOf(my_seq));
 
-    // The TypeInfo contained in my_type is a union. We use a
-    // switch to handle printing the Array or Pointer fields,
+    // The TypeInfo contained in my_typeinfo is a union. We use
+    // a switch to handle printing the Array or Pointer fields,
     // depending on which type of my_seq was passed in:
     switch (my_typeinfo) {
         .Array => {
