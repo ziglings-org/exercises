@@ -8,7 +8,7 @@ const mem = std.mem;
 
 const Allocator = std.mem.Allocator;
 const Child = std.process.Child;
-const Build = std.build;
+const Build = std.Build;
 const FileSource = std.Build.FileSource;
 const Reader = fs.File.Reader;
 const RunStep = std.Build.RunStep;
