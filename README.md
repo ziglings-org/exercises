@@ -96,7 +96,8 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-Version-0.12.0-dev.1243
+Version-0.12.0-dev.2043
+* *2024-01-05* zig 0.12.0-dev.2043 - rename of `std.Build.FileSource` to `std.Build.LazyPath` - see[#16353](https://github.com/ziglang/zig/issues/16353)
 * *2023-10-24* zig 0.12.0-dev.1243 - changes in `std.ChildProcess`: renamed exec to run - see[#5853](https://github.com/ziglang/zig/issues/5853)
 * *2023-06-26* zig 0.11.0-dev.4246 - changes in compile step (now it can be null)
 * *2023-06-26* zig 0.11.0-dev.3853 - removal of destination type from all cast builtins
