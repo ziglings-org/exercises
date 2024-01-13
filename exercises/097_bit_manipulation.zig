@@ -20,7 +20,7 @@
 //
 // Zig provides all the necessary functions to change the bits inside
 // a variable. It is distinguished whether the bit change leads to an
-// overflow or not.The details are in the Zig documentation in section
+// overflow or not. The details are in the Zig documentation in section
 // 10.1 "Table of Operators".
 //
 // Here are some examples of how the bits of variables can be changed:
