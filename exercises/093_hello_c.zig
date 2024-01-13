@@ -40,7 +40,7 @@
 // our well-known "import" for Zig
 const std = @import("std");
 
-// and here the new the import for C
+// and here the new import for C
 const c = @cImport({
     @cInclude("unistd.h");
 });
