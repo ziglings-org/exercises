@@ -33,7 +33,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
             const n = ex.number();
 
             const cmd = b.addSystemCommand(&.{
-                b.zig_exe,
+                b.graph.zig_exe,
                 "build",
                 "-Dhealed",
                 b.fmt("-Dhealed-path={s}", .{tmp_path}),
@@ -69,7 +69,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
 
         // TODO: when an exercise is modified, the cache is not invalidated.
         const cmd = b.addSystemCommand(&.{
-            b.zig_exe,
+            b.graph.zig_exe,
             "build",
             "-Dhealed",
             b.fmt("-Dhealed-path={s}", .{tmp_path}),
@@ -99,7 +99,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
                 const n = ex.number();
 
                 const cmd = b.addSystemCommand(&.{
-                    b.zig_exe,
+                    b.graph.zig_exe,
                     "build",
                     b.fmt("-Dn={}", .{n}),
                 });

@@ -386,7 +386,7 @@ const ZiglingStep = struct {
         var zig_args = std.ArrayList([]const u8).init(b.allocator);
         defer zig_args.deinit();
 
-        zig_args.append(b.zig_exe) catch @panic("OOM");
+        zig_args.append(b.graph.zig_exe) catch @panic("OOM");
 
         const cmd = switch (self.exercise.kind) {
             .exe => "build-exe",
