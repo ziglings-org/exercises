@@ -1104,6 +1104,20 @@ const exercises = [_]Exercise{
         ,
     },
     .{
+        .main_file = "104_threading.zig",
+        .output =
+        \\Starting work...
+        \\thread 1: started.
+        \\thread 2: started.
+        \\thread 3: started.
+        \\Some weird stuff, after starting the threads.
+        \\thread 2: finished.
+        \\thread 1: finished.
+        \\thread 3: finished.
+        \\Zig is cool!
+        ,
+    },
+    .{
         .main_file = "999_the_end.zig",
         .output =
         \\

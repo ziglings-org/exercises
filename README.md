@@ -216,6 +216,7 @@ Zig Core Language
 * [X] Interfaces
 * [X] Bit manipulation
 * [X] Working with C
+* [X] Threading
 * [ ] Interfaces part 2
 
 Zig Standard Library

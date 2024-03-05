@@ -1,0 +1,17 @@
+--- exercises/104_threading.zig	2024-03-05 09:09:04.013974229 +0100
++++ answers/104_threading.zig	2024-03-05 09:12:03.987162883 +0100
+@@ -97,12 +97,12 @@
+         defer handle.join();
+ 
+         // Second thread
+-        const handle2 = try std.Thread.spawn(.{}, thread_function, .{-4}); // that can't be right?
++        const handle2 = try std.Thread.spawn(.{}, thread_function, .{2});
+         defer handle2.join();
+ 
+         // Third thread
+         const handle3 = try std.Thread.spawn(.{}, thread_function, .{3});
+-        defer ??? // <-- something is missing
++        defer handle3.join();
+ 
+         // After the threads have been started,
+         // they run in parallel and we can still do some work in between.
