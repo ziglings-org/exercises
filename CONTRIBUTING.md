@@ -54,13 +54,12 @@ Ziglings. Please file an issue...or make a pull request!
 
 ## Formatting
 
-All exercises should conform to `zig fmt`. I often forget to do
-this.
+All exercises should conform to `zig fmt`.
 
 
 ## Pull Request Workflow
 
-Ziglings uses the "standard" Github workflow as guided by the Web
+Ziglings uses the "standard" Codeberg workflow as guided by the Web
 interface.  Specifically:
 
 * Fork this repository
@@ -71,7 +70,7 @@ interface.  Specifically:
       `git push origin my-branch`
 * Create a pull request from your branch to `ziglings/main`
 * Your faithful Ziglings maintainers will take a look at your
-  request ASAP (we don't talk about May-July 2022, LOL)
+  request ASAP (we don't talk about May-July, LOL)
 * Once the changes are reviewed, your request will be merged and
   eternal Ziglings contributor glory is yours!
 
