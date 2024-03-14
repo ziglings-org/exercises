@@ -141,9 +141,20 @@ pub fn main() void {
     //
     // Moving along...
     //
-    // Passing arguments to functions is pretty much exactly like
-    // making an assignment to a const (since Zig enforces that ALL
-    // function parameters are const).
+    // When arguments are passed to a function,
+    // they are ALWAYS passed as constants within the function,
+    // regardless of how they were declared in the calling function.
+    //
+    // Example:
+    // fn foo(arg: u8) void {
+    //    arg = 42; // Error, 'arg' is const!
+    // }
+    //
+    // fn bar() void {
+    //    var arg: u8 = 12;
+    //    foo(arg);
+    //    ...
+    // }
     //
     // Knowing this, see if you can make levelUp() work as expected -
     // it should add the specified amount to the supplied character's

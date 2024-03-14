@@ -1,5 +1,5 @@
---- exercises/051_values.zig	2023-10-03 22:15:22.122241138 +0200
-+++ answers/051_values.zig	2023-10-05 20:04:07.072767194 +0200
+--- exercises/051_values.zig	2024-03-14 23:25:42.695020607 +0100
++++ answers/051_values.zig	2024-03-14 23:28:34.525109174 +0100
 @@ -87,7 +87,7 @@
      // Let's assign the std.debug.print function to a const named
      // "print" so that we can use this new name later!
@@ -9,7 +9,7 @@
  
      // Now let's look at assigning and pointing to values in Zig.
      //
-@@ -152,13 +152,13 @@
+@@ -163,13 +163,13 @@
      print("XP before:{}, ", .{glorp.experience});
  
      // Fix 1 of 2 goes here:
