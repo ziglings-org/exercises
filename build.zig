@@ -939,7 +939,7 @@ const exercises = [_]Exercise{
     .{
         .main_file = "082_anonymous_structs3.zig",
         .output =
-        \\"0"(bool):true "1"(bool):false "2"(i32):42 "3"(f32):3.14159202e+00
+        \\"0"(bool):true "1"(bool):false "2"(i32):42 "3"(f32):3.141592e0
         ,
         .hint = "This one is a challenge! But you have everything you need.",
     },
