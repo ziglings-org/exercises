@@ -96,7 +96,8 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-Version-0.12.0-dev.2618
+Version-0.12.0-dev.3302
+* *2024-03-14* zig 0.12.0-dev.3302 - changes in `std.fmt` - floating-point formatting implementation - see[#19229](https://github.com/ziglang/zig/pull/19229)
 * *2024-02-05* zig 0.12.0-dev.2618 - changes in `build system` - from `Step.zig_exe` to `Step.graph.zig_exe` - see[#18778](https://github.com/ziglang/zig/issues/18778)
 * *2024-01-05* zig 0.12.0-dev.2043 - rename of `std.Build.FileSource` to `std.Build.LazyPath` - see[#16353](https://github.com/ziglang/zig/issues/16353)
 * *2023-10-24* zig 0.12.0-dev.1243 - changes in `std.ChildProcess`: renamed exec to run - see[#5853](https://github.com/ziglang/zig/issues/5853)
