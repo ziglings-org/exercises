@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.12.0-dev.3302";
+    const required_zig = "0.12.0-dev.3397";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -119,7 +119,7 @@ pub const logo =
 ;
 
 pub fn build(b: *Build) !void {
-    if (!validate_exercises()) std.os.exit(2);
+    if (!validate_exercises()) std.process.exit(2);
 
     use_color_escapes = false;
     if (std.io.getStdErr().supportsAnsiEscapeCodes()) {
@@ -172,7 +172,7 @@ pub fn build(b: *Build) !void {
         // Named build mode: verifies a single exercise.
         if (n == 0 or n > exercises.len - 1) {
             print("unknown exercise number: {}\n", .{n});
-            std.os.exit(2);
+            std.process.exit(2);
         }
         const ex = exercises[n - 1];
 
@@ -262,7 +262,7 @@ const ZiglingStep = struct {
                 print("\n{s}Ziglings hint: {s}{s}", .{ bold_text, hint, reset_text });
 
             self.help();
-            std.os.exit(2);
+            std.process.exit(2);
         };
 
         self.run(exe_path.?, prog_node) catch {
@@ -272,7 +272,7 @@ const ZiglingStep = struct {
                 print("\n{s}Ziglings hint: {s}{s}", .{ bold_text, hint, reset_text });
 
             self.help();
-            std.os.exit(2);
+            std.process.exit(2);
         };
 
         // Print possible warning/debug messages.
