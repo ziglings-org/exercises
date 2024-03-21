@@ -96,11 +96,12 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-Version-0.12.0-dev.3302
-* *2024-03-14* zig 0.12.0-dev.3302 - changes in `std.fmt` - floating-point formatting implementation - see[#19229](https://github.com/ziglang/zig/pull/19229)
-* *2024-02-05* zig 0.12.0-dev.2618 - changes in `build system` - from `Step.zig_exe` to `Step.graph.zig_exe` - see[#18778](https://github.com/ziglang/zig/issues/18778)
-* *2024-01-05* zig 0.12.0-dev.2043 - rename of `std.Build.FileSource` to `std.Build.LazyPath` - see[#16353](https://github.com/ziglang/zig/issues/16353)
-* *2023-10-24* zig 0.12.0-dev.1243 - changes in `std.ChildProcess`: renamed exec to run - see[#5853](https://github.com/ziglang/zig/issues/5853)
+Version-0.12.0-dev.3397
+* *2024-03-21* zig 0.12.0-dev.3397 - rename std.os to std.posix - see [#5019](https://github.com/ziglang/zig/issues/5019)
+* *2024-03-14* zig 0.12.0-dev.3302 - changes in `std.fmt` - floating-point formatting implementation - see [#19229](https://github.com/ziglang/zig/pull/19229)
+* *2024-02-05* zig 0.12.0-dev.2618 - changes in `build system` - from `Step.zig_exe` to `Step.graph.zig_exe` - see [#18778](https://github.com/ziglang/zig/issues/18778)
+* *2024-01-05* zig 0.12.0-dev.2043 - rename of `std.Build.FileSource` to `std.Build.LazyPath` - see [#16353](https://github.com/ziglang/zig/issues/16353)
+* *2023-10-24* zig 0.12.0-dev.1243 - changes in `std.ChildProcess`: renamed exec to run - see [#5853](https://github.com/ziglang/zig/issues/5853)
 * *2023-06-26* zig 0.11.0-dev.4246 - changes in compile step (now it can be null)
 * *2023-06-26* zig 0.11.0-dev.3853 - removal of destination type from all cast builtins
 * *2023-06-20* zig 0.11.0-dev.3747 - `@enumToInt` is now `@intFromEnum` and `@intToFloat` is now `@floatFromInt`
