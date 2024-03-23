@@ -1118,6 +1118,10 @@ const exercises = [_]Exercise{
         ,
     },
     .{
+        .main_file = "105_threading2.zig",
+        .output = "PI ≈ 3.14159265",
+    },
+    .{
         .main_file = "999_the_end.zig",
         .output =
         \\
