@@ -9,4 +9,4 @@ steps:
         - push
         - pull-requests		
         - cron		
-        cron: "Daily"
+      cron: "Daily"
