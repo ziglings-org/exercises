@@ -1122,6 +1122,10 @@ const exercises = [_]Exercise{
         .output = "PI ≈ 3.14159265",
     },
     .{
+        .main_file = "106_files.zig",
+        .output = "succefully wrote 18 bytes.",
+    },
+    .{
         .main_file = "999_the_end.zig",
         .output =
         \\
