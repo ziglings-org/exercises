@@ -1123,7 +1123,7 @@ const exercises = [_]Exercise{
     },
     .{
         .main_file = "106_files.zig",
-        .output = "succefully wrote 18 bytes.",
+        .output = "Succefully wrote 18 bytes.",
     },
     .{
         .main_file = "999_the_end.zig",
