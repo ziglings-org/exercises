@@ -59,7 +59,7 @@ pub fn main() !void {
 
     // !you are not allow to switch this two lines to before file closing line!
     const byte_written = try file.write("It's zigling time!");
-    std.debug.print("Successfully wrote {} bytes.\n", .{byte_written});
+    std.debug.print("Successfully wrote {d} bytes.\n", .{byte_written});
 }
 // to check if you actually write to the file, you can either,
 // 1. open the file on your text editor, or

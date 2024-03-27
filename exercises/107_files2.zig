@@ -45,7 +45,7 @@ pub fn main() !void {
 
     // Woah, too screamy, I know you're excited for zigling time but tone it down a bit
     // Can you print only what we read from the file ?
-    std.debug.print("Successfully Read {} byte: {s}\n", .{
+    std.debug.print("Successfully Read {d} byte: {s}\n", .{
         byte_read,
         content, // change this line only
     });
