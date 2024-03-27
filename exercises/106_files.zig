@@ -35,9 +35,7 @@ pub fn main() !void {
         // by doing nothing
         //
         // we want to catch error.PathAlreadyExists and do nothing
-        ??? => {
-            ???;
-        },
+        ??? => {},
         // if is any other unexpected error we just propagate it through
         else => return e,
     };
@@ -46,7 +44,8 @@ pub fn main() !void {
     // wait a minute
     // opening a directory might fail!
     // what should we do here?
-    const output_dir: std.fs.Dir = cwd.openDir("output", .{});
+    var output_dir: std.fs.Dir = cwd.openDir("output", .{});
+    defer output_dir.close();
 
     // we try to open the file `zigling.txt`,
     // and propagate the error up if there are any errors
@@ -60,7 +59,7 @@ pub fn main() !void {
 
     // !you are not allow to switch this two lines to before file closing line!
     const byte_written = try file.write("It's zigling time!");
-    std.debug.print("Succefully wrote {} bytes.\n", .{byte_written});
+    std.debug.print("Successfully wrote {} bytes.\n", .{byte_written});
 }
 // to check if you actually write to the file, you can either,
 // 1. open the file on your text editor, or
