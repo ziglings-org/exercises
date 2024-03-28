@@ -46,7 +46,7 @@
 // 1,000,000,000 partial values. And for each additional digit we have to
 // add a zero.
 // Even fast computers - and I mean really fast computers - get a bit warmer
-// on the CPU when it comes to really many diggits. But the 8 digits are
+// on the CPU when it comes to really many digits. But the 8 digits are
 // enough for us for now, because we want to understand the principle and
 // nothing more, right?
 //
