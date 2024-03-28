@@ -1122,6 +1122,17 @@ const exercises = [_]Exercise{
         .output = "PI ≈ 3.14159265",
     },
     .{
+        .main_file = "106_files.zig",
+        .output = "Successfully wrote 18 bytes.",
+    },
+    .{
+        .main_file = "107_files2.zig",
+        .output =
+        \\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        \\Successfully Read 18 byte: It's zigling time!
+        ,
+    },
+    .{
         .main_file = "999_the_end.zig",
         .output =
         \\

@@ -1,0 +1,26 @@
+--- exercises/107_files2.zig	2024-03-27 16:51:56.199719600 +0800
++++ answers/107_files2.zig	2024-03-27 16:52:01.650935300 +0800
+@@ -33,7 +33,7 @@
+     // initalize an array of u8 with all letter 'A'.
+     // we need to pick a size of the array, 64 seems like a good number.
+     // fix the initalization below
+-    var content = ['A']*64;
++    var content = [_]u8{'A'} ** 64;
+     // this should print out : `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`
+     std.debug.print("{s}\n", .{content});
+ 
+@@ -41,12 +41,12 @@
+     // can you go here to find a way to read the content ?
+     // https://ziglang.org/documentation/master/std/#std.fs.File
+     // hint: you might find two answer that are both vaild in this case
+-    const byte_read = zig_read_the_file_or_i_will_fight_you(&content);
++    const byte_read = try file.read(&content);
+ 
+     // Woah, too screamy, I know you're excited for zigling time but tone it down a bit
+     // Can you print only what we read from the file ?
+     std.debug.print("Successfully Read {d} byte: {s}\n", .{
+         byte_read,
+-        content, // change this line only
++        content[0..byte_read], // change this line only
+     });
+ }

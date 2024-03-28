@@ -7,6 +7,6 @@ steps:
     when:
       events:
         - push
-        - pull-requests
-        - cron
+        - pull-requests		
+        - cron		
       cron: "Daily"
