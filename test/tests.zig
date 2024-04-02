@@ -152,7 +152,7 @@ const CheckNamedStep = struct {
 
     fn make(step: *Step, _: *std.Progress.Node) !void {
         const b = step.owner;
-        const self = @fieldParentPtr(CheckNamedStep, "step", step);
+        const self: *CheckNamedStep = @alignCast(@fieldParentPtr("step", step));
         const ex = self.exercise;
 
         const stderr_file = try fs.cwd().openFile(
@@ -204,7 +204,7 @@ const CheckStep = struct {
 
     fn make(step: *Step, _: *std.Progress.Node) !void {
         const b = step.owner;
-        const self = @fieldParentPtr(CheckStep, "step", step);
+        const self: *CheckStep = @alignCast(@fieldParentPtr("step", step));
         const exercises = self.exercises;
 
         const stderr_file = try fs.cwd().openFile(
@@ -327,7 +327,7 @@ const FailStep = struct {
 
     fn make(step: *Step, _: *std.Progress.Node) !void {
         const b = step.owner;
-        const self = @fieldParentPtr(FailStep, "step", step);
+        const self: *FailStep = @alignCast(@fieldParentPtr("step", step));
 
         try step.result_error_msgs.append(b.allocator, self.error_msg);
         return error.MakeFailed;
@@ -370,7 +370,7 @@ const HealStep = struct {
 
     fn make(step: *Step, _: *std.Progress.Node) !void {
         const b = step.owner;
-        const self = @fieldParentPtr(HealStep, "step", step);
+        const self: *HealStep = @alignCast(@fieldParentPtr("step", step));
 
         return heal(b.allocator, self.exercises, self.work_path);
     }
