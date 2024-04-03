@@ -1,12 +1,4 @@
 # Ziglings
-# ⚠️ Ziglings has moved from GitHub to Codeberg!
-
-You are looking at the current Ziglings repo if you are viewing
-this at https://codeberg.org/ziglings/exercises/
-
-You can also use the handy URL https://ziglings.org to get here!
-
-***
 
 Welcome to Ziglings! This project contains a series of tiny
 broken programs (and one nasty surprise).  By fixing them, you'll
@@ -226,6 +218,7 @@ Zig Standard Library
 * [X] String formatting
 * [X] Testing
 * [X] Tokenization
+* [X] File handling
 
 ## Contributing
 
