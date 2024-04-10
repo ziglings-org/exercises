@@ -5,8 +5,4 @@ steps:
     commands:
       - sh ./patches/eowyn.sh
     when:
-      events:
-        - push
-        - pull-requests		
-        - cron		
-      cron: "Daily"
+      event: [ push, cron ]
