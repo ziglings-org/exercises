@@ -118,7 +118,11 @@ pub fn main() !void {
 // In our example, we pass the number of the thread as a parameter.
 fn thread_function(num: usize) !void {
     std.debug.print("thread {d}: {s}\n", .{ num, "started." });
-    std.time.sleep((5 - num % 3) * std.time.ns_per_s);
+
+    // This timer simulates the work of the thread.
+    const work_time = 2 * ((5 - num % 3) - 2);
+    std.time.sleep(work_time * std.time.ns_per_s);
+
     std.debug.print("thread {d}: {s}\n", .{ num, "finished." });
 }
 // This is the easiest way to run threads in parallel.
