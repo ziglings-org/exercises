@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.12.0-dev.3397";
+    const required_zig = "0.12.0-dev.3518";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {

@@ -1,12 +1,4 @@
 # Ziglings
-# ⚠️ Ziglings has moved from GitHub to Codeberg!
-
-You are looking at the current Ziglings repo if you are viewing
-this at https://codeberg.org/ziglings/exercises/
-
-You can also use the handy URL https://ziglings.org to get here!
-
-***
 
 Welcome to Ziglings! This project contains a series of tiny
 broken programs (and one nasty surprise).  By fixing them, you'll
@@ -96,7 +88,8 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-Version-0.12.0-dev.3397
+Version-0.12.0-dev.3518
+* *2024-03-21* zig 0.12.0-dev.3518 - change to @fieldParentPtr - see [#19470](https://github.com/ziglang/zig/pull/19470)
 * *2024-03-21* zig 0.12.0-dev.3397 - rename std.os to std.posix - see [#5019](https://github.com/ziglang/zig/issues/5019)
 * *2024-03-14* zig 0.12.0-dev.3302 - changes in `std.fmt` - floating-point formatting implementation - see [#19229](https://github.com/ziglang/zig/pull/19229)
 * *2024-02-05* zig 0.12.0-dev.2618 - changes in `build system` - from `Step.zig_exe` to `Step.graph.zig_exe` - see [#18778](https://github.com/ziglang/zig/issues/18778)
@@ -225,6 +218,7 @@ Zig Standard Library
 * [X] String formatting
 * [X] Testing
 * [X] Tokenization
+* [X] File handling
 
 ## Contributing
 
