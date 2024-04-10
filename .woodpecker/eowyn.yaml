@@ -1,0 +1,8 @@
+steps:
+  - name: eowyn
+    image: ziglings/ziglang
+    commands:
+      - sh ./patches/eowyn.sh
+    when:
+      event: [push, cron]
+      cron: daily*
