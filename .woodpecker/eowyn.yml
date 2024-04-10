@@ -1,8 +1,0 @@
-steps:
-  eowyn:
-    image: ziglings/ziglang:latest
-    pull: true
-    commands:
-      - sh ./patches/eowyn.sh
-    when:
-      event: [ push, cron ]
