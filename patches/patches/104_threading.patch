@@ -1,5 +1,5 @@
---- exercises/104_threading.zig	2024-04-10 16:02:33.680771772 +0200
-+++ answers/104_threading.zig	2024-04-10 16:01:00.042331517 +0200
+--- exercises/104_threading.zig	2024-04-10 19:12:29.878856370 +0200
++++ answers/104_threading.zig	2024-04-10 19:11:22.304265713 +0200
 @@ -97,12 +97,12 @@
          defer handle.join();
  
