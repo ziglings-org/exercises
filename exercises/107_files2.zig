@@ -13,7 +13,7 @@
 //    - First, we open the {project_root}/output/ directory
 //    - Secondly, we open file `zigling.txt` in that directory
 //    - then, we initalize an array of character with all letter 'A', and print it
-//    - Afte that, we read the content of the file to the array
+//    - After that, we read the content of the file to the array
 //    - Finally, we print out the read content
 
 const std = @import("std");
