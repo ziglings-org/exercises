@@ -1,6 +1,6 @@
 steps:
   - name: eowyn
-    image: ziglings/ziglang
+    image: ziglings/ziglang:latest
     commands:
       - sh ./patches/eowyn.sh
     when:
