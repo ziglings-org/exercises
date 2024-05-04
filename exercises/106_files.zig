@@ -50,20 +50,20 @@ pub fn main() !void {
     // we try to open the file `zigling.txt`,
     // and propagate the error up if there are any errors
     const file: std.fs.File = try output_dir.createFile("zigling.txt", .{});
-    // it is a good habit to close a file after you are done with
-    // so that other program can read it and prevent data corruption
+    // it is a good habit to close a file after you are done with it
+    // so that other programs can read it and prevent data corruption
     // but here we are not yet done writing to the file
-    // if only there are a keyword in zig that
-    // allow you "defer" code execute to the end of scope...
+    // if only there were a keyword in zig that
+    // allows you "defer" code execute to the end of scope...
     file.close();
 
-    // !you are not allow to switch this two lines to before file closing line!
+    // !you are not allowed to switch these two lines above the file closing line!
     const byte_written = try file.write("It's zigling time!");
     std.debug.print("Successfully wrote {d} bytes.\n", .{byte_written});
 }
 // to check if you actually write to the file, you can either,
 // 1. open the file on your text editor, or
-// 2. print the content of the file in the console with command
+// 2. print the content of the file in the console with the following command
 //    >> cat ./output/zigling.txt
 //
 //
@@ -89,4 +89,4 @@ pub fn main() !void {
 //   - go to documentation of the struct `std.fs.Dir` here
 //     https://ziglang.org/documentation/master/std/#std.fs.Dir
 //       - can you find a function for opening a file? how about deleting a file?
-//       - what kind of option can you uses with those function?
+//       - what kind of options can you use with those functions?
