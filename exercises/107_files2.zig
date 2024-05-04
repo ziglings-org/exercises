@@ -5,14 +5,14 @@
 //      with content `It's zigling time!`(18 byte total)
 //
 // Now there no point in writing to a file if we don't read from it am I right?
-// let's wrote a program to read the content of the file that we just created.
+// let's write a program to read the content of the file that we just created.
 //
-// I am assuming you've created the appropriate files for this to work.
+// I am assuming that you've created the appropriate files for this to work.
 //
 // Alright, bud, lean in close here's the game plan.
 //    - First, we open the {project_root}/output/ directory
 //    - Secondly, we open file `zigling.txt` in that directory
-//    - then, we initalize an array of character with all letter 'A', and print it
+//    - then, we initalize an array of characters with all letter 'A', and print it
 //    - After that, we read the content of the file to the array
 //    - Finally, we print out the read content
 
@@ -31,22 +31,22 @@ pub fn main() !void {
     defer file.close();
 
     // initalize an array of u8 with all letter 'A'.
-    // we need to pick a size of the array, 64 seems like a good number.
+    // we need to pick the size of the array, 64 seems like a good number.
     // fix the initalization below
     var content = ['A']*64;
     // this should print out : `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`
     std.debug.print("{s}\n", .{content});
 
-    // okay, seem like threat of violence is not the answer in this case
+    // okay, seems like a threat of violence is not the answer in this case
     // can you go here to find a way to read the content ?
     // https://ziglang.org/documentation/master/std/#std.fs.File
-    // hint: you might find two answer that are both vaild in this case
-    const byte_read = zig_read_the_file_or_i_will_fight_you(&content);
+    // hint: you might find two answers that are both vaild in this case
+    const bytes_read = zig_read_the_file_or_i_will_fight_you(&content);
 
     // Woah, too screamy, I know you're excited for zigling time but tone it down a bit
     // Can you print only what we read from the file ?
-    std.debug.print("Successfully Read {d} byte: {s}\n", .{
-        byte_read,
+    std.debug.print("Successfully Read {d} bytes: {s}\n", .{
+        bytes_read,
         content, // change this line only
     });
 }
