@@ -39,7 +39,7 @@ fn isPangram(str: []const u8) bool {
     // first we check if the string has at least 26 characters
     if (str.len < 26) return false;
 
-    // we uses a 32 bit variable of which we need 26 bits
+    // we use a 32 bit variable of which we need 26 bits
     var bits: u32 = 0;
 
     // loop about all characters in the string
