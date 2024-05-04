@@ -13,7 +13,7 @@
 // How could we do that? A good method is to use the modulo function.
 // But if we write "765.2 % 360", it only works with float values
 // that are known at compile time.
-// In Zig, we would use %mod(a, b) instead.
+// In Zig, we would use @mod(a, b) instead.
 //
 // Let us now assume that we cannot do this in Zig, but only with
 // a C function from the standard library. In the library "math",
