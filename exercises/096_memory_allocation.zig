@@ -30,9 +30,9 @@
 //         std.debug.print("slice_ptr={*}\n", .{slice_ptr});
 //     }
 
-// Instead of a simple integer or a constant sized slice, this
-// program requires a slice to be allocated that is the same size as
-// an input array.
+// Instead of a simple integer or a slice with a constant size,
+// this program requires allocating a slice that is the same size
+// as an input array.
 
 // Given a series of numbers, take the running average. In other
 // words, each item N should contain the average of the last N

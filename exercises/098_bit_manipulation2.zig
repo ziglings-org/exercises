@@ -1,5 +1,5 @@
 //
-// Another useful practice for bit manipulation is setting bits as flags.
+// Another useful application for bit manipulation is setting bits as flags.
 // This is especially useful when processing lists of something and storing
 // the states of the entries, e.g. a list of numbers and for each prime
 // number a flag is set.
@@ -19,9 +19,9 @@
 // For example, you could take an array of bool and set the value to 'true'
 // for each letter in the order of the alphabet (a=0; b=1; etc.) found in
 // the sentence. However, this is neither memory efficient nor particularly
-// fast. Instead we take a simpler way, very similar in principle, we define
-// a variable with at least 26 bits (e.g. u32) and also set the bit for each
-// letter found at the corresponding position.
+// fast. Instead we choose a simpler approach that is very similar in principle:
+// We define a variable with at least 26 bits (e.g. u32) and set the bit for
+// each letter that is found in the corresponding position.
 //
 // Zig provides functions for this in the standard library, but we prefer to
 // solve it without these extras, after all we want to learn something.
