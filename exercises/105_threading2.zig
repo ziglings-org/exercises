@@ -1,6 +1,6 @@
 //
-// Now that we are familiar with the principles of multi threading, we
-// boldly venture into a practical example from mathematics.
+// Now that we are familiar with the principles of multi-threading,
+// let's boldly venture into a practical example from mathematics.
 // We will determine the circle number PI with sufficient accuracy.
 //
 // There are different methods for this, and some of them are several

@@ -4,8 +4,8 @@
 // one possibility, namely asynchronous processes, in Exercises 84-91.
 //
 // However, the computing power of the processor is only distributed to
-// the started tasks, which always reaches its limits when pure computing
-// power is called up.
+// the started and running tasks, which always reaches its limits when
+// pure computing power is called up.
 //
 // For example, in blockchains based on proof of work, the miners have
 // to find a nonce for a certain character string so that the first m bits
