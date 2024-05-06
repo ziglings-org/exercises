@@ -1128,7 +1128,7 @@ const exercises = [_]Exercise{
         .main_file = "107_files2.zig",
         .output =
         \\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        \\Successfully Read 18 byte: It's zigling time!
+        \\Successfully Read 18 bytes: It's zigling time!
         ,
     },
     .{
