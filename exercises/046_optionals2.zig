@@ -51,8 +51,6 @@ fn visitElephants(first_elephant: *Elephant) void {
         // We should stop once we encounter a tail that
         // does NOT point to another element. What can
         // we put here to make that happen?
-        if (e.tail == null) ???;
-
-        e = e.tail.?;
+        e = e.tail ???
     }
 }
