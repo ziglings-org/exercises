@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.12.0-dev.3518";
+    const required_zig = "0.13.0-dev.339";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -244,7 +244,7 @@ const ZiglingStep = struct {
         return self;
     }
 
-    fn make(step: *Step, prog_node: *std.Progress.Node) !void {
+    fn make(step: *Step, prog_node: std.Progress.Node) !void {
         // NOTE: Using exit code 2 will prevent the Zig compiler to print the message:
         // "error: the following build command failed with exit code 1:..."
         const self: *ZiglingStep = @alignCast(@fieldParentPtr("step", step));
@@ -279,7 +279,7 @@ const ZiglingStep = struct {
         self.printErrors();
     }
 
-    fn run(self: *ZiglingStep, exe_path: []const u8, _: *std.Progress.Node) !void {
+    fn run(self: *ZiglingStep, exe_path: []const u8, _: std.Progress.Node) !void {
         resetLine();
         print("Checking: {s}\n", .{self.exercise.main_file});
 
@@ -375,7 +375,7 @@ const ZiglingStep = struct {
         print("{s}PASSED{s}\n\n", .{ green_text, reset_text });
     }
 
-    fn compile(self: *ZiglingStep, prog_node: *std.Progress.Node) !?[]const u8 {
+    fn compile(self: *ZiglingStep, prog_node: std.Progress.Node) !?[]const u8 {
         print("Compiling: {s}\n", .{self.exercise.main_file});
 
         const b = self.step.owner;
@@ -494,7 +494,7 @@ const PrintStep = struct {
         return self;
     }
 
-    fn make(step: *Step, _: *std.Progress.Node) !void {
+    fn make(step: *Step, _: std.Progress.Node) !void {
         const self: *PrintStep = @alignCast(@fieldParentPtr("step", step));
         print("{s}", .{self.message});
     }

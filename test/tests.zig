@@ -150,7 +150,7 @@ const CheckNamedStep = struct {
         return self;
     }
 
-    fn make(step: *Step, _: *std.Progress.Node) !void {
+    fn make(step: *Step, _: std.Progress.Node) !void {
         const b = step.owner;
         const self: *CheckNamedStep = @alignCast(@fieldParentPtr("step", step));
         const ex = self.exercise;
@@ -202,7 +202,7 @@ const CheckStep = struct {
         return self;
     }
 
-    fn make(step: *Step, _: *std.Progress.Node) !void {
+    fn make(step: *Step, _: std.Progress.Node) !void {
         const b = step.owner;
         const self: *CheckStep = @alignCast(@fieldParentPtr("step", step));
         const exercises = self.exercises;
@@ -325,7 +325,7 @@ const FailStep = struct {
         return self;
     }
 
-    fn make(step: *Step, _: *std.Progress.Node) !void {
+    fn make(step: *Step, _: std.Progress.Node) !void {
         const b = step.owner;
         const self: *FailStep = @alignCast(@fieldParentPtr("step", step));
 
@@ -368,7 +368,7 @@ const HealStep = struct {
         return self;
     }
 
-    fn make(step: *Step, _: *std.Progress.Node) !void {
+    fn make(step: *Step, _: std.Progress.Node) !void {
         const b = step.owner;
         const self: *HealStep = @alignCast(@fieldParentPtr("step", step));
 
