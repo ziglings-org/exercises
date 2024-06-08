@@ -40,7 +40,7 @@
 // Okay, you're armed.
 //
 // Now, please zap the alien structs until they're all gone or
-// Earth will be doomed!
+// the Earth will be doomed!
 //
 const std = @import("std");
 
