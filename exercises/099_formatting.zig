@@ -45,7 +45,7 @@
 // output. Escape sequences can also be written one after the
 // other, e.g. "\n\n" will cause two line feeds.
 //
-// By the way, the result of these escape sequences are passed
+// By the way, the result of these escape sequences is passed
 // directly to the terminal program. Other than translating them
 // into control codes, escape sequences have nothing to do with
 // Zig. Zig knows nothing about "line feeds" or "tabs" or
@@ -95,7 +95,7 @@
 //      ...
 //
 // Without string formatting, this would be a more challenging
-// assignment because the number of digits in the numbers vary
+// assignment because the number of digits in the numbers varies
 // from 1 to 3. But formatting can help us with that.
 //
 const std = @import("std");
