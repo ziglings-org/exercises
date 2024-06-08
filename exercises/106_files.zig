@@ -29,7 +29,7 @@ pub fn main() !void {
     // then we'll try to make a new directory /output/
     // to put our output files.
     cwd.makeDir("output") catch |e| switch (e) {
-        // there are chance you might want to run this
+        // there is a chance you might want to run this
         // program more than once and the path might already
         // been created, so we'll have to handle this error
         // by doing nothing
