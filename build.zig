@@ -459,7 +459,7 @@ fn resetLine() void {
 pub fn trimLines(allocator: std.mem.Allocator, buf: []const u8) ![]const u8 {
     var list = try std.ArrayList(u8).initCapacity(allocator, buf.len);
 
-    var iter = std.mem.split(u8, buf, " \n");
+    var iter = std.mem.splitSequence(u8, buf, " \n");
     while (iter.next()) |line| {
         // TODO: trimming CR characters is probably not necessary.
         const data = std.mem.trimRight(u8, line, " \r");
@@ -521,7 +521,7 @@ fn validate_exercises() bool {
             return false;
         }
 
-        var iter = std.mem.split(u8, ex.output, "\n");
+        var iter = std.mem.splitScalar(u8, ex.output, '\n');
         while (iter.next()) |line| {
             const output = std.mem.trimRight(u8, line, " \r");
             if (output.len != line.len) {
