@@ -5,7 +5,7 @@
 // linked to the first elephant. This is because we had NO CONCEPT
 // of a tail that didn't point to another elephant!
 //
-// We also introduce the handy ".?" shortcut:
+// We also introduce the handy `.?` shortcut:
 //
 //     const foo = bar.?;
 //
@@ -13,7 +13,8 @@
 //
 //     const foo = bar orelse unreachable;
 //
-// See if you can find where we use this shortcut below.
+// Check out where we use this shortcut below to change control flow
+// based on if an optional value exists.
 //
 // Now let's make those elephant tails optional!
 //
@@ -31,12 +32,23 @@ pub fn main() void {
     var elephantC = Elephant{ .letter = 'C' };
 
     // Link the elephants so that each tail "points" to the next.
-    elephantA.tail = &elephantB;
-    elephantB.tail = &elephantC;
+    linkElephants(&elephantA, &elephantB);
+    linkElephants(&elephantB, &elephantC);
+
+    // `linkElephants` will stop the program if you try and link an
+    // elephant that doesn't exist! Uncomment and see what happens.
+    // const missingElephant: ?*Elephant = null;
+    // linkElephants(&elephantC, missingElephant);
 
     visitElephants(&elephantA);
 
     std.debug.print("\n", .{});
+}
+
+// If e1 and e2 are valid pointers to elephants,
+// this function links the elephants so that e1's tail "points" to e2.
+fn linkElephants(e1: ?*Elephant, e2: ?*Elephant) void {
+    e1.?.*.tail = e2.?;
 }
 
 // This function visits all elephants once, starting with the
@@ -51,6 +63,9 @@ fn visitElephants(first_elephant: *Elephant) void {
         // We should stop once we encounter a tail that
         // does NOT point to another element. What can
         // we put here to make that happen?
+
+        // HINT: We want something similar to what `.?` does,
+        // but instead of ending the program, we want to exit the loop...
         e = e.tail ???
     }
 }
