@@ -199,7 +199,7 @@ pub fn build(b: *Build) !void {
         // like for 'exno' but chooses a random exersise number.
         print("work in progress: check a random exercise\n", .{});
 
-        var prng = std.rand.DefaultPrng.init(blk: {
+        var prng = std.Random.DefaultPrng.init(blk: {
             var seed: u64 = undefined;
             try std.posix.getrandom(std.mem.asBytes(&seed));
             break :blk seed;
