@@ -103,6 +103,8 @@ const Mode = enum {
     normal,
     /// Named build mode: `zig build -Dn=n`
     named,
+    /// Random build mode: `zig build -Drandom`
+    random,
 };
 
 pub const logo =
@@ -158,6 +160,7 @@ pub fn build(b: *Build) !void {
         false;
     const override_healed_path = b.option([]const u8, "healed-path", "Override healed path");
     const exno: ?usize = b.option(usize, "n", "Select exercise");
+    const rand: ?bool = b.option(bool, "random", "Select random exercise");
 
     const sep = std.fs.path.sep_str;
     const healed_path = if (override_healed_path) |path|
@@ -188,6 +191,33 @@ pub fn build(b: *Build) !void {
 
         zigling_step.dependOn(&verify_step.step);
 
+        return;
+    }
+
+    if (rand) |_| {
+        // Random build mode: verifies one random exercise.
+        // like for 'exno' but chooses a random exersise number.
+        print("work in progress: check a random exercise\n", .{});
+
+        var prng = std.rand.DefaultPrng.init(blk: {
+            var seed: u64 = undefined;
+            try std.posix.getrandom(std.mem.asBytes(&seed));
+            break :blk seed;
+        });
+        const rnd = prng.random();
+        const ex = exercises[rnd.intRangeLessThan(usize, 0, exercises.len)];
+
+        print("random exercise: {s}\n", .{ex.main_file});
+
+        const zigling_step = b.step(
+            "random",
+            b.fmt("Check the solution of {s}", .{ex.main_file}),
+        );
+        b.default_step = zigling_step;
+        zigling_step.dependOn(&header_step.step);
+        const verify_step = ZiglingStep.create(b, ex, work_path, .random);
+        verify_step.step.dependOn(&header_step.step);
+        zigling_step.dependOn(&verify_step.step);
         return;
     }
 
@@ -417,6 +447,7 @@ const ZiglingStep = struct {
         const cmd = switch (self.mode) {
             .normal => "zig build",
             .named => b.fmt("zig build -Dn={s}", .{key}),
+            .random => "zig build -Drandom",
         };
 
         print("\n{s}Edit exercises/{s} and run '{s}' again.{s}\n", .{
