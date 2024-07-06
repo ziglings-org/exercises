@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.13.0-dev.339";
+    const required_zig = "0.14.0-dev.42";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -199,7 +199,7 @@ pub fn build(b: *Build) !void {
         // like for 'exno' but chooses a random exersise number.
         print("work in progress: check a random exercise\n", .{});
 
-        var prng = std.rand.DefaultPrng.init(blk: {
+        var prng = std.Random.DefaultPrng.init(blk: {
             var seed: u64 = undefined;
             try std.posix.getrandom(std.mem.asBytes(&seed));
             break :blk seed;
@@ -490,7 +490,7 @@ fn resetLine() void {
 pub fn trimLines(allocator: std.mem.Allocator, buf: []const u8) ![]const u8 {
     var list = try std.ArrayList(u8).initCapacity(allocator, buf.len);
 
-    var iter = std.mem.split(u8, buf, " \n");
+    var iter = std.mem.splitSequence(u8, buf, " \n");
     while (iter.next()) |line| {
         // TODO: trimming CR characters is probably not necessary.
         const data = std.mem.trimRight(u8, line, " \r");
@@ -552,7 +552,7 @@ fn validate_exercises() bool {
             return false;
         }
 
-        var iter = std.mem.split(u8, ex.output, "\n");
+        var iter = std.mem.splitScalar(u8, ex.output, '\n');
         while (iter.next()) |line| {
             const output = std.mem.trimRight(u8, line, " \r");
             if (output.len != line.len) {

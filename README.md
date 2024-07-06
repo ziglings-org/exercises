@@ -88,7 +88,8 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-Version-0.13.0-dev.339
+Version-0.14.0-dev.42
+* *2024-06-17* zig 0.14.0-dev.42 - changes in `std.mem.split and tokenize` - see [#15579](https://github.com/ziglang/zig/pull/15579)
 * *2024-05-29* zig 0.13.0-dev.339 - rework std.Progress - see [#20059](https://github.com/ziglang/zig/pull/20059)
 * *2024-03-21* zig 0.12.0-dev.3518 - change to @fieldParentPtr - see [#19470](https://github.com/ziglang/zig/pull/19470)
 * *2024-03-21* zig 0.12.0-dev.3397 - rename std.os to std.posix - see [#5019](https://github.com/ziglang/zig/issues/5019)
