@@ -127,6 +127,12 @@ It can be handy to check just a single exercise:
 zig build -Dn=19
 ```
 
+Or let Ziglings pick an exercise for you:
+
+```
+zig build -Drandom
+```
+
 You can also run without checking for correctness:
 
 ```
