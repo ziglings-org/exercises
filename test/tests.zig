@@ -50,7 +50,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
             case_step.dependOn(&verify.step);
         }
 
-        const cleanup = b.addRemoveDirTree(tmp_path);
+        const cleanup = b.addRemoveDirTree(.{ .src_path = .{ .owner = b, .sub_path = tmp_path } });
         cleanup.step.dependOn(case_step);
 
         step.dependOn(&cleanup.step);
@@ -82,7 +82,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
         const verify = CheckStep.create(b, exercises, stderr);
         verify.step.dependOn(&cmd.step);
 
-        const cleanup = b.addRemoveDirTree(tmp_path);
+        const cleanup = b.addRemoveDirTree(.{ .src_path = .{ .owner = b, .sub_path = tmp_path } });
         cleanup.step.dependOn(&verify.step);
 
         step.dependOn(&cleanup.step);
