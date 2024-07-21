@@ -274,7 +274,7 @@ const ZiglingStep = struct {
         return self;
     }
 
-    fn make(step: *Step, prog_node: std.Progress.Node) !void {
+    fn make(step: *Step, options: Step.MakeOptions) !void {
         // NOTE: Using exit code 2 will prevent the Zig compiler to print the message:
         // "error: the following build command failed with exit code 1:..."
         const self: *ZiglingStep = @alignCast(@fieldParentPtr("step", step));
@@ -285,7 +285,7 @@ const ZiglingStep = struct {
             return;
         }
 
-        const exe_path = self.compile(prog_node) catch {
+        const exe_path = self.compile(options.progress_node) catch {
             self.printErrors();
 
             if (self.exercise.hint) |hint|
@@ -295,7 +295,7 @@ const ZiglingStep = struct {
             std.process.exit(2);
         };
 
-        self.run(exe_path.?, prog_node) catch {
+        self.run(exe_path.?, options.progress_node) catch {
             self.printErrors();
 
             if (self.exercise.hint) |hint|
@@ -436,7 +436,7 @@ const ZiglingStep = struct {
 
         zig_args.append("--listen=-") catch @panic("OOM");
 
-        return try self.step.evalZigProcess(zig_args.items, prog_node);
+        return try self.step.evalZigProcess(zig_args.items, prog_node, false);
     }
 
     fn help(self: *ZiglingStep) void {
@@ -525,7 +525,7 @@ const PrintStep = struct {
         return self;
     }
 
-    fn make(step: *Step, _: std.Progress.Node) !void {
+    fn make(step: *Step, _: Step.MakeOptions) !void {
         const self: *PrintStep = @alignCast(@fieldParentPtr("step", step));
         print("{s}", .{self.message});
     }
