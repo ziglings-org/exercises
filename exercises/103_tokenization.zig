@@ -119,9 +119,9 @@
 // after all we need some practice. Suppose we want to count the words
 // of this little poem:
 //
-// 	My name is Ozymandias, King of Kings;
-// 	Look on my Works, ye Mighty, and despair!
-// 	 by Percy Bysshe Shelley
+//      My name is Ozymandias, King of Kings;
+//      Look on my Works, ye Mighty, and despair!
+//            by Percy Bysshe Shelley
 //
 //
 const std = @import("std");
