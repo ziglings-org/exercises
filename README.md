@@ -69,7 +69,7 @@ reading these.
 ## A Note About Versions
 
 **Hint:** To check out Ziglings for a stable release of Zig, you can use
-the appropriate tag. 
+the appropriate tag.
 
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
@@ -126,6 +126,12 @@ It can be handy to check just a single exercise:
 
 ```
 zig build -Dn=19
+```
+
+Or run all exercises, starting from a specific one:
+
+```
+zig build -Ds=27
 ```
 
 Or let Ziglings pick an exercise for you:
