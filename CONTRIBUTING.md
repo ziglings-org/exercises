@@ -40,6 +40,7 @@ fit for one reason or another.
 
 ## Platforms and Zig Versions
 
+
 Because it uses the Zig build system, Ziglings should work
 wherever Zig does.
 
@@ -73,6 +74,15 @@ interface.  Specifically:
   request ASAP (we don't talk about May-July, LOL)
 * Once the changes are reviewed, your request will be merged and
   eternal Ziglings contributor glory is yours!
+
+
+## Licence
+
+If you submit your contribution to the repository/project,
+you agree that your contribution will be licensed under
+the license of this repository/this project.
+Please note, it does not change your rights to use your own
+contribution for any other purpose.
 
 
 ## The Secrets
