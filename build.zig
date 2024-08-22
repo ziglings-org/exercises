@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.14.0-dev.839";
+    const required_zig = "0.14.0-dev.1224";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -316,7 +316,7 @@ const ZiglingStep = struct {
             std.process.exit(2);
         };
 
-        self.run(exe_path.?, options.progress_node) catch {
+        self.run(exe_path, options.progress_node) catch {
             self.printErrors();
 
             if (self.exercise.hint) |hint|
@@ -426,7 +426,7 @@ const ZiglingStep = struct {
         print("{s}PASSED{s}\n\n", .{ green_text, reset_text });
     }
 
-    fn compile(self: *ZiglingStep, prog_node: std.Progress.Node) !?[]const u8 {
+    fn compile(self: *ZiglingStep, prog_node: std.Progress.Node) ![]const u8 {
         print("Compiling: {s}\n", .{self.exercise.main_file});
 
         const b = self.step.owner;
@@ -457,7 +457,21 @@ const ZiglingStep = struct {
 
         zig_args.append("--listen=-") catch @panic("OOM");
 
-        return try self.step.evalZigProcess(zig_args.items, prog_node, false);
+        //
+        // NOTE: After many changes in zig build system, we need to create the cache path manually.
+        // See https://github.com/ziglang/zig/pull/21115
+        // Maybe there is a better way (in the future).
+        const exe_dir = try self.step.evalZigProcess(zig_args.items, prog_node, false);
+        const exe_name = switch (self.exercise.kind) {
+            .exe => self.exercise.name(),
+            .@"test" => "test",
+        };
+        const sep = std.fs.path.sep_str;
+        const root_path = exe_dir.?.root_dir.path.?;
+        const sub_path = exe_dir.?.subPathOrDot();
+        const exe_path = b.fmt("{s}{s}{s}{s}{s}", .{ root_path, sep, sub_path, sep, exe_name });
+
+        return exe_path;
     }
 
     fn help(self: *ZiglingStep) void {
