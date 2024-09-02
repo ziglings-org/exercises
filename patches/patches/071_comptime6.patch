@@ -1,8 +1,8 @@
---- exercises/071_comptime6.zig	2023-10-03 22:15:22.125574535 +0200
-+++ answers/071_comptime6.zig	2023-10-05 20:04:07.162768879 +0200
+--- exercises/071_comptime6.zig	2024-09-02 19:21:50.250454978 +0200
++++ answers/071_comptime6.zig	2024-09-02 19:21:23.553250563 +0200
 @@ -40,7 +40,7 @@
  
-     const fields = @typeInfo(Narcissus).Struct.fields;
+     const fields = @typeInfo(Narcissus).@"struct".fields;
  
 -    ??? {
 +    inline for (fields) |field| {

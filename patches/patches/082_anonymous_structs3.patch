@@ -1,11 +1,11 @@
---- exercises/082_anonymous_structs3.zig	2023-10-03 22:15:22.125574535 +0200
-+++ answers/082_anonymous_structs3.zig	2023-10-05 20:04:07.212769813 +0200
+--- exercises/082_anonymous_structs3.zig	2024-08-04 15:57:16.753494020 +0200
++++ answers/082_anonymous_structs3.zig	2024-09-02 19:30:00.967005314 +0200
 @@ -82,14 +82,14 @@
      //         @typeInfo(Circle).Struct.fields
      //
      // This will be an array of StructFields.
 -    const fields = ???;
-+    const fields = @typeInfo(@TypeOf(tuple)).Struct.fields;
++    const fields = @typeInfo(@TypeOf(tuple)).@"struct".fields;
  
      // 2. Loop through each field. This must be done at compile
      // time.

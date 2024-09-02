@@ -38,7 +38,7 @@ pub fn main() void {
     // Please use an 'inline for' to implement the block below
     // for each field in the slice 'fields'!
 
-    const fields = @typeInfo(Narcissus).Struct.fields;
+    const fields = @typeInfo(Narcissus).@"struct".fields;
 
     ??? {
         if (field.type != void) {
