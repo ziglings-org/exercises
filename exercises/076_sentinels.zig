@@ -78,7 +78,7 @@ fn printSequence(my_seq: anytype) void {
     // a switch to handle printing the Array or Pointer fields,
     // depending on which type of my_seq was passed in:
     switch (my_typeinfo) {
-        .Array => {
+        .array => {
             print("Array:", .{});
 
             // Loop through the items in my_seq.
@@ -86,7 +86,7 @@ fn printSequence(my_seq: anytype) void {
                 print("{}", .{s});
             }
         },
-        .Pointer => {
+        .pointer => {
             // Check this out - it's pretty cool:
             const my_sentinel = sentinel(@TypeOf(my_seq));
             print("Many-item pointer:", .{});

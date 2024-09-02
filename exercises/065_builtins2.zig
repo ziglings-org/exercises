@@ -94,7 +94,7 @@ pub fn main() void {
     print("He has room in his heart for:", .{});
 
     // A StructFields array
-    const fields = @typeInfo(Narcissus).Struct.fields;
+    const fields = @typeInfo(Narcissus).@"struct".fields;
 
     // 'fields' is a slice of StructFields. Here's the declaration:
     //
@@ -110,15 +110,15 @@ pub fn main() void {
     // name will not be printed if the field is of type 'void'
     // (which is a zero-bit type that takes up no space at all!):
     if (fields[0].??? != void) {
-        print(" {s}", .{@typeInfo(Narcissus).Struct.fields[0].name});
+        print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[0].name});
     }
 
     if (fields[1].??? != void) {
-        print(" {s}", .{@typeInfo(Narcissus).Struct.fields[1].name});
+        print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[1].name});
     }
 
     if (fields[2].??? != void) {
-        print(" {s}", .{@typeInfo(Narcissus).Struct.fields[2].name});
+        print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[2].name});
     }
 
     // Yuck, look at all that repeated code above! I don't know
