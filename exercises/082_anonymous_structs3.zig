@@ -75,11 +75,11 @@ fn printTuple(tuple: anytype) void {
     //                   with fields specific to that type.
     //
     //     The list of a struct type's fields can be found in
-    //     TypeInfo's Struct.fields.
+    //     TypeInfo's @"struct".fields.
     //
     //     Example:
     //
-    //         @typeInfo(Circle).Struct.fields
+    //         @typeInfo(Circle).@"struct".fields
     //
     // This will be an array of StructFields.
     const fields = ???;
