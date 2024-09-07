@@ -1,7 +1,7 @@
---- exercises/082_anonymous_structs3.zig	2024-08-04 15:57:16.753494020 +0200
-+++ answers/082_anonymous_structs3.zig	2024-09-02 19:30:00.967005314 +0200
+--- exercises/082_anonymous_structs3.zig	2024-09-07 19:13:58.210327580 +0200
++++ answers/082_anonymous_structs3.zig	2024-09-07 19:21:20.972733477 +0200
 @@ -82,14 +82,14 @@
-     //         @typeInfo(Circle).Struct.fields
+     //         @typeInfo(Circle).@"struct".fields
      //
      // This will be an array of StructFields.
 -    const fields = ???;
