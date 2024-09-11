@@ -229,6 +229,7 @@ Zig Core Language
 * [X] Bit manipulation
 * [X] Working with C
 * [X] Threading
+* [ ] Labeled switch (#21257)
 
 Zig Standard Library
 
