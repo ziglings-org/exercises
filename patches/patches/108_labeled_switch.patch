@@ -1,11 +1,18 @@
 --- a/exercises/108_labeled_switch.zig
 +++ b/exercises/108_labeled_switch.zig
-@@ -26,7 +26,7 @@ pub fn main() void {
-     // try to fix it!
+@@ -26,13 +26,13 @@ pub fn main() void {
+     // how would you fix it?
      pr: switch (@as(PullRequestState, PullRequestState.Draft)) {
          PullRequestState.Draft => continue :pr PullRequestState.InReview,
 -        PullRequestState.InReview => continue :pr PullRequestState.Rejected,
 +        PullRequestState.InReview => continue :pr PullRequestState.Approved,
          PullRequestState.Approved => continue :pr PullRequestState.Merged,
-         PullRequestState.Rejected => std.debug.print("The pull request has been rejected", .{}),
-         PullRequestState.Merged => std.debug.print("The pull request has been merged", .{}),
+         PullRequestState.Rejected => {
+             std.debug.print("The pull request has been rejected", .{});
+             return;
+         },
+-        PullRequestState.Merged => break, // Would you know where to break to?
++        PullRequestState.Merged => break :pr, // Would you know where to break to?
+     }
+     std.debug.print("The pull request has been merged", .{});
+ }

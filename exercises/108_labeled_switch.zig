@@ -6,14 +6,14 @@
 //      foo: switch (state) {
 //          1 => continue :foo 2,
 //          2 => continue :foo 3,
-//          3 => return,
+//          3 => break :foo,
 //          4 => {},
 //         ...
 //     }
 //
 const std = @import("std");
 
-const PullRequestState = enum {
+const PullRequestState = enum(u8) {
     Draft,
     InReview,
     Approved,
@@ -22,13 +22,17 @@ const PullRequestState = enum {
 };
 
 pub fn main() void {
-    // Something is wrong, it seems your Pull Request can never be merged
-    // try to fix it!
+    // Oh no, your pull request keeps being rejected,
+    // how would you fix it?
     pr: switch (@as(PullRequestState, PullRequestState.Draft)) {
         PullRequestState.Draft => continue :pr PullRequestState.InReview,
         PullRequestState.InReview => continue :pr PullRequestState.Rejected,
         PullRequestState.Approved => continue :pr PullRequestState.Merged,
-        PullRequestState.Rejected => std.debug.print("The pull request has been rejected", .{}),
-        PullRequestState.Merged => std.debug.print("The pull request has been merged", .{}),
+        PullRequestState.Rejected => {
+            std.debug.print("The pull request has been rejected", .{});
+            return;
+        },
+        PullRequestState.Merged => break, // Would you know where to break to?
     }
+    std.debug.print("The pull request has been merged", .{});
 }
