@@ -1,6 +1,6 @@
 --- a/exercises/108_labeled_switch.zig
 +++ b/exercises/108_labeled_switch.zig
-@@ -26,13 +26,13 @@ pub fn main() void {
+@@ -65,13 +65,13 @@ pub fn main() void {
      // how would you fix it?
      pr: switch (@as(PullRequestState, PullRequestState.Draft)) {
          PullRequestState.Draft => continue :pr PullRequestState.InReview,
