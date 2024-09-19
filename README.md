@@ -88,7 +88,8 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-Version-0.14.0-dev.1224
+Version-0.14.0-dev.1573
+* *2024-09-16* zig 0.14.0-dev.1573 - introduction of labeled switch, see [#21257](https://github.com/ziglang/zig/pull/21257)
 * *2024-09-02* zig 0.14.0-dev.1409 - several changes in std.builtin, see [#21225](https://github.com/ziglang/zig/pull/21225)
 * *2024-08-04* zig 0.14.0-dev.1224 - several changes in build system, see [#21115](https://github.com/ziglang/zig/pull/21115)
 * *2024-08-04* zig 0.14.0-dev.839 - several changes in build system, see [#20580](https://github.com/ziglang/zig/pull/20580), [#20600](https://github.com/ziglang/zig/issues/20600)
@@ -229,7 +230,7 @@ Zig Core Language
 * [X] Bit manipulation
 * [X] Working with C
 * [X] Threading
-* [ ] Labeled switch (#21257)
+* [x] Labeled switch
 
 Zig Standard Library
 
