@@ -1199,9 +1199,7 @@ const exercises = [_]Exercise{
     },
     .{
         .main_file = "108_labeled_switch.zig",
-        .output =
-        \\The pull request has been merged
-        ,
+        .output = "The pull request has been merged.",
     },
     .{
         .main_file = "999_the_end.zig",
