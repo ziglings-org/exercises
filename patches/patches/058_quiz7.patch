@@ -1,8 +1,8 @@
---- exercises/058_quiz7.zig	2023-10-03 22:15:22.125574535 +0200
-+++ answers/058_quiz7.zig	2023-10-05 20:04:07.106101152 +0200
+--- exercises/058_quiz7.zig	2024-10-28 09:06:49.448505460 +0100
++++ answers/058_quiz7.zig	2024-10-28 09:35:14.631932322 +0100
 @@ -192,8 +192,8 @@
              // Oops! The hermit forgot how to capture the union values
-             // in a switch statement. Please capture both values as
+             // in a switch statement. Please capture each value as
              // 'p' so the print statements work!
 -            .place => print("{s}", .{p.name}),
 -            .path => print("--{}->", .{p.dist}),
