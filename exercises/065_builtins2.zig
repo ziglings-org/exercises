@@ -111,6 +111,7 @@ pub fn main() void {
     // (which is a zero-bit type that takes up no space at all!):
     if (fields[0].??? != void) {
         print(" {s}", .{fields.name});
+        print(" {s}", .{fields[0].name});
     }
 
     if (fields[1].??? != void) {
