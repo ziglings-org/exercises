@@ -110,15 +110,15 @@ pub fn main() void {
     // name will not be printed if the field is of type 'void'
     // (which is a zero-bit type that takes up no space at all!):
     if (fields[0].??? != void) {
-        print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[0].name});
+        print(" {s}", .{fields.name});
     }
 
     if (fields[1].??? != void) {
-        print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[1].name});
+        print(" {s}", .{fields[1].name});
     }
 
     if (fields[2].??? != void) {
-        print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[2].name});
+        print(" {s}", .{fields[2].name});
     }
 
     // Yuck, look at all that repeated code above! I don't know
