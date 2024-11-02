@@ -24,16 +24,16 @@
      // (which is a zero-bit type that takes up no space at all!):
 -    if (fields[0].??? != void) {
 +    if (fields[0].type != void) {
-         print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[0].name});
+         print(" {s}", .{fields[0].name});
      }
  
 -    if (fields[1].??? != void) {
 +    if (fields[1].type != void) {
-         print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[1].name});
+         print(" {s}", .{fields[1].name});
      }
  
 -    if (fields[2].??? != void) {
 +    if (fields[2].type != void) {
-         print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[2].name});
+         print(" {s}", .{fields[2].name});
      }
  
