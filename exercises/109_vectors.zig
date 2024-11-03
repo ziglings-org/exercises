@@ -121,10 +121,8 @@ fn calcMaxPairwiseDiffOld( list1 : [4] f32, list2 : [4] f32) f32 {
 
 const Vec4 = @Vector(4, f32);
 fn calcMaxPairwiseDiffNew( a : Vec4, b : Vec4) f32 {
-//    const abs_diff_vec = ???;
-    const abs_diff_vec = @abs(a - b);
-//    const max_diff = @reduce(???, abs_diff_vec);
-    const max_diff = @reduce(.Max, abs_diff_vec);
+    const abs_diff_vec = ???;
+    const max_diff = @reduce(???, abs_diff_vec);
     return max_diff;
 }
 
