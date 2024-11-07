@@ -1,5 +1,5 @@
---- exercises/099_formatting.zig	2023-10-03 22:15:22.125574535 +0200
-+++ answers/099_formatting.zig	2023-10-05 20:04:07.292771311 +0200
+--- exercises/099_formatting.zig	2024-11-07 21:45:10.459123650 +0100
++++ answers/099_formatting.zig	2024-11-07 21:43:55.154345991 +0100
 @@ -131,7 +131,7 @@
          for (0..size) |b| {
              // What formatting is needed here to make our columns
