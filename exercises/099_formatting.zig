@@ -16,7 +16,7 @@
 // Therefore, the comments for the format() function are the only
 // way to definitively learn how to format strings in Zig:
 //
-//     https://github.com/ziglang/zig/blob/master/lib/std/fmt.zig#L29
+//     https://github.com/ziglang/zig/blob/master/lib/std/fmt.zig#L33
 //
 // Zig already has a very nice selection of formatting options.
 // These can be used in different ways, but generally to convert
