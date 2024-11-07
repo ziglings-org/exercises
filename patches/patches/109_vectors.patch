@@ -1,0 +1,13 @@
+--- exercises/109_vectors.zig	2024-11-03 11:17:00.928652000 +1000
++++ answers/109_vectors.zig	2024-11-07 13:11:23.838667200 +1000
+@@ -121,8 +121,8 @@
+ 
+ const Vec4 = @Vector(4, f32);
+ fn calcMaxPairwiseDiffNew( a : Vec4, b : Vec4) f32 {
+-    const abs_diff_vec = ???;
+-    const max_diff = @reduce(???, abs_diff_vec);
++    const abs_diff_vec = @abs(a - b);
++    const max_diff = @reduce(.Max, abs_diff_vec);
+     return max_diff;
+ }
+ 
