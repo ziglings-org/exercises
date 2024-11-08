@@ -1,5 +1,5 @@
---- exercises/065_builtins2.zig	2024-09-02 19:15:56.569952315 +0200
-+++ answers/065_builtins2.zig	2024-09-02 19:13:44.280600350 +0200
+--- exercises/065_builtins2.zig	2024-11-02 16:58:30.607829441 +0100
++++ answers/065_builtins2.zig	2024-11-02 16:58:33.821220588 +0100
 @@ -58,7 +58,7 @@
      // Oops! We cannot leave the 'me' and 'myself' fields
      // undefined. Please set them here:
@@ -24,16 +24,16 @@
      // (which is a zero-bit type that takes up no space at all!):
 -    if (fields[0].??? != void) {
 +    if (fields[0].type != void) {
-         print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[0].name});
+         print(" {s}", .{fields[0].name});
      }
  
 -    if (fields[1].??? != void) {
 +    if (fields[1].type != void) {
-         print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[1].name});
+         print(" {s}", .{fields[1].name});
      }
  
 -    if (fields[2].??? != void) {
 +    if (fields[2].type != void) {
-         print(" {s}", .{@typeInfo(Narcissus).@"struct".fields[2].name});
+         print(" {s}", .{fields[2].name});
      }
  

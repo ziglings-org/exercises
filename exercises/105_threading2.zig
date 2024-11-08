@@ -39,7 +39,7 @@
 // in practice. Because either you don't need the precision, or you use a
 // calculator in which the number is stored as a very precise constant.
 // But at some point this constant was calculated and we are doing the same
-// now.The question at this point is, how many partial values do we have
+// now. The question at this point is, how many partial values do we have
 // to calculate for which accuracy?
 //
 // The answer is chewing, to get 8 digits after the decimal point we need
