@@ -9,7 +9,7 @@
 // by organizing them into directories, which hold files and other directories,
 // thus creating a tree structure that can be navigated.
 //
-// Fortunately, the Zig standard library provides a simple API for interacting
+// Fortunately, the Zig Standard Library provides a simple API for interacting
 // with the file system, see the detail documentation here:
 //
 // https://ziglang.org/documentation/master/std/#std.fs
