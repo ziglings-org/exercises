@@ -1,5 +1,5 @@
---- exercises/046_optionals2.zig	2024-09-04 20:51:36.766783971 +0200
-+++ answers/046_optionals2.zig	2024-09-04 20:51:01.389400985 +0200
+--- exercises/046_optionals2.zig	2024-11-08 22:46:25.592875338 +0100
++++ answers/046_optionals2.zig	2024-11-08 22:46:20.699447951 +0100
 @@ -22,7 +22,7 @@
  
  const Elephant = struct {
