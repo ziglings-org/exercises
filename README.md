@@ -232,6 +232,7 @@ Zig Core Language
 * [X] Working with C
 * [X] Threading
 * [x] Labeled switch
+* [x] Vector operations (SIMD)
 
 Zig Standard Library
 
