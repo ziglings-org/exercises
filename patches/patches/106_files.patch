@@ -1,5 +1,5 @@
---- exercises/106_files.zig	2024-06-17 10:11:53.651439869 +0200
-+++ answers/106_files.zig	2024-06-17 10:21:50.697337653 +0200
+--- exercises/106_files.zig	2024-11-09 20:33:07.455580904 +0100
++++ answers/106_files.zig	2024-11-09 20:33:30.394785215 +0100
 @@ -1,22 +1,22 @@
  //
  // Until now, we've only been printing our output in the console,
@@ -17,9 +17,9 @@
 +// by organizing files into directories, which hold files and other directories,
 +// thus creating a tree structure for navigating.
  //
--// Fortunately, the Zig standard library provides a simple API for interacting
+-// Fortunately, the Zig Standard Library provides a simple API for interacting
 -// with the file system, see the detail documentation here:
-+// Fortunately, zig standard library provide a simple api for interacting
++// Fortunately, the Zig Standard Library provide a simple api for interacting
 +// with the file system, see the detail documentation here
  //
  // https://ziglang.org/documentation/master/std/#std.fs
