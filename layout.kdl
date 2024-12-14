@@ -1,0 +1,26 @@
+theme "nord"
+
+layout {
+  pane split_direction="vertical" {
+    pane {
+      name "code"
+      command "nvim"
+      args "."
+      focus true
+      size "70%"
+    }
+    pane {
+      split_direction "horizontal"
+      size "30%"
+
+      pane {
+        name "plz build .//..."
+        size "50%"
+      }
+      pane {
+        name "plz test .//..."
+        size "50%"
+      }
+    }
+  }
+}
