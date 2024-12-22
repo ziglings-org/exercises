@@ -10,12 +10,10 @@ Those broken programs need your help! (You'll also save the
 planet from evil aliens and help some friendly elephants stick
 together, which is very sweet of you.)
 
-This project was directly inspired by the brilliant and fun
-[rustlings](https://github.com/rust-lang/rustlings)
-project for the [Rust](https://www.rust-lang.org/) language.
-Indirect inspiration comes from [Ruby Koans](http://rubykoans.com/)
-and the Little LISPer/Little Schemer series of books.
-Ziglings was initiated by [Dave Gauer](https://ratfactor.com/).
+This project was initiated by [Dave Gauer]()https://ratfactor.com/ and is directly inspired
+by the brilliant and fun [rustlings](https://github.com/rust-lang/rustlings) project.
+Indirect inspiration comes from [Ruby Koans](http://rubykoans.com/) and the Little LISPer/Little
+Schemer series of books.
 
 ## Intended Audience
 
