@@ -35,6 +35,7 @@
 //              2 => continue :foo 3,
 //              3 => return,
 //              4 => {},
+//              else => {},
 //          }
 //          std.debug.print("This statement cannot be reached");
 //      }
@@ -46,6 +47,9 @@
 //  3. In the case '2' we repeat the same pattern as case '1'
 //        but instead the value to be evaluated is now '3';
 //  4. Finally we get to case '3', where we return from the function as a whole.
+//  5. In this example as the input has no clear exhaustive patterns but a essentially
+//      any u8 integer, we need do need to handle any case that is not explicitly handled
+//      by using the `else => {}` branch as a default case.
 //
 // Since step 4 or a break stament do not exist in this switch, the debug statement is
 // never executed
