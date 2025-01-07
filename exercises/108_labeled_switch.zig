@@ -34,7 +34,6 @@
 //              1 => continue :foo 2,
 //              2 => continue :foo 3,
 //              3 => return,
-//              4 => {},
 //              else => {},
 //          }
 //          std.debug.print("This statement cannot be reached");
