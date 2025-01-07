@@ -7,5 +7,5 @@
 -    for (hex_nums, ???) |hn, ???| {
 +    for (hex_nums, dec_nums) |hn, dn| {
          if (hn != dn) {
-             std.debug.print("Uh oh! Found a mismatch: {d} vs {d}\n", .{ hn, dn });
+             print("Uh oh! Found a mismatch: {d} vs {d}\n", .{ hn, dn });
              return;
