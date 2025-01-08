@@ -40,7 +40,7 @@ pub fn main() !void {
     // okay, seems like a threat of violence is not the answer in this case
     // can you go here to find a way to read the content?
     // https://ziglang.org/documentation/master/std/#std.fs.File
-    // hint: you might find two answers that are both vaild in this case
+    // hint: you might find two answers that are both valid in this case
     const bytes_read = zig_read_the_file_or_i_will_fight_you(&content);
 
     // Woah, too screamy. I know you're excited for zigling time but tone it down a bit.
