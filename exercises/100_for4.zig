@@ -41,12 +41,12 @@ pub fn main() void {
 
     for (hex_nums, ???) |hn, ???| {
         if (hn != dn) {
-            std.debug.print("Uh oh! Found a mismatch: {d} vs {d}\n", .{ hn, dn });
+            print("Uh oh! Found a mismatch: {d} vs {d}\n", .{ hn, dn });
             return;
         }
     }
 
-    std.debug.print("Arrays match!\n", .{});
+    print("Arrays match!\n", .{});
 }
 //
 // You are perhaps wondering what happens if one of the two lists
