@@ -245,7 +245,6 @@ pub fn build(b: *Build) !void {
     }
 
     if (reset) |_| {
-
         const progress_file = ".progress.txt";
 
         std.fs.cwd().deleteFile(progress_file) catch |err| {
