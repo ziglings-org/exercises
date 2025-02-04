@@ -162,6 +162,8 @@ pub fn build(b: *Build) !void {
     const exno: ?usize = b.option(usize, "n", "Select exercise");
     const rand: ?bool = b.option(bool, "random", "Select random exercise");
     const start: ?usize = b.option(usize, "s", "Start at exercise");
+    // flag to reset the exercise progress
+    const reset: ?bool = b.option(bool, "reset", "Reset exercise progress");
 
     const sep = std.fs.path.sep_str;
     const healed_path = if (override_healed_path) |path|
@@ -242,13 +244,34 @@ pub fn build(b: *Build) !void {
         return;
     }
 
+    if (reset) |_| {
+
+        const progress_file = ".progress.txt";
+
+        std.fs.cwd().deleteFile(progress_file) catch |err| {
+            switch (err) {
+                std.fs.Dir.DeleteFileError.FileNotFound => {},
+                else => {
+                    print("Unable to remove progress file, Error: {}\n", .{err});
+                    return err;
+                },
+            }
+        };
+
+        print("Progress reset, .progress.txt removed.\n", .{});
+        std.process.exit(0);
+    }
+
     // Normal build mode: verifies all exercises according to the recommended
     // order.
     const ziglings_step = b.step("ziglings", "Check all ziglings");
     b.default_step = ziglings_step;
 
     var prev_step = &header_step.step;
+    // read the file to find the latest complete, use that in the for loop
+    // for (exercises[(s - 1)..]) |ex| {
     for (exercises) |ex| {
+        // print("here {s}\n", .{ex.main_file});
         const verify_stepn = ZiglingStep.create(b, ex, work_path, .normal);
         verify_stepn.step.dependOn(prev_step);
 
@@ -402,6 +425,18 @@ const ZiglingStep = struct {
                 \\{s}=========================================={s}
             , .{ red, reset, exercise_output, red, reset, output, red, reset });
         }
+
+        const progress = try std.fmt.allocPrint(b.allocator, "{d}", .{self.exercise.number()});
+        defer b.allocator.free(progress);
+
+        const file = try std.fs.cwd().createFile(
+            ".progress.txt",
+            .{ .read = true, .truncate = true },
+        );
+        defer file.close();
+
+        try file.writeAll(progress);
+        try file.sync();
 
         print("{s}PASSED:\n{s}{s}\n\n", .{ green_text, output, reset_text });
     }
