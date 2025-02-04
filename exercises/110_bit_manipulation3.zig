@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------
-// Setting, Clearing, and Toggling Bits
+// Toggling, Setting, and Clearing Bits
 // ----------------------------------------------------------------------------
 //
 // Another exciting thing about Zig is its suitability for embedded
@@ -69,6 +69,58 @@ const testing = std.testing;
 pub fn main() !void {
     var PORTB: u4 = 0b0000; // only 4 bits wide for simplicity
     //
+    // Let's first take a look at toggling bits.
+    //
+    // ------------------------------------------------------------------------
+    // Toggling bits with XOR:
+    // ------------------------------------------------------------------------
+    // XOR stands for "exclusive or". We can toggle bits with the ^ (XOR)
+    // bitwise operator, like so:
+    //
+    //
+    // In order to output a 1, the logic of an XOR operation requires that the
+    // two input bits are of different values. Therefore, 0 ^ 1 and 1 ^ 0 will
+    // both yield a 1 but 0 ^ 0 and 1 ^ 1 will output 0. XOR's unique behavior
+    // of outputing a 0 when both inputs are 1s is what makes it different from
+    // the OR operator; it also gives us the ability to toggle bits by putting
+    // 1s into our bitmask.
+    //
+    // - 1s in our bitmask operand, can be thought of as causing the
+    //   corresponding bits in the other operand to flip to the opposite value.
+    // - 0s cause no change.
+    //
+    //                            The 0s in our bitmask preserve these values 
+    // -XOR op- ---expanded---    in the output.
+    //            _______________/
+    //           /       /
+    //   0110   1   1   0   0
+    // ^ 1111   0   1   0   1 (bitmask)
+    // ------   -   -   -   -
+    // = 1001   1   0   0   1 <- This bit was already cleared.
+    //              \_______\
+    //                       \
+    //                         We can think of these bits having flipped
+    //                         because of the presence of 1s in those columns
+    //                         of our bitmask.
+
+    print("Toggle pins with XOR on PORTB\n", .{});
+    print("-----------------------------\n", .{});
+    PORTB = 0b1100;
+    print("  {b:0>4} // (initial state of PORTB)\n", .{PORTB});
+    print("^ {b:0>4} // (bitmask)\n", .{0b0101});
+    PORTB ^= (1 << 1) | (1 << 0); // What's wrong here?
+    checkAnswer(0b1001, PORTB);
+
+    newline();
+
+    PORTB = 0b1100;
+    print("  {b:0>4} // (initial state of PORTB)\n", .{PORTB});
+    print("^ {b:0>4} // (bitmask)\n", .{0b0011});
+    PORTB ^= (1 << 1) & (1 << 0); // What's wrong here?
+    checkAnswer(0b1111, PORTB);
+
+    // Now let's take a look at setting bits with the | operator.
+    //
     // ------------------------------------------------------------------------
     // Setting bits with OR:
     // ------------------------------------------------------------------------
@@ -129,6 +181,10 @@ pub fn main() !void {
 
     newline();
 
+    // So now we've covered how to toggle and set bits. What about clearing
+    // them? Well, this is where Zig throws us a curve ball. Don't worry we'll
+    // go through it step by step.
+
     // ------------------------------------------------------------------------
     // Clearing bits with AND and NOT:
     // ------------------------------------------------------------------------
@@ -165,10 +221,10 @@ pub fn main() !void {
     //
     //  2. The second step in creating our bit mask is to invert the bits
     //          ~0100 -> 1011
-    //     we can write this as:
+    //     in C we would write this as:
     //          ~(1 << 2) -> 1011
     //
-    //     But if we try to compile ~(1 << 2), we'll get an error:
+    //     But if we try to compile ~(1 << 2) in Zig, we'll get an error:
     //          unable to perform binary not operation on type 'comptime_int'
     //
     //     Before Zig can invert our bits, it needs to know the number of
@@ -225,56 +281,10 @@ pub fn main() !void {
     newline();
     newline();
 
-
-    //
     // ------------------------------------------------------------------------
-    // Toggling bits with XOR:
+    // Conclusion
     // ------------------------------------------------------------------------
-    // XOR stands for "exclusive or". We can toggle bits with the ^ (XOR)
-    // bitwise operator, like so:
     //
-    //
-    // In order to output a 1, the logic of an XOR operation requires that the
-    // two input bits are of different values. Therefore, 0 ^ 1 and 1 ^ 0 will
-    // both yield a 1 but 0 ^ 0 and 1 ^ 1 will output 0. XOR's unique behavior
-    // of outputing a 0 when both inputs are 1s is what makes it different from
-    // the OR operator; it also gives us the ability to toggle bits by putting
-    // 1s into our bitmask.
-    //
-    // - 1s in our bitmask operand, can be thought of as causing the
-    //   corresponding bits in the other operand to flip to the opposite value.
-    // - 0s cause no change.
-    //
-    //                            The 0s in our bitmask preserve these values 
-    // -XOR op- ---expanded---    in the output.
-    //            _______________/
-    //           /       /
-    //   0110   1   1   0   0
-    // ^ 1111   0   1   0   1 (bitmask)
-    // ------   -   -   -   -
-    // = 1001   1   0   0   1 <- This bit was already cleared.
-    //              \_______\
-    //                       \
-    //                         We can think of these bits having flipped
-    //                         because of the presence of 1s in those columns
-    //                         of our bitmask.
-
-    print("Toggle pins with XOR on PORTB\n", .{});
-    print("-----------------------------\n", .{});
-    PORTB = 0b1100;
-    print("  {b:0>4} // (initial state of PORTB)\n", .{PORTB});
-    print("^ {b:0>4} // (bitmask)\n", .{0b0101});
-    PORTB ^= (1 << 1) | (1 << 0); // What's wrong here?
-    checkAnswer(0b1001, PORTB);
-
-    newline();
-
-    PORTB = 0b1100;
-    print("  {b:0>4} // (initial state of PORTB)\n", .{PORTB});
-    print("^ {b:0>4} // (bitmask)\n", .{0b0011});
-    PORTB ^= (1 << 1) & (1 << 0); // What's wrong here?
-    checkAnswer(0b1111, PORTB);
-
     // While the examples in this exercise have used only 4-bit wide variables,
     // working with 8 bits is no different. Here's a an example where we set
     // every other bit beginning with the two's place:
