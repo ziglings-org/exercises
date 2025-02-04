@@ -119,6 +119,8 @@ pub fn main() !void {
     PORTB ^= (1 << 1) & (1 << 0); // What's wrong here?
     checkAnswer(0b1111, PORTB);
 
+    newline();
+
     // Now let's take a look at setting bits with the | operator.
     //
     // ------------------------------------------------------------------------
