@@ -1209,6 +1209,16 @@ const exercises = [_]Exercise{
         ,
     },
     .{ .main_file = "110_bit_manipulation3.zig", .output = 
+    \\Toggle pins with XOR on PORTB
+    \\-----------------------------
+    \\  1100 // (initial state of PORTB)
+    \\^ 0101 // (bitmask)
+    \\= 1001
+    \\
+    \\  1100 // (initial state of PORTB)
+    \\^ 0011 // (bitmask)
+    \\= 1111
+    \\
     \\Set pins with OR on PORTB
     \\-------------------------
     \\  1001 // (initial state of PORTB)
@@ -1228,17 +1238,6 @@ const exercises = [_]Exercise{
     \\  0111 // (reset state)
     \\& 1110 // (bitmask)
     \\= 0110
-    \\
-    \\
-    \\Toggle pins with XOR on PORTB
-    \\-----------------------------
-    \\  1100 // (initial state of PORTB)
-    \\^ 0101 // (bitmask)
-    \\= 1001
-    \\
-    \\  1100 // (initial state of PORTB)
-    \\^ 0011 // (bitmask)
-    \\= 1111
     },
     .{
         .main_file = "999_the_end.zig",
