@@ -173,6 +173,11 @@ zig build -Dn=19 -l
   ...
 ```
 
+To reset the progress (have it run all the exercises that have already been completed):
+```
+zig build -Dreset
+```
+
 ## What's Covered
 
 The primary goal for Ziglings is to cover the core Zig language.
