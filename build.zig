@@ -162,7 +162,6 @@ pub fn build(b: *Build) !void {
     const exno: ?usize = b.option(usize, "n", "Select exercise");
     const rand: ?bool = b.option(bool, "random", "Select random exercise");
     const start: ?usize = b.option(usize, "s", "Start at exercise");
-    // flag to reset the exercise progress
     const reset: ?bool = b.option(bool, "reset", "Reset exercise progress");
 
     const sep = std.fs.path.sep_str;
