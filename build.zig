@@ -267,10 +267,33 @@ pub fn build(b: *Build) !void {
     b.default_step = ziglings_step;
 
     var prev_step = &header_step.step;
-    // read the file to find the latest complete, use that in the for loop
-    // for (exercises[(s - 1)..]) |ex| {
-    for (exercises) |ex| {
-        // print("here {s}\n", .{ex.main_file});
+
+    var starting_exercise: u32 = 0;
+
+    if (std.fs.cwd().openFile(".progress.txt", .{})) |progress_file| {
+        defer progress_file.close();
+
+        const progress_file_size = try progress_file.getEndPos();
+
+        var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+        defer _ = gpa.deinit();
+        const allocator = gpa.allocator();
+        const contents = try progress_file.readToEndAlloc(allocator, progress_file_size);
+        defer allocator.free(contents);
+
+        starting_exercise = try std.fmt.parseInt(u32, contents, 10);
+    } else |err| {
+        switch (err) {
+            // This is fine, may be the first time tests are run or progress have been reset
+            std.fs.File.OpenError.FileNotFound => {},
+            else => {
+                print("Unable to open progress file, Error: {}\n", .{err});
+                return err;
+            },
+        }
+    }
+
+    for (exercises[starting_exercise..]) |ex| {
         const verify_stepn = ZiglingStep.create(b, ex, work_path, .normal);
         verify_stepn.step.dependOn(prev_step);
 
