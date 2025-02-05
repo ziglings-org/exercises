@@ -120,6 +120,8 @@ pub const logo =
     \\
 ;
 
+const progress_filename = ".progress.txt";
+
 pub fn build(b: *Build) !void {
     if (!validate_exercises()) std.process.exit(2);
 
@@ -244,9 +246,7 @@ pub fn build(b: *Build) !void {
     }
 
     if (reset) |_| {
-        const progress_file = ".progress.txt";
-
-        std.fs.cwd().deleteFile(progress_file) catch |err| {
+        std.fs.cwd().deleteFile(progress_filename) catch |err| {
             switch (err) {
                 std.fs.Dir.DeleteFileError.FileNotFound => {},
                 else => {
@@ -256,7 +256,7 @@ pub fn build(b: *Build) !void {
             }
         };
 
-        print("Progress reset, .progress.txt removed.\n", .{});
+        print("Progress reset, {s} removed.\n", .{progress_filename});
         std.process.exit(0);
     }
 
@@ -269,7 +269,7 @@ pub fn build(b: *Build) !void {
 
     var starting_exercise: u32 = 0;
 
-    if (std.fs.cwd().openFile(".progress.txt", .{})) |progress_file| {
+    if (std.fs.cwd().openFile(progress_filename, .{})) |progress_file| {
         defer progress_file.close();
 
         const progress_file_size = try progress_file.getEndPos();
@@ -283,10 +283,12 @@ pub fn build(b: *Build) !void {
         starting_exercise = try std.fmt.parseInt(u32, contents, 10);
     } else |err| {
         switch (err) {
-            // This is fine, may be the first time tests are run or progress have been reset
-            std.fs.File.OpenError.FileNotFound => {},
+
+            std.fs.File.OpenError.FileNotFound => {
+                // This is fine, may be the first time tests are run or progress have been reset
+            },
             else => {
-                print("Unable to open progress file, Error: {}\n", .{err});
+                print("Unable to open {s}: {}\n", .{progress_filename, err});
                 return err;
             },
         }
@@ -451,7 +453,7 @@ const ZiglingStep = struct {
         defer b.allocator.free(progress);
 
         const file = try std.fs.cwd().createFile(
-            ".progress.txt",
+            progress_filename,
             .{ .read = true, .truncate = true },
         );
         defer file.close();
