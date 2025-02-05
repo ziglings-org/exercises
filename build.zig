@@ -294,11 +294,13 @@ pub fn build(b: *Build) !void {
         }
     }
 
-    for (exercises[starting_exercise..]) |ex| {
-        const verify_stepn = ZiglingStep.create(b, ex, work_path, .normal);
-        verify_stepn.step.dependOn(prev_step);
+    for (exercises) |ex| {
+        if (starting_exercise < ex.number()) {
+            const verify_stepn = ZiglingStep.create(b, ex, work_path, .normal);
+            verify_stepn.step.dependOn(prev_step);
 
-        prev_step = &verify_stepn.step;
+            prev_step = &verify_stepn.step;
+        }
     }
     ziglings_step.dependOn(prev_step);
 
