@@ -89,7 +89,7 @@ pub fn main() !void {
     //   corresponding bits in the other operand to flip to the opposite value.
     // - 0s cause no change.
     //
-    //                            The 0s in our bitmask preserve these values 
+    //                            The 0s in our bitmask preserve these values
     // -XOR op- ---expanded---    in the output.
     //            _______________/
     //           /       /
@@ -452,4 +452,3 @@ fn checkAnswer(expected: u4, answer: u4) void {
     }
     newline();
 }
-
