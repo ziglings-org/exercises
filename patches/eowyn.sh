@@ -26,6 +26,13 @@ echo "Zig version" $(zig version)
 echo "Eowyn version 23.10.5.1, let's try our magic power."
 echo ""
 
+# Remove progress file
+progress_file=".progress.txt"
+if [ -f $progress_file ]; then
+    rm $progress_file 
+fi
+
+
 # Create directory of healing if it doesn't already exist.
 mkdir -p patches/healed
 
