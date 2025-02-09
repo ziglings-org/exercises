@@ -12,6 +12,12 @@
 # using the patches in this directory and convey them
 # to convalesce in the healed directory.
 #
+delete_progress() {
+    progress_file=".progress.txt"
+    if [ -f $progress_file ]; then
+        rm $progress_file 
+    fi
+}
 set -e
 
 # We check ourselves before we wreck ourselves.
@@ -23,15 +29,11 @@ fi
 
 # Which version we have?
 echo "Zig version" $(zig version)
-echo "Eowyn version 23.10.5.1, let's try our magic power."
+echo "Eowyn version 25.1.9, let's try our magic power."
 echo ""
 
 # Remove progress file
-progress_file=".progress.txt"
-if [ -f $progress_file ]; then
-    rm $progress_file 
-fi
-
+delete_progress
 
 # Create directory of healing if it doesn't already exist.
 mkdir -p patches/healed
@@ -61,3 +63,6 @@ zig fmt --check patches/healed
 
 # Test the healed exercises. May the compiler have mercy upon us.
 zig build -Dhealed
+
+# Remove progress file again
+delete_progress
