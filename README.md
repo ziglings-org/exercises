@@ -51,14 +51,14 @@ $ zig version
 Clone this repository with Git:
 
 ```
-$ git clone https://ziglings.org
-$ cd ziglings.org
+git clone https://codeberg.org/ziglings/exercises.git ziglings
+cd ziglings
 ```
 
 Then run `zig build` and follow the instructions to begin!
 
 ```
-$ zig build
+zig build
 ```
 
 Note: The output of Ziglings is the unaltered output from the Zig
