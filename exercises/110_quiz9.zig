@@ -3,22 +3,23 @@
 // ----------------------------------------------------------------------------
 //
 // Another exciting thing about Zig is its suitability for embedded
-// programming. Your Zig code doesn't have to remain on your laptop. You can
+// programming. Your Zig code doesn't have to remain on your laptop; you can
 // also deploy your code to microcontrollers! This means you can write Zig to
 // drive your next robot or greenhouse climate control system! Ready to enter
-// the exciting world of embedded programming? This quiz is designed to test
-// your knowledge of bit manipulationh in Zig while also giving you a taste of
-// what it's like to control registers in a microcontroller. Let's get started!
+// the exciting world of embedded programming? Let's get started!
+// 
+// ----------------------------------------------------------------------------
+// Some Background
+// ----------------------------------------------------------------------------
 //
 // A common activity in microcontroller programming is setting and clearing
 // bits on input and output pins. This lets you control LEDs, sensors, motors
 // and more! In a previous exercise (097_bit_manipulation.zig) you learned how
-// to swap two bytes using the ^ (XOR - exclusive or) operator. In this
-// quiz, we'll take a closer look at bit manipulation and how we can write
-// code that sets and clears specific bits as we would if we were programming
-// the pins on a real microcontroller. Included at the end of this exercise are
-// some helper functions that demonstrate how we might make our code a little
-// more readable.
+// to swap two bytes using the ^ (XOR - exclusive or) operator. This quiz will
+// test your knowledge of bit manipulationh in Zig while giving you a taste of
+// what it's like to control registers in a real microcontroller. Included at
+// the end are some helper functions that demonstrate how we might make our
+// code a little more readable.
 //
 // Below is a pinout diagram for the famous ATmega328 AVR microcontroller used
 // as the primary microchip on popular microcontroller platforms like the
