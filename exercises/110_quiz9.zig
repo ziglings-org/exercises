@@ -175,8 +175,8 @@ pub fn main() !void {
 // -XOR op- ---expanded---    in the output.
 //            _______________/
 //           /       /
-//   0110   1   1   0   0
-// ^ 1111   0   1   0   1 (bitmask)
+//   1100   1   1   0   0
+// ^ 0101   0   1   0   1 (bitmask)
 // ------   -   -   -   -
 // = 1001   1   0   0   1 <- This bit was already cleared.
 //              \_______\
