@@ -1,5 +1,5 @@
---- exercises/110_bit_manipulation3.zig	2025-02-08 11:52:35.609300707 -0800
-+++ answers/110_bit_manipulation3.zig	2025-02-08 13:00:15.414038314 -0800
+--- exercises/110_quiz9.zig	2025-02-08 13:19:48.522641785 -0800
++++ answers/110_quiz9.zig	2025-02-10 17:42:04.525004335 -0800
 @@ -108,7 +108,7 @@
      PORTB = 0b1100;
      print("  {b:0>4} // (initial state of PORTB)\n", .{PORTB});

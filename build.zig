@@ -1269,7 +1269,7 @@ const exercises = [_]Exercise{
         \\Max difference (new fn): 0.014
         ,
     },
-    .{ .main_file = "110_bit_manipulation3.zig", .output = 
+    .{ .main_file = "110_quiz9.zig", .output = 
     \\Toggle pins with XOR on PORTB
     \\-----------------------------
     \\  1100 // (initial state of PORTB)
