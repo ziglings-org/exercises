@@ -70,30 +70,14 @@ const testing = std.testing;
 pub fn main() !void {
     var PORTB: u4 = 0b0000; // only 4 bits wide for simplicity
 
-    // The LCD display on our robot is not behaving as expected. In order to
-    // get it functioning properly, we must initialize it by sending the
-    // correct sequence of half-bytes to PORTB's lower four pins.
-    //
-    // See if you can solve the following problems to get the lcd working and
-    // reveal the message our robot has stored in his EEPROM.
-    //
-    //                           .--.      .--.
-    //                           |  |      |  |
-    //                    +--------------------------+
-    //                    | +----------------------+ |
-    //                    | |                      | |
-    //                    | |  XXXXXXXX  XXXXXXXX  | | <-- LCD
-    //                    | |                      | |
-    //                    | +----------------------+ |
-    //                    |        _________         |
-    //                    |       |_|_|_|_|_|        |
-    //                    |                          |
-    //                    +--------------------------+
-    //                              |     |
-    //
-    // The last two problems throw you a bit of a curve ball. Try solving them
-    // on your own. If you need help, scroll to the bottom to see some in depth
-    // explanations on toggling, setting, and clearing bits in Zig.
+    // ------------------------------------------------------------------------
+    // Quiz
+    // ------------------------------------------------------------------------
+
+    // See if you can solve the following problems. The last two problems throw
+    // you a bit of a curve ball. Try solving them on your own. If you need
+    // help, scroll to the bottom of main to see some in depth explanations on
+    // toggling, setting, and clearing bits in Zig.
 
     print("Toggle pins with XOR on PORTB\n", .{});
     print("-----------------------------\n", .{});
