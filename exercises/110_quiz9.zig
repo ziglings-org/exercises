@@ -1,20 +1,20 @@
 // ----------------------------------------------------------------------------
-// Toggling, Setting, and Clearing Bits
+// Quiz Time: Toggling, Setting, and Clearing Bits
 // ----------------------------------------------------------------------------
 //
 // Another exciting thing about Zig is its suitability for embedded
 // programming. Your Zig code doesn't have to remain on your laptop. You can
 // also deploy your code to microcontrollers! This means you can write Zig to
 // drive your next robot or greenhouse climate control system! Ready to enter
-// the exciting world of embedded programming? This exercise is designed to
-// give you a taste of what it's like to control registers in a
-// microcontroller. Let's get started!
+// the exciting world of embedded programming? This quiz is designed to test
+// your knowledge of bit manipulationh in Zig while also giving you a taste of
+// what it's like to control registers in a microcontroller. Let's get started!
 //
 // A common activity in microcontroller programming is setting and clearing
 // bits on input and output pins. This lets you control LEDs, sensors, motors
 // and more! In a previous exercise (097_bit_manipulation.zig) you learned how
 // to swap two bytes using the ^ (XOR - exclusive or) operator. In this
-// exercise, we'll take a closer look at bit manipulation and how we can write
+// quiz, we'll take a closer look at bit manipulation and how we can write
 // code that sets and clears specific bits as we would if we were programming
 // the pins on a real microcontroller. Included at the end of this exercise are
 // some helper functions that demonstrate how we might make our code a little
@@ -47,8 +47,8 @@
 //                                  PORTB
 //
 // Drawing inspiration from this diagram, we'll use the pins for PORTB as our
-// mental model for this exercise in bit manipulation. It should be noted that
-// in the following examples we are using ordinary variables, one of which we
+// mental model for this quiz on bit manipulation. It should be noted that
+// in the following problems we are using ordinary variables, one of which we
 // have named PORTB, to simulate modifying the bits of real hardware registers.
 // But in actual microcontroller code, PORTB would be defined something like
 // this:
@@ -57,7 +57,7 @@
 // This lets the compiler know not to make any optimizations to PORTB so that
 // the IO pins are properly mapped to our code.
 //
-// NOTE : To keep things simple, the following examples are given using type
+// NOTE : To keep things simple, the following problems are given using type
 // u4, so applying the output to PORTB would only affect the lower four pins
 // PB0..PB3. Of course, there is nothing to prevent you from swapping the u4
 // with a u8 so you can control all 8 of PORTB's IO pins.
