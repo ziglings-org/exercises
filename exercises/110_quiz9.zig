@@ -16,7 +16,7 @@
 // bits on input and output pins. This lets you control LEDs, sensors, motors
 // and more! In a previous exercise (097_bit_manipulation.zig) you learned how
 // to swap two bytes using the ^ (XOR - exclusive or) operator. This quiz will
-// test your knowledge of bit manipulationh in Zig while giving you a taste of
+// test your knowledge of bit manipulation in Zig while giving you a taste of
 // what it's like to control registers in a real microcontroller. Included at
 // the end are some helper functions that demonstrate how we might make our
 // code a little more readable.
@@ -321,7 +321,7 @@ pub fn main() !void {
 // ------------------------------------------------------------------------
 //
 // While the examples in this quiz have used only 4-bit wide variables,
-// working with 8 bits is no different. Here's a an example where we set
+// working with 8 bits is no different. Here's an example where we set
 // every other bit beginning with the two's place:
 
 // var PORTD: u8 = 0b0000_0000;
