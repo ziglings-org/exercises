@@ -7,7 +7,7 @@
 // also deploy your code to microcontrollers! This means you can write Zig to
 // drive your next robot or greenhouse climate control system! Ready to enter
 // the exciting world of embedded programming? Let's get started!
-// 
+//
 // ----------------------------------------------------------------------------
 // Some Background
 // ----------------------------------------------------------------------------
@@ -135,9 +135,7 @@ pub fn main() !void {
 
     newline();
     newline();
-
 }
-
 
 // ************************************************************************
 //                    IN-DEPTH EXPLANATIONS BELOW
@@ -345,8 +343,6 @@ pub fn main() !void {
 // PORTD = ~PORTD;
 // print("PORTD: {b:0>8} // bits flipped with NOT (~)\n", .{PORTD});
 // newline();
-
-
 
 // ----------------------------------------------------------------------------
 // Here are some helper functions for manipulating bits
