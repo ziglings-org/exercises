@@ -202,7 +202,7 @@ pub fn main() !void {
 //                    _ Set only this bit.
 //                   /
 //   1001   1   0   0   1
-// | 0010   0   0   1   0 (bit mask)
+// | 0010   0   0   1   0 (bitmask)
 // ------   -   -   -   -
 // = 1011   1   0   1   1
 //           \___\_______\
@@ -211,7 +211,7 @@ pub fn main() !void {
 //                          a 0 effects no change.
 //
 // ------------------------------------------------------------------------
-// To create a bit mask like 0b0010 used above:
+// To create a bitmask like 0b0010 used above:
 //
 // 1. First, shift the value 1 over one place with the bitwise << (shift
 // left) operator as indicated below:
@@ -254,7 +254,7 @@ pub fn main() !void {
 //                __________ Clear only this bit.
 //               /
 //   1110   1   1   1   0
-// & 1011   1   0   1   1 (bit mask)
+// & 1011   1   0   1   1 (bitmask)
 // ------   -   -   -   -
 // = 1010   1   0   1   0 <- This bit was already cleared.
 //           \_______\
@@ -263,7 +263,7 @@ pub fn main() !void {
 //                      1 preserves the original bit value whether 0 or 1.
 //
 // ------------------------------------------------------------------------
-// We can use the ~ (NOT) operator to easily create a bit mask like 1011:
+// We can use the ~ (NOT) operator to easily create a bitmask like 1011:
 //
 //  1. First, shift the value 1 over two places with the bit-wise << (shift
 //     left) operator as indicated below:
@@ -272,7 +272,7 @@ pub fn main() !void {
 //          1 << 2 -> 0100 <- The 1 has been shifted two places to the left
 //          1 << 3 -> 1000
 //
-//  2. The second step in creating our bit mask is to invert the bits
+//  2. The second step in creating our bitmask is to invert the bits
 //          ~0100 -> 1011
 //     in C we would write this as:
 //          ~(1 << 2) -> 1011
