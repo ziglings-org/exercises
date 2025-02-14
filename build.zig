@@ -283,12 +283,11 @@ pub fn build(b: *Build) !void {
         starting_exercise = try std.fmt.parseInt(u32, contents, 10);
     } else |err| {
         switch (err) {
-
             std.fs.File.OpenError.FileNotFound => {
                 // This is fine, may be the first time tests are run or progress have been reset
             },
             else => {
-                print("Unable to open {s}: {}\n", .{progress_filename, err});
+                print("Unable to open {s}: {}\n", .{ progress_filename, err });
                 return err;
             },
         }
@@ -964,7 +963,7 @@ const exercises = [_]Exercise{
     },
     .{
         .main_file = "060_floats.zig",
-        .output = "Shuttle liftoff weight: 2032092kg",
+        .output = "Shuttle liftoff weight: 2032kg",
     },
     .{
         .main_file = "061_coercions.zig",
