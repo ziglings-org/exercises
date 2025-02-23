@@ -1,9 +1,9 @@
---- exercises/060_floats.zig	2025-02-14 09:10:40.443151829 +0100
-+++ answers/060_floats.zig	2025-02-14 09:10:47.576619873 +0100
+--- exercises/060_floats.zig	2025-03-03 20:23:40.255443963 +0400
++++ answers/060_floats.zig	2025-03-03 20:29:58.554854977 +0400
 @@ -43,7 +43,7 @@
      //
-     // We'll convert this weight from pound to kilograms at a
-     // conversion of 0.453592kg to the pound.
+     // We'll convert this weight from pounds to metric units at a
+     // conversion of 0.453592 kg to the pound.
 -    const shuttle_weight: f16 = 0.453592 * 4480e3;
 +    const shuttle_weight: f32 = 0.453592 * 4.480e3;
  
