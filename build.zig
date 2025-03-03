@@ -963,7 +963,7 @@ const exercises = [_]Exercise{
     },
     .{
         .main_file = "060_floats.zig",
-        .output = "Shuttle liftoff weight: 2032kg",
+        .output = "Shuttle liftoff weight: 2032 metric tons",
     },
     .{
         .main_file = "061_coercions.zig",
