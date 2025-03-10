@@ -45,7 +45,7 @@ Verify the installation and build number of `zig` like so:
 
 ```
 $ zig version
-0.14.0-dev.xxxx+xxxxxxxxx
+0.15.0-dev.xxxx+xxxxxxxxx
 ```
 
 Clone this repository with Git:
@@ -73,8 +73,8 @@ the appropriate tag.
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
 compiler rather than versioned **release** builds. The last
-stable release was `0.13.0`, but Ziglings needs a dev build with
-pre-release version "0.14.0" and a build number at least as high
+stable release was `0.14.0`, but Ziglings needs a dev build with
+pre-release version "0.15.0" and a build number at least as high
 as that shown in the example version check above.
 
 It is likely that you'll download a build which is _greater_ than
