@@ -233,6 +233,7 @@ Zig Core Language
 * [X] Interfaces
 * [X] Bit manipulation
 * [X] Working with C
+* [ ] Opaque types (anyopaque)
 * [X] Threading
 * [x] Labeled switch
 * [x] Vector operations (SIMD)
