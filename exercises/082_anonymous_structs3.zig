@@ -95,12 +95,14 @@ fn printTuple(tuple: anytype) void {
         //     Each 'field' in this loop is one of these:
         //
         //         pub const StructField = struct {
-        //             name: []const u8,
+        //             name: [:0]const u8,
         //             type: type,
-        //             default_value: anytype,
+        //             default_value_ptr: ?*const anyopaque,
         //             is_comptime: bool,
         //             alignment: comptime_int,
         //         };
+        //
+        //     Note we will learn about 'anyopaque' type later
         //
         //     You'll need this builtin:
         //
