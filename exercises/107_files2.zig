@@ -12,7 +12,7 @@
 // Alright, bud, lean in close. Here's the game plan.
 //    - First, we open the {project_root}/output/ directory
 //    - Secondly, we open file `zigling.txt` in that directory
-//    - Then, we initalize an array of characters with all letter 'A', and print it
+//    - Then, we initialize an array of characters with all letter 'A', and print it
 //    - After that, we read the content of the file into the array
 //    - Finally, we print out the content we just read
 
@@ -30,9 +30,9 @@ pub fn main() !void {
     const file = try output_dir.openFile("zigling.txt", .{});
     defer file.close();
 
-    // initalize an array of u8 with all letter 'A'
+    // initialize an array of u8 with all letter 'A'
     // we need to pick the size of the array, 64 seems like a good number
-    // fix the initalization below
+    // fix the initialization below
     var content = ['A']*64;
     // this should print out : `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`
     std.debug.print("{s}\n", .{content});

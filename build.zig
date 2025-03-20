@@ -200,7 +200,7 @@ pub fn build(b: *Build) !void {
 
     if (rand) |_| {
         // Random build mode: verifies one random exercise.
-        // like for 'exno' but chooses a random exersise number.
+        // like for 'exno' but chooses a random exercise number.
         print("work in progress: check a random exercise\n", .{});
 
         var prng = std.Random.DefaultPrng.init(blk: {

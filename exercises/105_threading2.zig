@@ -21,9 +21,9 @@
 // There were the Scottish mathematician Gregory and the German
 // mathematician Leibniz, and even a few hundred years earlier the Indian
 // mathematician Madhava. All of them independently developed the same
-// formula, which was published by Leibnitz in 1682 in the journal
+// formula, which was published by Leibniz in 1682 in the journal
 // "Acta Eruditorum".
-// This is why this method has become known as the "Leibnitz series",
+// This is why this method has become known as the "Leibniz series",
 // although the other names are also often used today.
 // We will not go into the formula and its derivation in detail, but
 // will deal with the series straight away:
@@ -50,7 +50,7 @@
 // enough for us for now, because we want to understand the principle and
 // nothing more, right?
 //
-// As we have already discovered, the Leibnitz series is a series with a
+// As we have already discovered, the Leibniz series is a series with a
 // fixed distance of 2 between the individual partial values. This makes
 // it easy to apply a simple loop to it, because if we start with n = 1
 // (which is not necessarily useful now) we always have to add 2 in each

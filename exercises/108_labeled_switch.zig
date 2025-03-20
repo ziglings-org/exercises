@@ -24,7 +24,7 @@
 //
 // By combining all we've learned so far, we can now proceed with a labeled switch
 //
-// A labeled switch is some extra syntatic sugar, which comes with all sorts of
+// A labeled switch is some extra syntactic sugar, which comes with all sorts of
 // candy (performance benefits). Don't believe me? Directly to source https://github.com/ziglang/zig/pull/21367
 //
 // Here is the previous excerpt implemented as a labeled switch instead:
