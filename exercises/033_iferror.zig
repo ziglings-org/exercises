@@ -17,7 +17,7 @@
 //
 //     if (foo) |value| {
 //         ...
-//     } else |err| switch(err) {
+//     } else |err| switch (err) {
 //         ...
 //     }
 //

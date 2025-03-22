@@ -161,7 +161,7 @@ pub fn main() !void {
 // In order to output a 1, the logic of an XOR operation requires that the
 // two input bits are of different values. Therefore, 0 ^ 1 and 1 ^ 0 will
 // both yield a 1 but 0 ^ 0 and 1 ^ 1 will output 0. XOR's unique behavior
-// of outputing a 0 when both inputs are 1s is what makes it different from
+// of outputting a 0 when both inputs are 1s is what makes it different from
 // the OR operator; it also gives us the ability to toggle bits by putting
 // 1s into our bitmask.
 //
@@ -247,7 +247,7 @@ pub fn main() !void {
 // PORTB = PORTB & 0b1011;
 // print("PORTB: {b:0>4}\n", .{PORTB}); // output -> 1010
 //
-// - 0s clear bits when used in conjuction with a bitwise AND.
+// - 0s clear bits when used in conjunction with a bitwise AND.
 // - 1s do nothing, thus preserving the original bits.
 //
 // -AND op- ---expanded---
