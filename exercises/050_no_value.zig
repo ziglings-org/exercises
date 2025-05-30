@@ -43,7 +43,7 @@
 //
 //       "void" is a _type_, not a value. It is the most popular of the
 //       Zero Bit Types (those types which take up absolutely no space
-//       and have only a semantic value. When compiled to executable
+//       and have only a semantic value). When compiled to executable
 //       code, zero bit types generate no code at all. The above example
 //       shows a variable foo of type void which is assigned the value
 //       of an empty expression. It's much more common to see void as
