@@ -19,12 +19,12 @@
 //     const MyBar = Bar();  // store the struct type
 //     const bar = Bar() {}; // create instance of the struct
 //
-// * The value of @typeName(Bar()) is "Bar()".
-// * The value of @typeName(MyBar) is "Bar()".
-// * The value of @typeName(@TypeOf(bar)) is "Bar()".
+// * The value of @typeName(Bar()) is "<filename>.Bar()".
+// * The value of @typeName(MyBar) is "<filename>.Bar()".
+// * The value of @typeName(@TypeOf(bar)) is "<filename>.Bar()".
 //
 // You can also have completely anonymous structs. The value
-// of @typeName(struct {}) is "struct:<position in source>".
+// of @typeName(struct {}) is "<filename>.<function>__struct_<nnn>".
 //
 const print = @import("std").debug.print;
 
