@@ -60,7 +60,7 @@
 // variety of formatting instructions. It's basically a tiny
 // language of its own. Here's a numeric example:
 //
-//     print("Catch-{x:0>4}.", .{twenty_two});
+//     print("Catch-0x{x:0>4}.", .{twenty_two});
 //
 // This formatting instruction outputs a hexadecimal number with
 // leading zeros:
