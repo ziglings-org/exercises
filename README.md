@@ -73,7 +73,7 @@ the appropriate tag.
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
 compiler rather than versioned **release** builds. The last
-stable release was `0.14.0`, but Ziglings needs a dev build with
+stable release was `0.14.1`, but Ziglings needs a dev build with
 pre-release version "0.15.0" and a build number at least as high
 as that shown in the example version check above.
 
