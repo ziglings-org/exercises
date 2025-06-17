@@ -1,5 +1,5 @@
---- exercises/065_builtins2.zig	2024-11-02 16:58:30.607829441 +0100
-+++ answers/065_builtins2.zig	2024-11-02 16:58:33.821220588 +0100
+--- exercises/065_builtins2.zig	2025-06-17 13:58:07.857258167 +0200
++++ answers/065_builtins2.zig	2025-06-17 13:56:36.630415938 +0200
 @@ -58,7 +58,7 @@
      // Oops! We cannot leave the 'me' and 'myself' fields
      // undefined. Please set them here:
@@ -18,7 +18,7 @@
  
      // Now we print a pithy statement about Narcissus.
      print("A {s} loves all {s}es. ", .{
-@@ -109,15 +109,15 @@
+@@ -113,15 +113,15 @@
      // Please complete these 'if' statements so that the field
      // name will not be printed if the field is of type 'void'
      // (which is a zero-bit type that takes up no space at all!):
