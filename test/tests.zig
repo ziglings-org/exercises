@@ -161,8 +161,7 @@ const CheckNamedStep = struct {
         );
         defer stderr_file.close();
 
-        var buffer: [4096]u8 = undefined;
-        const stderr = stderr_file.reader(&buffer);
+        var stderr = stderr_file.readerStreaming(&.{});
         {
             // Skip the logo.
             const nlines = mem.count(u8, root.logo, "\n");
@@ -170,10 +169,10 @@ const CheckNamedStep = struct {
 
             var lineno: usize = 0;
             while (lineno < nlines) : (lineno += 1) {
-                _ = try readLine(stderr, &buf);
+                _ = try readLine(&stderr, &buf);
             }
         }
-        try check_output(step, ex, stderr);
+        try check_output(step, ex, &stderr);
     }
 };
 
@@ -214,8 +213,7 @@ const CheckStep = struct {
         );
         defer stderr_file.close();
 
-        var buffer: [4096]u8 = undefined;
-        const stderr = stderr_file.reader(&buffer);
+        var stderr = stderr_file.readerStreaming(&.{});
         for (exercises) |ex| {
             if (ex.number() == 1) {
                 // Skip the logo.
@@ -224,15 +222,15 @@ const CheckStep = struct {
 
                 var lineno: usize = 0;
                 while (lineno < nlines) : (lineno += 1) {
-                    _ = try readLine(stderr, &buf);
+                    _ = try readLine(&stderr, &buf);
                 }
             }
-            try check_output(step, ex, stderr);
+            try check_output(step, ex, &stderr);
         }
     }
 };
 
-fn check_output(step: *Step, exercise: Exercise, reader: Reader) !void {
+fn check_output(step: *Step, exercise: Exercise, reader: *Reader) !void {
     const b = step.owner;
 
     var buf: [1024]u8 = undefined;
@@ -299,12 +297,9 @@ fn check(
     }
 }
 
-fn readLine(reader: fs.File.Reader, buf: []u8) !?[]const u8 {
-    if (try reader.file.deprecatedReader().readUntilDelimiterOrEof(buf, '\n')) |line| {
-        return mem.trimRight(u8, line, " \r\n");
-    }
-
-    return null;
+fn readLine(reader: *fs.File.Reader, buf: []u8) !?[]const u8 {
+    try reader.interface.readSliceAll(buf);
+    return mem.trimRight(u8, buf, " \r\n");
 }
 
 /// Fails with a custom error message.
