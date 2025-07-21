@@ -126,19 +126,18 @@ pub fn build(b: *Build) !void {
     if (!validate_exercises()) std.process.exit(2);
 
     use_color_escapes = false;
-    if (std.io.getStdErr().supportsAnsiEscapeCodes()) {
+    if (std.fs.File.stderr().supportsAnsiEscapeCodes()) {
         use_color_escapes = true;
     } else if (builtin.os.tag == .windows) {
         const w32 = struct {
-            const WINAPI = std.os.windows.WINAPI;
             const DWORD = std.os.windows.DWORD;
             const ENABLE_VIRTUAL_TERMINAL_PROCESSING = 0x0004;
             const STD_ERROR_HANDLE: DWORD = @bitCast(@as(i32, -12));
-            extern "kernel32" fn GetStdHandle(id: DWORD) callconv(WINAPI) ?*anyopaque;
-            extern "kernel32" fn GetConsoleMode(console: ?*anyopaque, out_mode: *DWORD) callconv(WINAPI) u32;
-            extern "kernel32" fn SetConsoleMode(console: ?*anyopaque, mode: DWORD) callconv(WINAPI) u32;
+            const GetStdHandle = std.os.windows.kernel32.GetStdHandle;
+            const GetConsoleMode = std.os.windows.kernel32.GetConsoleMode;
+            const SetConsoleMode = std.os.windows.kernel32.SetConsoleMode;
         };
-        const handle = w32.GetStdHandle(w32.STD_ERROR_HANDLE);
+        const handle = w32.GetStdHandle(w32.STD_ERROR_HANDLE).?;
         var mode: w32.DWORD = 0;
         if (w32.GetConsoleMode(handle, &mode) != 0) {
             mode |= w32.ENABLE_VIRTUAL_TERMINAL_PROCESSING;
