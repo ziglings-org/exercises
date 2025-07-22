@@ -32,7 +32,7 @@ const print = std.debug.print;
 
 pub fn main() !void {
     // let's check the pangram
-    print("Is this a pangram? {?}!\n", .{isPangram("The quick brown fox jumps over the lazy dog.")});
+    print("Is this a pangram? {}!\n", .{isPangram("The quick brown fox jumps over the lazy dog.")});
 }
 
 fn isPangram(str: []const u8) bool {
@@ -45,7 +45,7 @@ fn isPangram(str: []const u8) bool {
     // loop about all characters in the string
     for (str) |c| {
         // if the character is an alphabetical character
-        if (ascii.isASCII(c) and ascii.isAlphabetic(c)) {
+        if (ascii.isAscii(c) and ascii.isAlphabetic(c)) {
             // then we set the bit at the position
             //
             // to do this, we use a little trick:

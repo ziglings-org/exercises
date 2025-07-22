@@ -1,15 +1,15 @@
---- exercises/034_quiz4.zig	2023-10-03 22:15:22.122241138 +0200
-+++ answers/034_quiz4.zig	2023-10-05 20:04:06.996099091 +0200
+--- exercises/034_quiz4.zig	2025-07-22 09:55:51.337832401 +0200
++++ answers/034_quiz4.zig	2025-07-22 10:05:08.320323184 +0200
 @@ -9,10 +9,10 @@
  
  const NumError = error{IllegalNumber};
  
 -pub fn main() void {
 +pub fn main() !void {
-     const stdout = std.io.getStdOut().writer();
+     var stdout = std.fs.File.stdout().writer(&.{});
  
 -    const my_num: u32 = getNumber();
 +    const my_num: u32 = try getNumber();
  
-     try stdout.print("my_num={}\n", .{my_num});
+     try stdout.interface.print("my_num={}\n", .{my_num});
  }
