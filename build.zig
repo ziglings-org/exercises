@@ -519,7 +519,7 @@ const ZiglingStep = struct {
         // NOTE: After many changes in zig build system, we need to create the cache path manually.
         // See https://github.com/ziglang/zig/pull/21115
         // Maybe there is a better way (in the future).
-        const exe_dir = try self.step.evalZigProcess(zig_args.items, prog_node, false);
+        const exe_dir = try self.step.evalZigProcess(zig_args.items, prog_node, false, null, b.allocator);
         const exe_name = switch (self.exercise.kind) {
             .exe => self.exercise.name(),
             .@"test" => "test",
