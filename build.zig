@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.15.0-dev.1380";
+    const required_zig = "0.15.0-dev.1519";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -492,7 +492,7 @@ const ZiglingStep = struct {
         const path = join(b.allocator, &.{ self.work_path, exercise_path }) catch
             @panic("OOM");
 
-        var zig_args = std.ArrayList([]const u8).init(b.allocator);
+        var zig_args = std.array_list.Managed([]const u8).init(b.allocator);
         defer zig_args.deinit();
 
         zig_args.append(b.graph.zig_exe) catch @panic("OOM");
@@ -581,17 +581,17 @@ fn resetLine() void {
 /// Removes trailing whitespace for each line in buf, also ensuring that there
 /// are no trailing LF characters at the end.
 pub fn trimLines(allocator: std.mem.Allocator, buf: []const u8) ![]const u8 {
-    var list = try std.ArrayList(u8).initCapacity(allocator, buf.len);
+    var list = try std.array_list.Aligned(u8, null).initCapacity(allocator, buf.len);
 
     var iter = std.mem.splitSequence(u8, buf, " \n");
     while (iter.next()) |line| {
         // TODO: trimming CR characters is probably not necessary.
         const data = std.mem.trimRight(u8, line, " \r");
-        try list.appendSlice(data);
-        try list.append('\n');
+        try list.appendSlice(allocator, data);
+        try list.append(allocator, '\n');
     }
 
-    const result = try list.toOwnedSlice(); // TODO: probably not necessary
+    const result = try list.toOwnedSlice(allocator); // TODO: probably not necessary
 
     // Remove the trailing LF character, that is always present in the exercise
     // output.
