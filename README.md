@@ -87,7 +87,7 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
-* *2025-08-08* zig 0.15.0-dev.1519 - changes in array listr, see [#24801](https://github.com/ziglang/zig/pull/24801)
+* *2025-08-15* zig 0.15.0-dev.1519 - changes in array list, see [#24801](https://github.com/ziglang/zig/pull/24801)
 * *2025-08-08* zig 0.15.0-dev.1380 - changes in build system, see [#24588](https://github.com/ziglang/zig/pull/24588)
 * *2025-07-22* zig 0.15.0-dev.1092 - various changes due to new I/O API, see [#24488](https://github.com/ziglang/zig/pull/24488)
 * *2024-09-16* zig 0.14.0-dev.1573 - introduction of labeled switch, see [#21257](https://github.com/ziglang/zig/pull/21257)
