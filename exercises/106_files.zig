@@ -63,8 +63,9 @@ pub fn main() !void {
 }
 // to check if you actually write to the file, you can either,
 // 1. open the file in your text editor, or
-// 2. print the content of the file in the console with the following command
-//    >> cat ./output/zigling.txt
+// 2. print the content of the file in the console with one of these commands
+//    Linux/macOS:   >> cat ./output/zigling.txt
+//    Windows (CMD): >> type .\output\zigling.txt
 //
 //
 // More on Creating files
