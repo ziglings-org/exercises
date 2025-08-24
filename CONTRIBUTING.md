@@ -51,6 +51,7 @@ downloads page.
 If you run into an error in Ziglings caused by breaking changes
 in the latest development build of Zig, that's a new bug in
 Ziglings. Please file an issue...or make a pull request!
+For the latter, also read "The Secrets” section.
 
 
 ## Formatting
@@ -89,3 +90,24 @@ contribution for any other purpose.
 
 If you want to peek at the secrets, take a look at the `patches/`
 directory.
+
+Every Ziglings exercise contains mistakes on purpose.
+To keep our automated tests happy, each exercise also
+has a patch in `patches/healed` that “heals” it.
+
+When you change an exercise, you’ll usually need to update
+its patch too. That’s where our little helper Gollum comes in:
+
+  1. In the project root, create a folder called answers/.
+  2. Put your solved version of the exercise file in there.
+  3. Back in the root, run:
+     `./patches/gollum <exercise-number>`
+     For example: ./patches/gollum 106
+     This will generate a shiny new patch.
+
+Double-check everything by asking the magical Eowyn:
+     `./patches/eowyn`
+
+If all tests pass: 🎉 You’re done!
+Don’t forget to commit the patch file.
+
