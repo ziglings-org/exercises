@@ -508,6 +508,10 @@ const ZiglingStep = struct {
             zig_args.append("-lc") catch @panic("OOM");
         }
 
+        if (b.reference_trace) |rt| {
+            zig_args.append(b.fmt("-freference-trace={}", .{rt})) catch @panic("OOM");
+        }
+
         zig_args.append(b.pathFromRoot(path)) catch @panic("OOM");
 
         zig_args.append("--cache-dir") catch @panic("OOM");
