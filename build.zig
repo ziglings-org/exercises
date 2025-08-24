@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.14.0-dev.1573";
+    const required_zig = "0.15.0-dev.1519";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -126,19 +126,18 @@ pub fn build(b: *Build) !void {
     if (!validate_exercises()) std.process.exit(2);
 
     use_color_escapes = false;
-    if (std.io.getStdErr().supportsAnsiEscapeCodes()) {
+    if (std.fs.File.stderr().supportsAnsiEscapeCodes()) {
         use_color_escapes = true;
     } else if (builtin.os.tag == .windows) {
         const w32 = struct {
-            const WINAPI = std.os.windows.WINAPI;
             const DWORD = std.os.windows.DWORD;
             const ENABLE_VIRTUAL_TERMINAL_PROCESSING = 0x0004;
             const STD_ERROR_HANDLE: DWORD = @bitCast(@as(i32, -12));
-            extern "kernel32" fn GetStdHandle(id: DWORD) callconv(WINAPI) ?*anyopaque;
-            extern "kernel32" fn GetConsoleMode(console: ?*anyopaque, out_mode: *DWORD) callconv(WINAPI) u32;
-            extern "kernel32" fn SetConsoleMode(console: ?*anyopaque, mode: DWORD) callconv(WINAPI) u32;
+            const GetStdHandle = std.os.windows.kernel32.GetStdHandle;
+            const GetConsoleMode = std.os.windows.kernel32.GetConsoleMode;
+            const SetConsoleMode = std.os.windows.kernel32.SetConsoleMode;
         };
-        const handle = w32.GetStdHandle(w32.STD_ERROR_HANDLE);
+        const handle = w32.GetStdHandle(w32.STD_ERROR_HANDLE).?;
         var mode: w32.DWORD = 0;
         if (w32.GetConsoleMode(handle, &mode) != 0) {
             mode |= w32.ENABLE_VIRTUAL_TERMINAL_PROCESSING;
@@ -493,7 +492,7 @@ const ZiglingStep = struct {
         const path = join(b.allocator, &.{ self.work_path, exercise_path }) catch
             @panic("OOM");
 
-        var zig_args = std.ArrayList([]const u8).init(b.allocator);
+        var zig_args = std.array_list.Managed([]const u8).init(b.allocator);
         defer zig_args.deinit();
 
         zig_args.append(b.graph.zig_exe) catch @panic("OOM");
@@ -509,6 +508,10 @@ const ZiglingStep = struct {
             zig_args.append("-lc") catch @panic("OOM");
         }
 
+        if (b.reference_trace) |rt| {
+            zig_args.append(b.fmt("-freference-trace={}", .{rt})) catch @panic("OOM");
+        }
+
         zig_args.append(b.pathFromRoot(path)) catch @panic("OOM");
 
         zig_args.append("--cache-dir") catch @panic("OOM");
@@ -520,7 +523,7 @@ const ZiglingStep = struct {
         // NOTE: After many changes in zig build system, we need to create the cache path manually.
         // See https://github.com/ziglang/zig/pull/21115
         // Maybe there is a better way (in the future).
-        const exe_dir = try self.step.evalZigProcess(zig_args.items, prog_node, false);
+        const exe_dir = try self.step.evalZigProcess(zig_args.items, prog_node, false, null, b.allocator);
         const exe_name = switch (self.exercise.kind) {
             .exe => self.exercise.name(),
             .@"test" => "test",
@@ -582,17 +585,17 @@ fn resetLine() void {
 /// Removes trailing whitespace for each line in buf, also ensuring that there
 /// are no trailing LF characters at the end.
 pub fn trimLines(allocator: std.mem.Allocator, buf: []const u8) ![]const u8 {
-    var list = try std.ArrayList(u8).initCapacity(allocator, buf.len);
+    var list = try std.array_list.Aligned(u8, null).initCapacity(allocator, buf.len);
 
     var iter = std.mem.splitSequence(u8, buf, " \n");
     while (iter.next()) |line| {
         // TODO: trimming CR characters is probably not necessary.
         const data = std.mem.trimRight(u8, line, " \r");
-        try list.appendSlice(data);
-        try list.append('\n');
+        try list.appendSlice(allocator, data);
+        try list.append(allocator, '\n');
     }
 
-    const result = try list.toOwnedSlice(); // TODO: probably not necessary
+    const result = try list.toOwnedSlice(allocator); // TODO: probably not necessary
 
     // Remove the trailing LF character, that is always present in the exercise
     // output.
@@ -1064,7 +1067,7 @@ const exercises = [_]Exercise{
     .{
         .main_file = "082_anonymous_structs3.zig",
         .output =
-        \\"0"(bool):true "1"(bool):false "2"(i32):42 "3"(f32):3.141592e0
+        \\"0"(bool):true "1"(bool):false "2"(i32):42 "3"(f32):3.141592
         ,
         .hint = "This one is a challenge! But you have everything you need.",
     },
