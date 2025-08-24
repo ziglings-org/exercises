@@ -58,7 +58,7 @@ test "add" {
 
     // Another way to perform this test
     // is as follows:
-    try testing.expectEqual(add(41, 1), 42);
+    try testing.expectEqual(42, add(41, 1));
 
     // This time a test with the addition
     // of a negative number:
