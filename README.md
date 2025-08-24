@@ -25,10 +25,9 @@ language such as C.
 
 Each exercise is self-contained and self-explained. However,
 you're encouraged to also check out these Zig language resources
-for more detail:
+for more details:
 
 * https://ziglang.org/learn/
-* https://ziglearn.org/
 * https://ziglang.org/documentation/master/
 * [Zig in Depth! (video series)](https://www.youtube.com/watch?v=MMtvGA1YhW4&list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&pp=iAQB)
 
