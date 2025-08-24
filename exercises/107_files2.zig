@@ -2,7 +2,7 @@
 // Prerequisite :
 //    - exercise/106_files.zig, or
 //    - create a file {project_root}/output/zigling.txt
-//      with content `It's zigling time!`(18 byte total)
+//      with content `It's zigling time!`(18 bytes total)
 //
 // Now there's no point in writing to a file if we don't read from it, am I right?
 // Let's write a program to read the content of the file that we just created.
