@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.15.0-dev.1519";
+    const required_zig = "0.16.0-dev.164";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -276,8 +276,12 @@ pub fn build(b: *Build) !void {
         var gpa = std.heap.GeneralPurposeAllocator(.{}){};
         defer _ = gpa.deinit();
         const allocator = gpa.allocator();
-        const contents = try progress_file.readToEndAlloc(allocator, progress_file_size);
+        const contents = try allocator.alloc(u8, progress_file_size);
         defer allocator.free(contents);
+        const bytes_read = try progress_file.read(contents);
+        if (bytes_read != progress_file_size) {
+            return error.UnexpectedEOF;
+        }
 
         starting_exercise = try std.fmt.parseInt(u32, contents, 10);
     } else |err| {
@@ -566,7 +570,7 @@ const ZiglingStep = struct {
 
         // Render compile errors at the bottom of the terminal.
         // TODO: use the same ttyconf from the builder.
-        const ttyconf: std.io.tty.Config = if (use_color_escapes)
+        const ttyconf: std.Io.tty.Config = if (use_color_escapes)
             .escape_codes
         else
             .no_color;
