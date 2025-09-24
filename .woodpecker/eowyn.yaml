@@ -1,12 +1,26 @@
 steps:
-  - name: eowyn
+  - name: test-pr
     image: ziglings/ziglang:latest
     pull: true
     commands:
       - sh ./patches/eowyn.sh
     when:
-      event: [pull_request, push, cron]
-      ref:
-        - refs/pull/**
-        - refs/heads/main
+      event: [pull_request]
+
+  - name: test-merge
+    image: ziglings/ziglang:latest
+    pull: true
+    commands:
+      - sh ./patches/eowyn.sh
+    when:
+      event: [push]
+      branch: [main]
+
+  - name: nightly
+    image: ziglings/ziglang:latest
+    pull: true
+    commands:
+      - sh ./patches/eowyn.sh
+    when:
+      event: [cron]
       cron: daily*
