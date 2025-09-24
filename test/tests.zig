@@ -43,7 +43,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
             cmd.expectExitCode(0);
             cmd.step.dependOn(&heal_step.step);
 
-            const stderr = cmd.captureStdErr();
+            const stderr = cmd.captureStdErr(.{});
             const verify = CheckNamedStep.create(b, ex, stderr);
             verify.step.dependOn(&cmd.step);
 
@@ -78,7 +78,7 @@ pub fn addCliTests(b: *std.Build, exercises: []const Exercise) *Step {
         cmd.expectExitCode(0);
         cmd.step.dependOn(&heal_step.step);
 
-        const stderr = cmd.captureStdErr();
+        const stderr = cmd.captureStdErr(.{});
         const verify = CheckStep.create(b, exercises, stderr);
         verify.step.dependOn(&cmd.step);
 
