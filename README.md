@@ -86,6 +86,7 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
+* *2025-09-24* zig 0.16.0-dev.377 - Enable passing file content as args, see [#25228](https://github.com/ziglang/zig/pull/25228)
 * *2025-09-03* zig 0.16.0-dev.164 - changes in reader, see [#25077](https://github.com/ziglang/zig/pull/25077)
 * *2025-08-15* zig 0.15.0-dev.1519 - changes in array list, see [#24801](https://github.com/ziglang/zig/pull/24801)
 * *2025-08-08* zig 0.15.0-dev.1380 - changes in build system, see [#24588](https://github.com/ziglang/zig/pull/24588)
