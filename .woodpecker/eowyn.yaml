@@ -7,7 +7,6 @@ steps:
     when:
       event: [pull_request, push, cron]
       ref:
-        include:
-          - refs/pull/**      # alle PRs
-          - refs/heads/main   # nur Pushes auf main
+        - refs/pull/**
+        - refs/heads/main
       cron: daily*
