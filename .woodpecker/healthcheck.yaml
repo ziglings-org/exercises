@@ -1,0 +1,13 @@
+when:
+  - event: push
+    branch: main
+  - event: cron
+
+steps:
+  - name: ping status monitor
+    image: curlimages/curl
+    commands:
+      - curl "https://status.codeberg.eu/api/push/$token?status=up&msg=OK&ping="
+    environment:
+      token:
+        from_secret: token
