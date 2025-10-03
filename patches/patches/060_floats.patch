@@ -1,11 +1,11 @@
---- exercises/060_floats.zig	2025-03-03 20:23:40.255443963 +0400
-+++ answers/060_floats.zig	2025-03-03 20:29:58.554854977 +0400
+--- exercises/060_floats.zig	2025-10-03 13:28:03.092371247 +0200
++++ answers/060_floats.zig	2025-10-03 13:27:40.842926774 +0200
 @@ -43,7 +43,7 @@
      //
      // We'll convert this weight from pounds to metric units at a
      // conversion of 0.453592 kg to the pound.
 -    const shuttle_weight: f16 = 0.453592 * 4480e3;
-+    const shuttle_weight: f32 = 0.453592 * 4.480e3;
++    const shuttle_weight: f32 = 0.453592 * 4.480e6;
  
      // By default, float values are formatted in scientific
      // notation. Try experimenting with '{d}' and '{d:.3}' to see
