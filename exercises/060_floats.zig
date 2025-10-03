@@ -48,7 +48,7 @@ pub fn main() void {
     // By default, float values are formatted in scientific
     // notation. Try experimenting with '{d}' and '{d:.3}' to see
     // how decimal formatting works.
-    print("Shuttle liftoff weight: {d:.0} metric tons\n", .{shuttle_weight});
+    print("Shuttle liftoff weight: {d:.0} metric tons\n", .{shuttle_weight / 1e3});
 }
 
 // Floating further:
