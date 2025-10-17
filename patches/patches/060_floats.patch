@@ -1,5 +1,5 @@
---- exercises/060_floats.zig	2025-10-03 13:28:03.092371247 +0200
-+++ answers/060_floats.zig	2025-10-03 13:27:40.842926774 +0200
+--- exercises/060_floats.zig	2025-10-17 17:58:44.811502880 +0200
++++ answers/060_floats.zig	2025-10-17 17:57:39.227157388 +0200
 @@ -43,7 +43,7 @@
      //
      // We'll convert this weight from pounds to metric units at a
@@ -7,5 +7,5 @@
 -    const shuttle_weight: f16 = 0.453592 * 4480e3;
 +    const shuttle_weight: f32 = 0.453592 * 4.480e6;
  
-     // By default, float values are formatted in scientific
-     // notation. Try experimenting with '{d}' and '{d:.3}' to see
+     // By default, float values are formatted in standard decimal
+     // notation. Experiment with '{d}' and '{d:.3}' to see how
