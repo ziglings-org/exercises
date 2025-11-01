@@ -570,12 +570,12 @@ const ZiglingStep = struct {
 
         // Render compile errors at the bottom of the terminal.
         // TODO: use the same ttyconf from the builder.
-        const ttyconf: std.Io.tty.Config = if (use_color_escapes)
-            .escape_codes
+        const color: std.zig.Color = if (use_color_escapes)
+            .on
         else
-            .no_color;
+            .off;
         if (self.step.result_error_bundle.errorMessageCount() > 0) {
-            self.step.result_error_bundle.renderToStdErr(.{ .ttyconf = ttyconf });
+            self.step.result_error_bundle.renderToStdErr(.{}, color);
         }
     }
 };

@@ -161,7 +161,9 @@ const CheckNamedStep = struct {
         );
         defer stderr_file.close();
 
-        var stderr = stderr_file.readerStreaming(&.{});
+        var threaded: std.Io.Threaded = .init_single_threaded;
+        const io = threaded.io();
+        var stderr = stderr_file.readerStreaming(io, &.{});
         {
             // Skip the logo.
             const nlines = mem.count(u8, root.logo, "\n");
@@ -213,7 +215,9 @@ const CheckStep = struct {
         );
         defer stderr_file.close();
 
-        var stderr = stderr_file.readerStreaming(&.{});
+        var threaded: std.Io.Threaded = .init_single_threaded;
+        const io = threaded.io();
+        var stderr = stderr_file.readerStreaming(io, &.{});
         for (exercises) |ex| {
             if (ex.number() == 1) {
                 // Skip the logo.
