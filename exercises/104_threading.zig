@@ -106,7 +106,7 @@ pub fn main() !void {
 
         // After the threads have been started,
         // they run in parallel and we can still do some work in between.
-        std.posix.nanosleep(1, 0);
+        std.posix.nanosleep(4, 0);
         std.debug.print("Some weird stuff, after starting the threads.\n", .{});
     }
     // After we have left the closed area, we wait until
