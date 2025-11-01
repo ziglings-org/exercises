@@ -72,7 +72,7 @@ the appropriate tag.
 The Zig language is under very active development. In order to be
 current, Ziglings tracks **development** builds of the Zig
 compiler rather than versioned **release** builds. The last
-stable release was `0.15.1`, but Ziglings needs a dev build with
+stable release was `0.15.2`, but Ziglings needs a dev build with
 pre-release version "0.16.0" and a build number at least as high
 as that shown in the example version check above.
 
@@ -86,6 +86,7 @@ that if you update one, you may need to also update the other.
 
 ### Version Changes
 
+* *2025-11-01* zig 0.16.0-dev.1204 - more changes due to new I/O API, see [#25592](https://github.com/ziglang/zig/pull/25592)
 * *2025-09-24* zig 0.16.0-dev.377 - Enable passing file content as args, see [#25228](https://github.com/ziglang/zig/pull/25228)
 * *2025-09-03* zig 0.16.0-dev.164 - changes in reader, see [#25077](https://github.com/ziglang/zig/pull/25077)
 * *2025-08-15* zig 0.15.0-dev.1519 - changes in array list, see [#24801](https://github.com/ziglang/zig/pull/24801)

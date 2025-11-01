@@ -1,6 +1,6 @@
---- exercises/104_threading.zig	2024-04-10 19:12:29.878856370 +0200
-+++ answers/104_threading.zig	2024-04-10 19:11:22.304265713 +0200
-@@ -97,12 +97,12 @@
+--- exercises/104_threading.zig	2025-11-01 15:37:31.299815135 +0100
++++ answers/104_threading.zig	2025-11-01 15:39:28.774262735 +0100
+@@ -97,16 +97,16 @@
          defer handle.join();
  
          // Second thread
@@ -15,3 +15,8 @@
  
          // After the threads have been started,
          // they run in parallel and we can still do some work in between.
+-        std.posix.nanosleep(1, 0);
++        std.posix.nanosleep(4, 0);
+         std.debug.print("Some weird stuff, after starting the threads.\n", .{});
+     }
+     // After we have left the closed area, we wait until
