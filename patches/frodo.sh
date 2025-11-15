@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 #    "How do you pick up the threads of an old life?
 #     How do you go on, when in your heart you begin

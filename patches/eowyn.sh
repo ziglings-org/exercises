@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 #     "I will be a shieldmaiden no longer,
 #      nor vie with the great Riders, nor
