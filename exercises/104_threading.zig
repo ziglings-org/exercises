@@ -106,7 +106,7 @@ pub fn main() !void {
 
         // After the threads have been started,
         // they run in parallel and we can still do some work in between.
-        std.Thread.sleep(1500 * std.time.ns_per_ms);
+        std.posix.nanosleep(4, 0);
         std.debug.print("Some weird stuff, after starting the threads.\n", .{});
     }
     // After we have left the closed area, we wait until
@@ -117,12 +117,12 @@ pub fn main() !void {
 // This function is started with every thread that we set up.
 // In our example, we pass the number of the thread as a parameter.
 fn thread_function(num: usize) !void {
-    std.Thread.sleep(200 * num * std.time.ns_per_ms);
+    std.posix.nanosleep(1 * num, 0);
     std.debug.print("thread {d}: {s}\n", .{ num, "started." });
 
     // This timer simulates the work of the thread.
     const work_time = 3 * ((5 - num % 3) - 2);
-    std.Thread.sleep(work_time * std.time.ns_per_s);
+    std.posix.nanosleep(work_time, 0);
 
     std.debug.print("thread {d}: {s}\n", .{ num, "finished." });
 }
