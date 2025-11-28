@@ -730,7 +730,7 @@ const exercises = [_]Exercise{
     },
     .{
         .main_file = "009_if.zig",
-        .output = "Foo is 1!",
+        .output = "Foo is 42!",
     },
     .{
         .main_file = "010_if2.zig",
@@ -1275,7 +1275,7 @@ const exercises = [_]Exercise{
         \\Max difference (new fn): 0.014
         ,
     },
-    .{ .main_file = "110_quiz9.zig", .output = 
+    .{ .main_file = "110_quiz9.zig", .output =
     \\Toggle pins with XOR on PORTB
     \\-----------------------------
     \\  1100 // (initial state of PORTB)
