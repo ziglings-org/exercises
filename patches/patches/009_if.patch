@@ -1,11 +1,11 @@
---- exercises/009_if.zig	2023-10-03 22:15:22.122241138 +0200
-+++ answers/009_if.zig	2023-10-05 20:04:06.882763636 +0200
+--- exercises/009_if.zig	2025-11-28 14:40:19.301738185 +0100
++++ answers/009_if.zig	2025-11-28 14:39:07.756077340 +0100
 @@ -24,7 +24,7 @@
-     const foo = 1;
+     const foo = 42;
  
      // Please fix this condition:
 -    if (foo) {
-+    if (foo == 1) {
++    if (foo == 42) {
          // We want our program to print this message!
-         std.debug.print("Foo is 1!\n", .{});
+         std.debug.print("Foo is 42!\n", .{});
      } else {
